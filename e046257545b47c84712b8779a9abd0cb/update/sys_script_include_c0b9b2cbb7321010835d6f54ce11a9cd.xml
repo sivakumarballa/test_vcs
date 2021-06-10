@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AppDetailsBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AppDetailsBuilder</name>
+        <script><![CDATA[var AppDetailsBuilder = (function() {
+	return {
+		build: function(applicationSysId) {
+			var appDetailsRecord = new GlideRecord(CreatorStudioConstants.appDetailsTable.NAME);
+			var appDetails;
+		
+			if (!appDetailsRecord.get('application', applicationSysId)) {
+				return null;
+			}
+			
+			appDetails = this.buildDetailsBody(appDetailsRecord);
+		
+			return appDetails;
+		},
+		buildDetailsBody: function(appDetailsRecord) {
+			return {
+				sys_id: appDetailsRecord.getUniqueValue(),
+				app_sys_id: appDetailsRecord.getValue('application'),
+				operations: appDetailsRecord.getValue('operations'),
+				submitted_on: appDetailsRecord.getDisplayValue('submitted_on')
+			};
+		}
+	};
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-27 21:20:50</sys_created_on>
+        <sys_id>c0b9b2cbb7321010835d6f54ce11a9cd</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>AppDetailsBuilder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_c0b9b2cbb7321010835d6f54ce11a9cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-26 15:09:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

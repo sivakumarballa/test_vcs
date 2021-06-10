@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>A comma separated list (no spaces between types) of supported content types for the Taxonomy and Taxonomy Category illustrations and icons. See sys_attachment --&gt; content_type for example content types.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>true</is_private>
+        <name>sn_app_eng_studio.illustration_supported_content_types</name>
+        <read_roles>admin</read_roles>
+        <suffix>illustration_supported_content_types</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-09 14:49:54</sys_created_on>
+        <sys_id>3df6a35577f3330001fb4311a810612a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>sn_app_eng_studio.illustration_supported_content_types</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_properties_3df6a35577f3330001fb4311a810612a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-05 17:33:36</sys_updated_on>
+        <type>string</type>
+        <value>image/svg+xml</value>
+        <write_roles>maint</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=3df6a35577f3330001fb4311a810612a"/>
+</record_update>

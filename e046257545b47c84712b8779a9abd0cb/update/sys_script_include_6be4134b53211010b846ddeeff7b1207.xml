@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ApplicationStatusHelper</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Helper for application status information.</description>
+        <name>ApplicationStatusHelper</name>
+        <script><![CDATA[var ApplicationStatusHelper = Class.create();
+ApplicationStatusHelper.prototype = {
+    initialize: function() {
+    },
+	// keys in this mapping correlate to the value of `state` in task table
+	appStatusMapping: {
+		0: { value: 'in_development', display_value: gs.getMessage('In Development')},
+		1: { value: 'pending_approval', display_value: gs.getMessage('Pending Approval')},
+		2: { value: 'in_validation', display_value: gs.getMessage('In Validation')},
+		3: { value: 'published', display_value: gs.getMessage('Published')},
+		4: { value: 'rejected', display_value: gs.getMessage('Rejected')},
+	},
+    type: 'ApplicationStatusHelper'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-26 20:06:27</sys_created_on>
+        <sys_id>6be4134b53211010b846ddeeff7b1207</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ApplicationStatusHelper</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_6be4134b53211010b846ddeeff7b1207</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-30 18:54:42</sys_updated_on>
+    </sys_script_include>
+</record_update>

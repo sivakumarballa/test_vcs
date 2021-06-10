@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Applications in Projects" max_length="40" name="sn_app_eng_studio_project_application_m2m" type="collection">
+        <element attributes="encode_utf8=false" label="Application" max_length="32" name="application" reference="sys_scope" reference_cascade_rule="delete" reference_qual="javascript:'sys_idIN' + sn_app_eng_studio.ProjectApplicationRefQual.getSuitableApplicationSysIds();" type="reference"/>
+        <element attributes="encode_utf8=false" label="Project" max_length="32" name="project" reference="sn_app_eng_studio_project" reference_cascade_rule="delete" type="reference"/>
+        <element label="Soft Deleted" max_length="40" name="soft_deleted" type="boolean"/>
+        <element default="global" label="Domain" max_length="32" name="sys_domain" reference="domain" type="domain_id"/>
+        <index name="index">
+            <element name="application"/>
+        </index>
+        <index name="index2">
+            <element name="sys_domain"/>
+        </index>
+        <index name="index3">
+            <element name="project"/>
+        </index>
+    </element>
+</database>

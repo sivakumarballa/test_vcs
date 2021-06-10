@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>aec3b37cc3ce1010a9f5e548fa40dd6d</image>
+        <name>servicenow_logo.svg</name>
+        <size_bytes>2380</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-14 18:55:33</sys_created_on>
+        <sys_id>56b3b37cc3ce1010a9f5e548fa40dd56</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>servicenow_logo.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_56b3b37cc3ce1010a9f5e548fa40dd56</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-14 18:55:46</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>9ecc1a90ccb608c9837b29266eb427f9f0282e3918f9d9af0637f77d50613f5a</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2380</size_bytes>
+        <size_compressed>1012</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-14 18:55:45</sys_created_on>
+        <sys_id>aec3b37cc3ce1010a9f5e548fa40dd6d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-14 18:55:46</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>56b3b37cc3ce1010a9f5e548fa40dd56</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="aec3b37cc3ce1010a9f5e548fa40dd6d">aec3b37cc3ce1010a9f5e548fa40dd6d</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-14 18:55:45</sys_created_on>
+        <sys_id>eec3b37cc3ce1010a9f5e548fa40dd6d</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>nVZNc9s2EL3nV2DYSzsVISw+FkBGciamY1/SZKZNzx6PxcicyKJHZi333/eBBFVKiZtMpYPwiMXbt28XtBdvnu834qnePTbtdlmQVIWot7ftqtmul8Wfny7LULw5e7V4fFqLfbPq7pZFUA/Phbirm/Vdtyy0Seipqffn7fOyUEKJoIQ2xZSUCoE028dlcdd1D6/n8/1+L/dGtrv1XCul5qDPIa+fN832y7cCKcY473eLs1cCn0XXdJv6zIV4UXm6KOPlpS6tr7gMNlYlexO9Ordk34XFfIgdzq1Fs1oW7z5clJ8+lvgpxGO3a7/Uy2LbbusRlbleiP/cbDbjZlqXu782iK6f6m27WmU5U+r7m2Zzra8v6lvorVeF6HY328fP7e5+WfTLzU1X/1y6EKTqPzNRGuIMfpkwTlj/qHdPzW39od1fb9p1e/371fn11dWvb0v9Av+U/mX2H8jwjRP9qYeb7k7g3G9KauKZ1pIMi/cDIqmteO+kC3S01jJqUXlJHPGcdRBRkjUzJYOKgkhapgwqstIYP26xjM7iPCkSFCR7mllJXlRaSWXdzCHMC4BAfuZlpDCCxBqhIMNRKDmpTTiFCFZskHyAQcboBJR45sxKBs8sAHQjzkjNZsbSQhaobICS6CEY2TivqwAFMQOWjgOO2+CFkz4ykjjuHUrg2McBFX2DLtPwxXEgf9Le4FucLeapE99rknGSyM4IdsP0ypB0So9QR6kMGoUqYPWITPIV/g4wSg4iH0MviEWmHEBlgvSaM7K49tEPZ/J6pBvhkCufyjqORfaag+sHIASlOfVFwywKeOY94U2DsU7ma80CVkW4jyakLlUJUuzzMCIxS9EkZkYko51xpklGlSK9ZGOS1T7RoOVpUyOrS15E1bdBedvbpiOmWGEEjDBI7xMwNo7aM6oM5sOFwyZIDY/nLB5qOpDCEdTWZyQSVktW/Vh6TLc10nqfpIZICMWUo/q+DCeslzqkCh3ZEUCSToE9YmlwW8Af+mtkB4ePLZ3MFqnDcPnq7UV03xuudvN3esVNGOh0PMVD22w7vPxdSEWLPN4Od5d5RKksXKz0nnC4rI7y2vV2oSYKJFhJCyv7HUYZyuZ1RP1xjPIgVnrY8bDJu7wmaUIcEzLsMQcxDK+9TzdWG9zJqdDegVzmj7ugX3TBs2Q0Cw20SewBYTqER7lfoSwRyCo6QWMk3k6n62N2oP9XiHm5ELiEecJg4q0Lo82kqmz7ERqV42rjGp8gJdmBBVdbu0TJMSaE+R+Bl87oQ2BGmcT3I3+MxuQeXf8XTTT/tx+L+frkr/D0wQH0i0X6B+bsHxeYl9NMCQAA</data>
+        <length>1336</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="aec3b37cc3ce1010a9f5e548fa40dd6d">aec3b37cc3ce1010a9f5e548fa40dd6d</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-14 18:55:45</sys_created_on>
+        <sys_id>62c3b37cc3ce1010a9f5e548fa40dd6e</sys_id>
+    </sys_attachment_doc>
+</record_update>

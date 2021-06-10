@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <compiler_build/>
+        <copied_from>b6289a925b11101001fb0c370581c7ac</copied_from>
+        <copied_from_name>Object Template Subflow</copied_from_name>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__classic_ui</internal_name>
+        <label_cache>[{"name":"subflow.classic_ui_input","label":"Input➛Classic UI Input","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4b667393-cc02-4e70-874f-1391b2afb08f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"e9738a60-e854-4738-b5f1-95a5c1dbe90c.classic_ui_output","label":"1➛Classic UI Output","reference_display":"Classic UI Output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"db3965a7-8406-4112-adec-d02660c046bd"}}]</label_cache>
+        <master_snapshot>1a82ea0558512010fa9be831f627287b</master_snapshot>
+        <name>Object Template - Classic UI</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:58:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>84712ec158512010fa9be831f62728c9</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Object Template - Classic UI</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_hub_flow_84712ec158512010fa9be831f62728c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=84712ec158512010fa9be831f62728c9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=84712ec158512010fa9be831f62728c9"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9^id=84712ec158512010fa9be831f62728c9"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=84712ec158512010fa9be831f62728c9^sys_idNOT INc4712ec158512010fa9be831f62728cb"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>84712ec158512010fa9be831f62728c9</id>
+        <name>Object Template - Classic UI</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:58:31</sys_created_on>
+        <sys_id>c4712ec158512010fa9be831f62728cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 20:58:31</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=84712ec158512010fa9be831f62728c9^sys_idNOT INd281eec158512010fa9be831f6272810"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4b667393-cc02-4e70-874f-1391b2afb08f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>classic_ui_input</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Classic UI Input</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</model>
+        <model_id>84712ec158512010fa9be831f62728c9</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_84712ec158512010fa9be831f62728c9</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:58:56</sys_created_on>
+        <sys_id>d281eec158512010fa9be831f6272810</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=84712ec158512010fa9be831f62728c9^sys_idNOT IN90a1eec158512010fa9be831f62728d8"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6c702429-5990-4b4f-a078-fe5fe7011fca</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>classic_ui_output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Classic UI Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</model>
+        <model_id>84712ec158512010fa9be831f62728c9</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:59:21</sys_created_on>
+        <sys_id>90a1eec158512010fa9be831f62728d8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=84712ec158512010fa9be831f62728c9^sys_idNOT IN5982aa0558512010fa9be831f62728cd"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Templated Classic UI">5c911a820f0010108c9c5019c4767e81</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:14</sys_created_on>
+        <sys_id>5982aa0558512010fa9be831f62728cd</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <ui_id>e9738a60-e854-4738-b5f1-95a5c1dbe90c</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5982aa0558512010fa9be831f62728cd"/>
+    <sys_element_mapping action="delete_multiple" query="id=5982aa0558512010fa9be831f62728cd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>classic_ui_input</field>
+        <id>5982aa0558512010fa9be831f62728cd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:15</sys_created_on>
+        <sys_id>9582aa0558512010fa9be831f62728cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:15</sys_updated_on>
+        <table>var__m_sys_hub_action_input_5c911a820f0010108c9c5019c4767e81</table>
+        <value>{{subflow.classic_ui_input}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=84712ec158512010fa9be831f62728c9^sys_idNOT IN6d82aa0558512010fa9be831f62728d0"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">1182aa0558512010fa9be831f62728d0</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>classic_ui_output</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:15</sys_created_on>
+        <sys_id>6d82aa0558512010fa9be831f62728d0</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <ui_id>720462c2-3224-4ea4-ac65-7cda9bb32535</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=6d82aa0558512010fa9be831f62728d0"/>
+    <sys_element_mapping action="delete_multiple" query="id=6d82aa0558512010fa9be831f62728d0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>classic_ui_output</field>
+        <id>6d82aa0558512010fa9be831f62728d0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:15</sys_created_on>
+        <sys_id>6582aa0558512010fa9be831f62728d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:15</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9</table>
+        <value>{{e9738a60-e854-4738-b5f1-95a5c1dbe90c.classic_ui_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_84712ec158512010fa9be831f62728c9^sys_idNOT INa281eec158512010fa9be831f6272817"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>classic_ui_input</element>
+        <help/>
+        <hint/>
+        <label>Classic UI Input</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_84712ec158512010fa9be831f62728c9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:58:57</sys_created_on>
+        <sys_id>a281eec158512010fa9be831f6272817</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Classic UI Input</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_84712ec158512010fa9be831f62728c9_classic_ui_input_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9^sys_idNOT INd8a1eec158512010fa9be831f62728dc"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>classic_ui_output</element>
+        <help/>
+        <hint/>
+        <label>Classic UI Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 20:59:21</sys_created_on>
+        <sys_id>d8a1eec158512010fa9be831f62728dc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Classic UI Output</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_output_84712ec158512010fa9be831f62728c9_classic_ui_output_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=84712ec158512010fa9be831f62728c9^sys_idNOT INbe82ea0558512010fa9be831f62728bc"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@7a6e7b37</plan>
+        <plan_id display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</plan_id>
+        <snapshot>1a82ea0558512010fa9be831f627287b</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>be82ea0558512010fa9be831f62728bc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+    </sys_flow_subflow_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__classic_ui</internal_name>
+        <label_cache>[{"name":"subflow.classic_ui_input","label":"Input➛Classic UI Input","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4b667393-cc02-4e70-874f-1391b2afb08f","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"e9738a60-e854-4738-b5f1-95a5c1dbe90c.classic_ui_output","label":"1➛Classic UI Output","reference_display":"Classic UI Output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"db3965a7-8406-4112-adec-d02660c046bd"}}]</label_cache>
+        <master>true</master>
+        <name>Object Template - Classic UI</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Object Template - Classic UI">84712ec158512010fa9be831f62728c9</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1a82ea0558512010fa9be831f627287b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=1a82ea0558512010fa9be831f627287b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=1a82ea0558512010fa9be831f627287b"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b^id=1a82ea0558512010fa9be831f627287b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=1a82ea0558512010fa9be831f627287b^sys_idNOT IN1a82ea0558512010fa9be831f627287c"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>1a82ea0558512010fa9be831f627287b</id>
+        <name>Object Template - Classic UI</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>1a82ea0558512010fa9be831f627287c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=1a82ea0558512010fa9be831f627287b^sys_idNOT INa282ea0558512010fa9be831f627287e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=4b667393-cc02-4e70-874f-1391b2afb08f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>classic_ui_input</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Classic UI Input</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Classic UI">1a82ea0558512010fa9be831f627287b</model>
+        <model_id>1a82ea0558512010fa9be831f627287b</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_1a82ea0558512010fa9be831f627287b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>a282ea0558512010fa9be831f627287e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=1a82ea0558512010fa9be831f627287b^sys_idNOT IN6282ea0558512010fa9be831f6272898"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6c702429-5990-4b4f-a078-fe5fe7011fca</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>classic_ui_output</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Classic UI Output</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Classic UI">1a82ea0558512010fa9be831f627287b</model>
+        <model_id>1a82ea0558512010fa9be831f627287b</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>6282ea0558512010fa9be831f6272898</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=1a82ea0558512010fa9be831f627287b^sys_idNOT INa282ea0558512010fa9be831f62728ac"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Templated Classic UI">5c911a820f0010108c9c5019c4767e81</action_type>
+        <action_type_parent display_value="Create Templated Classic UI">d342fe9d0f0010108c9c5019c4767ea8</action_type_parent>
+        <comment/>
+        <compiled_snapshot>5c911a820f0010108c9c5019c4767e81</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Classic UI">1a82ea0558512010fa9be831f627287b</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:20</sys_created_on>
+        <sys_id>a282ea0558512010fa9be831f62728ac</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <ui_id>e9738a60-e854-4738-b5f1-95a5c1dbe90c</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=a282ea0558512010fa9be831f62728ac"/>
+    <sys_element_mapping action="delete_multiple" query="id=a282ea0558512010fa9be831f62728ac"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>classic_ui_input</field>
+        <id>a282ea0558512010fa9be831f62728ac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:20</sys_created_on>
+        <sys_id>ee82ea0558512010fa9be831f62728ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:20</sys_updated_on>
+        <table>var__m_sys_hub_action_input_5c911a820f0010108c9c5019c4767e81</table>
+        <value>{{subflow.classic_ui_input}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=1a82ea0558512010fa9be831f627287b^sys_idNOT INae82ea0558512010fa9be831f62728a3"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">1182aa0558512010fa9be831f62728d0</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Classic UI">1a82ea0558512010fa9be831f627287b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>classic_ui_output</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>ae82ea0558512010fa9be831f62728a3</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:44</sys_updated_on>
+        <ui_id>720462c2-3224-4ea4-ac65-7cda9bb32535</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ae82ea0558512010fa9be831f62728a3"/>
+    <sys_element_mapping action="delete_multiple" query="id=ae82ea0558512010fa9be831f62728a3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>classic_ui_output</field>
+        <id>ae82ea0558512010fa9be831f62728a3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>2682ea0558512010fa9be831f62728a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b</table>
+        <value>{{e9738a60-e854-4738-b5f1-95a5c1dbe90c.classic_ui_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_1a82ea0558512010fa9be831f627287b^sys_idNOT INae82ea0558512010fa9be831f6272892"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>classic_ui_input</element>
+        <help/>
+        <hint/>
+        <label>Classic UI Input</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1a82ea0558512010fa9be831f627287b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>ae82ea0558512010fa9be831f6272892</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Classic UI Input</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_1a82ea0558512010fa9be831f627287b_classic_ui_input_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b^sys_idNOT IN6282ea0558512010fa9be831f627289e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>classic_ui_output</element>
+        <help/>
+        <hint/>
+        <label>Classic UI Output</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:03:19</sys_created_on>
+        <sys_id>6282ea0558512010fa9be831f627289e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Classic UI Output</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_output_1a82ea0558512010fa9be831f627287b_classic_ui_output_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:03:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_flow action="update">
+        <sys_id>84712ec158512010fa9be831f62728c9</sys_id>
+        <latest_snapshot>1a82ea0558512010fa9be831f627287b</latest_snapshot>
+    </sys_hub_flow>
+</record_update>

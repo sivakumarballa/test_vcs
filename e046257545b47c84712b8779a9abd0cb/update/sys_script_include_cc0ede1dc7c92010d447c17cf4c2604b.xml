@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.PipelineService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>PipelineService</name>
+        <script><![CDATA[/**
+ * Returns the active pipeline record - sn_app_eng_studio_pipeline 
+ * @returns {Object}
+*/
+var aesGetPipeline = function () {
+	var pipelineRecord = new GlideRecord(PipelineConstants.PIPELINE_TABLE);
+	pipelineRecord.addQuery('active', true);
+	pipelineRecord.query();
+
+	if (pipelineRecord.getRowCount() === 0) {		
+		var error = new Error(PipelineConstants.errors.INVAILD_PIPELINE_ERROR);
+		error.name = PipelineConstants.errors.PIPELINE_ERROR;
+		error.code = "404";
+		
+		throw error;
+	}
+	
+	pipelineRecord.next();
+
+	return pipelineRecord;
+};
+	
+
+var PipelineService = Class.create();
+
+PipelineService.prototype = {
+	initialize: function() {
+		this.activePipeline = aesGetPipeline();
+	},
+	
+	/**
+	 * Returns the environment url for the given environment column name. 
+	 * @param {String} environment
+	 * @returns {String} url
+	 */
+	getEnvironmentUrl: function(environment) {
+
+		var url = this.activePipeline[environment].getRefRecord().getValue('instance_url');
+
+		if (!url) {
+			var error = new Error(PipelineConstants.errors.NO_ENV_URL_ERROR);
+			error.name = PipelineConstants.errors.PIPELINE_ERROR;
+			error.code = "404";
+			
+			throw error;
+		}
+
+		return url.slice(-1) !== "/" ? url + "/" : url;
+	},
+	
+	/**
+	 * Returns a request object with authentication setup based on the provided environment column name
+	 * @param {Object} request
+	 * @param {String} environment 
+	 * @returns {Object} request object
+	 */
+	setRequestAuth: function(request, environment) {
+		var environmentCred = this.getEnvironmentCredential(environment);
+		var credentialId = environmentCred.getValue('sys_id');
+
+		var provider = new sn_cc.StandardCredentialsProvider();
+		var credential = provider.getCredentialByID(credentialId);
+		
+		request.setBasicAuth(credential.getAttribute("user_name"), credential.getAttribute("password"));
+		
+		return request;
+		
+	},
+	
+	/**
+	 * Builds an authenticated request object for the provided environment. Returns the request for execution.
+	 * @param {String} environment - column name of the environment
+	 * @param {String} endpoint  - endpoint to send the request to
+	 * @param {Object} args - Object with "requestBody" or "queryParams"
+	 * @returns {Object} request object
+	*/
+	buildRequest: function(method, environment, endpoint, args) {
+				
+		var request = new sn_ws.RESTMessageV2();
+		
+		var trimmedEndpoint = endpoint.slice(0, 1) == "/" ? endpoint.slice(1, endpoint.length) : endpoint;
+		
+		var url = this.getEnvironmentUrl(environment) + trimmedEndpoint;
+		
+		if(args && args.queryParams && typeof args.queryParams === 'object') {
+			Object.keys(args.queryParams).forEach( function (param) {
+				request.setQueryParameter(param, args.queryParams[param]);
+			});
+		}
+
+		if(args && args.requestHeaders && typeof args.requestHeaders === 'object') {
+			Object.keys(args.requestHeaders).forEach( function (param) {
+				request.setRequestHeader(param, args.requestHeaders[param]);
+			});
+		}
+
+		request.setEndpoint(url);
+		request.setHttpMethod(method);
+	
+		this.setRequestAuth(request, environment);
+
+		request.setRequestHeader("Accept","application/json");
+		request.setRequestHeader('Content-Type','application/json');
+		
+		if (args && args.requestBody) {
+			request.setRequestBody(JSON.stringify(args.requestBody));
+		} 
+
+		return request;
+	},
+	
+	/**
+	 * Returns a discovery credential record for the given environment
+	 * @param {String} environment - column name of the environment
+	 * @returns {Object} discoveryRecord
+	*/
+	getEnvironmentCredential: function (environment) {
+		var baseInstanceUrl;
+		var cred;
+		var error;
+
+		var credRef = this.activePipeline[environment].getRefRecord().getValue('instance_credential');
+		
+		if (!credRef) {
+			error = new Error(environment + " has not been setup correctly in " + PipelineConstants.PIPELINE_TABLE + ".");
+			error.name = PipelineConstants.errors.PIPELINE_ERROR;
+			error.code = "404";
+
+			throw error;
+		}
+
+		var discoveryRecord = new GlideRecord(PipelineConstants.DISCOVERY_CREDENTIALS);
+		discoveryRecord.addQuery('tag', credRef);
+		discoveryRecord.query();
+
+		if (discoveryRecord.getRowCount() === 0) {
+
+			error = new Error(environment + " has not been setup correctly in " + PipelineConstants.PIPELINE_TABLE + ". Could not find credential");
+			error.name = PipelineConstants.errors.PIPELINE_ERROR;
+			error.code = "404";
+
+			throw error;
+		}
+		
+		discoveryRecord.next();
+
+		return discoveryRecord;
+	},
+
+	/**
+	 * Returns the active pipeline record - sn_app_eng_studio_pipeline 
+	 * @returns {Object}
+	*/
+	getActivePipeline: function () {
+		return this.activePipeline;
+	},
+	
+	/**
+	 * Returns an environment record for the given type (type is the column name on the pipeline)
+	 * @returns {GlideRecord}
+	*/
+	getEnvironmentByType: function(type) {
+		var environment = this.activePipeline[type];
+		
+		if (!environment.isValidRecord()) { return null; }
+		
+		return this.activePipeline[type].getRefRecord();			
+	},
+
+	/**
+	 * Returns a boolean. Will return true if the instance this is called on is equal to the production instance
+	 * Production instance is defined by sn_app_eng_studio_environment.instance_url for the active pipeline.
+	 * @returns {Boolean}
+	*/
+	isProd: function() {
+		var productionUrl = this.getEnvironmentUrl(PipelineConstants.PROD_ENV_COLUMN);
+
+		if (!productionUrl) { return false; }
+
+		return this.removeProtocolFromUrl(productionUrl) === this.removeProtocolFromUrl(gs.getProperty('glide.servlet.uri'));
+	},
+
+	/**
+	 * Takes a URL and returns the URL sans-protocol
+	 * @param {String} url - Example: http://example.com
+	 * @returns {String} - Example: http://example.com or example.com -> example.com
+	*/
+	removeProtocolFromUrl: function(url) {
+		var httpRegex = /(http(s?)):\/\//i;
+
+		return url.replace(httpRegex, '');
+	},
+	
+	type: 'PipelineService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-12 05:07:11</sys_created_on>
+        <sys_id>cc0ede1dc7c92010d447c17cf4c2604b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>PipelineService</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_cc0ede1dc7c92010d447c17cf4c2604b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 17:15:51</sys_updated_on>
+    </sys_script_include>
+</record_update>

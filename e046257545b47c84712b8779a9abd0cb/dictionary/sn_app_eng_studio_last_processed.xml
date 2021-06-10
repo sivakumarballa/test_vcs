@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Last Processed" max_length="40" name="sn_app_eng_studio_last_processed" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:new GlideDateTime();" hint="The timestamp for when the job or flow was last executed." label="Last processed" max_length="40" name="last_processed" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" hint="Unique name for last processed date" label="Name" mandatory="true" max_length="255" name="name" type="string"/>
+    </element>
+</database>

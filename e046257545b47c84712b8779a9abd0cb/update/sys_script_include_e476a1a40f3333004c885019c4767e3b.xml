@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.CreatorStudioConstants</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Contains various constants used by other scripts specific to App Engine Studio</description>
+        <name>CreatorStudioConstants</name>
+        <script><![CDATA[var CreatorStudioConstants = {
+	
+	/**
+	 * @deprecated
+	 * This seems to be using the wrong name or checking the wrong thing, if need to check 
+	 * for global scope, use 'GLOBAL_APPLICATION_SCOPE_NAME'
+	 */
+	GLOBAL_APPLICATION_SYS_ID : "global",
+	
+	GLOBAL_APPLICATION_SCOPE_NAME : "global",
+	
+	MAGIC_SYS_ID : "$sys_id_ui11",
+	
+	projectTable : {
+		NAME : "sn_app_eng_studio_project"
+	},
+	
+	applicationProjectLinkTable : {
+		NAME : "sn_app_eng_studio_project_application_m2m"
+	},
+	
+	appDetailsTable : {
+		NAME : "sn_app_eng_studio_app_details"
+	},
+
+	clientParams : {
+		REFERRING_URL : "{client:ReferringUrl}",
+		SCOPE_ID : "{client:ScopeId}",
+		SCOPE_NAME : "{client:ScopeName}",
+		STACKNAME : "{client:StackName}",
+		TABLE : "{client:Table}",
+		VIEW_NAME : "{client:ViewName}"
+	},
+
+	sysparms : {
+		NAMEOFSTACK : "sysparm_nameofstack",
+		REDIRECT_URL : "sysparm_redirect_url",
+		REFERRING_URL : "sysparm_referring_url",
+		TRANSACTION_SCOPE : "sysparm_transaction_scope",
+		VIEW : "sysparm_view"
+	},
+	
+	sorting : {
+		APPS_SORT_APPROVED_FIELDS : ["name", "updated"],
+		APPS_SORT_DEFAULT_FIELD : "updated",
+		ASC_ORDER : "asc",
+		DESC_ORDER : "desc"
+	},
+
+	errors : {
+		PROJECT_ACCESS_DENIED : "Access to project denied",
+		PROJECT_DOES_NOT_EXIST : "Project does not exist",
+		APPLICATION_ACCESS_DENIED : "Access to application denied",
+		APPLICATION_DOES_NOT_EXIST : "Application cannot be found",
+		APPLICATION_DETAILS_RECORD_NOT_FOUND: "Application Details record cannot be found",
+		TAXONOMY_DOES_NOT_EXIST : "Taxonomy cannot be found",
+		APPLICATION_FILE_DOES_NOT_EXIST : "Application file cannot be found",
+		PROJECT_LINK_EXISTS : "Project link already exists",
+		PROJECT_LINK_DOES_NOT_EXIST : "Project link does not exist",
+		OPERATIONS_IMPROPER_FORMAT: "Operations must be an array",
+		INSERT_FAILURE: "Failed to insert record",
+		UPDATE_FAILURE: "Failed to update record"
+	},
+	
+	deploymentStates: {
+		PENDING_APPROVAL: '1',
+		IN_VALIDATION: '2',
+		PUBLISHED: '3',
+		REJECTED: '4'
+	}
+
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-06 21:32:45</sys_created_on>
+        <sys_id>e476a1a40f3333004c885019c4767e3b</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>CreatorStudioConstants</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_e476a1a40f3333004c885019c4767e3b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-01 21:34:15</sys_updated_on>
+    </sys_script_include>
+</record_update>

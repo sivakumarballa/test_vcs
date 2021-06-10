@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ApplicationService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>App Engine Studio's interaction layer for applications</description>
+        <name>ApplicationService</name>
+        <script><![CDATA[var ApplicationService = (function() {
+    return {
+
+        getAccessibleApps: function() {
+            return gs.getSession().getApplicationPickerList();
+        },
+
+        getAccessibleAppSysIds: function() {
+            return this.getAccessibleApps().map(function(app) {
+                return app.sysId;
+            });
+        },
+
+        /** 
+         * @return {string} array of sys_ids of sys_scope records for applications user can read 
+         */
+
+        getUserApplications: function() {
+            var apps = new GlideRecord('sys_app');
+            var userApps = [];
+            apps.query();
+
+            while (apps.next()) {
+                if (apps.canRead())
+                    userApps.push(apps.getValue("sys_id"));
+            }
+
+            return userApps;
+        }
+    };
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-11 17:01:56</sys_created_on>
+        <sys_id>137412d75b32401083f30f216581c718</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>ApplicationService</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_137412d75b32401083f30f216581c718</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-20 15:54:54</sys_updated_on>
+    </sys_script_include>
+</record_update>

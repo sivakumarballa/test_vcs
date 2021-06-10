@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Sync Queue" max_length="40" name="sn_app_eng_studio_sync_queue" type="collection">
+        <element attributes="edge_encryption_enabled=true" hint="If the operation for the single queue item failed or was skipped, then this message is updated with details." label="Message" max_length="2000" name="message" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" label="Operation" mandatory="true" max_length="40" name="operation" type="string">
+            <choice>
+                <element inactive_on_update="false" label="INSERT" sequence="1" value="insert"/>
+                <element inactive_on_update="false" label="UPDATE" sequence="2" value="update"/>
+                <element inactive_on_update="false" label="DELETE" sequence="3" value="delete"/>
+            </choice>
+        </element>
+        <element hint="Data to be used in the operation for a given queue item, in other words, the changes to be applied." label="Payload" mandatory="true" max_length="4000" name="payload" type="json"/>
+        <element attributes="edge_encryption_enabled=true" hint="Timestamp for when the change happened. This determines the order of the queue." label="Sequence" mandatory="true" max_length="40" name="sequence" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="queued" label="State" mandatory="true" max_length="40" name="state" type="string">
+            <choice>
+                <element hint="The queue item has been processed and successfully synced with other environment" inactive_on_update="false" label="Synced" sequence="1" value="synced"/>
+                <element hint="The queue item failed to be synced with other environment." inactive_on_update="false" label="Failed" sequence="2" value="failed"/>
+                <element hint="The change has been inserted into the queue but no action has been taken on the item." inactive_on_update="false" label="Queued" sequence="3" value="queued"/>
+                <element hint="It was determined no action was necessary for the queue item." inactive_on_update="false" label="Skipped" sequence="4" value="skipped"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" hint="Name of the table where the change took place." label="Table name" mandatory="true" max_length="40" name="table" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.TaxonomyCategoriesDataModel</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builds a model object of taxonomy category data for App Engine Studio projects</description>
+        <name>TaxonomyCategoriesDataModel</name>
+        <script><![CDATA[var TaxonomyCategoriesDataModel = Class.create();
+TaxonomyCategoriesDataModel.prototype = {
+    taxonomyCategoryTable: "sn_app_eng_studio_taxonomy_category",
+
+    initialize: function() {},
+
+    generate: function() {
+        var taxonomyCategory = new GlideRecord(this.taxonomyCategoryTable);
+        taxonomyCategory.orderBy("order");
+        taxonomyCategory.query();
+
+        var taxonomies = [];
+        if (!taxonomyCategory.hasNext())
+            return taxonomies;
+
+        while (taxonomyCategory.next()) {
+            var category = {
+                "name": taxonomyCategory.getDisplayValue("category") || "",
+                "sys_id": taxonomyCategory.getUniqueValue(),
+                "description": ValueDisplayValueModel(taxonomyCategory, "description") || "",
+                "help_text": taxonomyCategory.getDisplayValue("help_text") || "",
+                "icon": this._getImageUrl(taxonomyCategory, "icon"),
+                "order": parseInt(taxonomyCategory.getValue("order"), 10)
+            };
+            taxonomies.push(category);
+        }
+
+        return taxonomies;
+    },
+
+    _getImageUrl: function(taxonomyCategory, imageColumn) {
+        var imageFieldValue = taxonomyCategory.getValue(imageColumn);
+        var _imageAttachmentValidator = new ImageAttachmentValidator();
+        if (!gs.nil(imageFieldValue)) {
+            // ensure that even though there is a sys_id on the image field, that that image is not deleted from 
+            // sys_attachment
+            if (_imageAttachmentValidator.attachmentExists(taxonomyCategory.getUniqueValue(), imageColumn))
+                return "/" + imageFieldValue + ".iix";
+        }
+
+        // An icon/illustration may not exist in the Taxonomy Category table -- in this case, return an empty string.
+        // The UI for creator studio will render a default image in this case.
+        return "";
+    },
+
+    type: 'TaxonomyCategoriesDataModel'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-30 18:51:22</sys_created_on>
+        <sys_id>34bc7c56b7a3330001fb99adde11a94a</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>TaxonomyCategoriesDataModel</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_34bc7c56b7a3330001fb99adde11a94a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-05 11:16:23</sys_updated_on>
+    </sys_script_include>
+</record_update>

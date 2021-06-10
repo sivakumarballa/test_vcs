@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_lib_component">
+    <sys_ux_lib_component action="INSERT_OR_UPDATE">
+        <default_children/>
+        <default_layout/>
+        <deprecated>false</deprecated>
+        <overrides/>
+        <required_sys_props/>
+        <required_translation_keys>You need to elevate your role to security_admin to make modifications to these items
+We encountered an error while getting role details.
+You have successfully saved {0}.
+(empty)
+We encountered an error while saving the role.
+We encountered an error while {0} {1} ACL for {2}.
+Grant all ACLs to Experiences
+Select All
+Grant access to {0}
+You cannot configure these permissions until you add an experience to this app.
+Grant all ACLs to Data
+Create
+Read
+Write
+Delete
+Select all ACLs for {0}
+You cannot configure these permissions until you add a data to this app.
+Close
+Save
+General
+Name this role
+Name
+Role name
+Describe this role
+Description
+Role description
+Scope for the role
+Scope
+Role scope
+Experience
+Data
+Home
+Go to Home page
+My Apps
+Go to My Apps page
+Templates
+Go to Templates page
+Resources
+Go to Resources page
+Login
+Help
+Now Logo
+App Engine Studio
+Click to close
+We encountered an error while fetching templates.
+Basic Info
+Launch
+We encountered an error while fetching categories.
+We encountered an error while fetching app object templates permission
+{0} is not installed.
+Request an IntegrationHub subscription.
+Then install this spoke from ServiceNow store.
+If you need help setting up this spoke, contact your system administrator
+Contact administrator
+{0} does not have a connection set up.
+You can proceed with your flow, but you may need to contact your system administrator to set up the connection.
+This template doesn't exist. Try using another template or create an app from scratch, instead.
+No templates found. Try creating an app from scratch, instead.
+Search all templates...
+by
+Use Template
+Other ways to use this app
+What this app contains
+See everything this app contains
+Documentation
+no results found
+No results found
+Create app
+Instructions
+Schema
+Please wait for this process to complete
+You will be able to access the application after the updates are complete.
+Sort (newest)
+Sort (oldest)
+Sort (a to z)
+Sort (z to a)
+Create an app from scratch. 
+Or use a template
+Last updated on {0}
+Import app
+Search all apps...
+experience
+Experiences
+automated flow
+Automated flows
+Hi, {0}
+Hi
+How do you want to get started?
+Quick start
+My recent apps
+See all of my apps
+See all templates
+Add an experience
+Browse templates
+Learn the tools
+Add a table
+table
+Tables
+Add an automated flow
+Connection is temporarily unavailable. Try again, later.
+Contact your admin if this persists.
+Connection is temporarily unavailable. Try again, later. If this persists, contact your admin.
+If this persists, contact your admin.
+Loading...
+There was an error while retrieving your application deployment information. Contact your admin {0} in order to submit your app.
+There was an error while retrieving your application deployment information. Contact your admin in order to submit your app.
+Your previously submitted app is still being tested. Contact your admin {0} in order to submit a new version.
+Your previously submitted app is still being tested. Contact your admin in order to submit a new version.
+App Home
+All
+Close guidance sidebar
+Open guidance sidebar
+Guidance
+This panel displays which step you are on in the app creation process. Use this toggle to show or hide this panel at any time
+Guidance is disabled. Use the toggle switch to turn it back on.
+Use left and right arrow keys to navigate tabs
+Press delete or backspace to close tab
+Tab menu
+Close list of tabs
+Open to see list of tabs
+Enter full screen
+Exit full screen
+Leave {0} tab without saving?
+Changes in this tab will be lost if you leave now.
+Search {0}
+Add {0}
+Store information in your app
+Create interfaces for users to interact with the app
+Add automated workflows to improve productivity
+Control access to your app
+Add a table or upload a spreadsheet
+Add an interface
+Add a process or third-party integration
+Add a role or access control
+You need access to create or review this. Contact your system admin to add data
+You need access to create or review this. Contact your system admin to add an experience
+You need access to create or review this. Contact your system admin to add logic and automation
+You need access to create or review this. Contact your system admin to add security
+Data is the starting point for any app. Start with a table or upload a spreadsheet.
+Start on the front-end by adding an interface, like a workspace or portal.
+Automation streamlines processes and workflows within your organization.
+Add roles, like admins and collaborators, to understand who has access to what.
+Need more data in your app? Add another table to your app.
+Need more on the front-end? Add another interface to your app.
+Need more automation? Add another automated workflow to your app.
+Need more security? Add another role or access control to your app.
+Add
+Click to create object for category {0}
+See all ({0})
+Edit
+Preview
+Application logo
+Updated: {0}
+Manage collaborators
+Edit application properties
+Submit
+Ready to launch? Once your app is approved, it will be live and ready to use.
+We encountered an error while retrieving application status.
+Your app was not submitted. The app version is expected to be in semantic version format.
+Are you sure you want to delete this {0}?
+The {0} '{1}'  will be permanently deleted and could affect this and other applications in unforeseen ways. Type {2} to confirm.
+DELETE
+Your app no longer contains the {0}, '{1}'.
+We encountered an error while deleting {0}
+Application Properties
+ADD AUTOMATION
+How do you want to add an automated workflow to your app?
+Select and customize one of these automation templates to automate your workflows. Or, build a new automated workflow from scratch.
+Learn more about automated workflows.
+Build from scratch
+Repository configuration
+ADD {0}
+What type of {0} do you want to add to your app?
+Select an experience to learn more about the interface and what it can do for your users.
+Select one to learn more.
+Try Again. If the problem continues, please contact your administrator.
+Updated repository configuration
+Use of the default naming convention is strongly encouraged
+More information
+Name your app
+This name applies to the container and also shows up in the ServiceNow App store. It's not the name of a Workspace or Mobile application.
+Describe your app
+This description shows up in the ServiceNow App store. It can't be more than 160 characters long.
+Date created
+Last modified
+sys_app ID
+Open app in Dev Studio
+Drag app logo or browse to upload
+Delete application
+Contact your admin
+We encountered an error while deleting {0}.
+Are you sure you want to delete this app?
+Type {0} to confirm that you want to remove this app from App Engine Studio, including anything built for this app.
+Application properties updated successfully.
+We encountered an error while updating Application properties
+Processing...
+Cancel
+Are you sure you want to proceed with the delete?
+Delete has been successful.
+We encountered an error while performing the delete.
+Wrong file type
+Browse files. Accepted file types: {0}
+Remove image
+Copy
+{0} complete
+Percentage complete
+Success with warning
+Success
+Warning
+Failure
+Edit your integration with your external repository.
+Linking your application to source control will enable integration with a source control system. Provide the URL of a GIT repository and credentials for a user that has permission to read and write to the GIT repository.
+WARNING: Linking an application to source control deletes its completed update sets and customer update records. Export any update sets you want to preserve prior to linking.
+MID server name
+Select configured MID server
+Network protocol
+https
+ssh
+Select network protocol
+URL
+Repository URL
+Branch
+Branch name
+Connect with a MID server
+Yes
+No
+Select if MID server should be added
+Credential
+Select valid credentials
+Editing the repository configuration was successful.
+Editing the repository configuration was unsuccessful.
+Something went wrong. Please try again later.
+Begin
+Source control
+Link to source control
+Commit changes
+Create branch
+Pull from repository
+Stash local changes
+Create tag
+Switch branch
+There are no branches to switch
+Manage stashes
+Edit repository configuration
+REPOSITORY ACTIONS
+REPOSITORY MANAGEMENT
+Contact your system administrator
+OK
+App Engine Studio generates a default mobile experience for you. To further customize this experience, use Mobile Studio to improve your app's mobile experience.
+To use Mobile Studio, please contact your system administrator.
+Opening Mobile Studio
+Continue to Mobile Studio
+Your mobile experience can be edited within Mobile Studio. There, you can further customize this experience and apply advanced configurations.
+Learn more about Mobile Studio
+Nice Job! Your app is on the way for review
+You'll get a notification when it's ready. You can track your app's status from your app page.
+Ready to submit your app for IT review?
+Here's what to expect from your IT administrator during the review process.
+Test
+Making sure all requirements have been met and things are working as expected
+Health scan
+Catching and resolving any potential code issues
+Perform QA
+Ensuring proper quality of your application
+Publish
+Making your app available for installation on other instances in the organization
+Deploy
+Deploying it when it's ready to use
+Delete stash
+Are you sure you want to delete this stash? You will not be able to recover these files.
+No stashes available
+Stashes {0}
+Filtered Results ({0})
+Filter stashes
+Stash "{0}" deleted
+Stash "{0}" deletion failed
+Merge conflicts found
+Stash "{0}" applied.
+Select a branch
+Back
+There are no unstashed files.
+Discard local changes
+Uncommitted changed files ({0})
+Filtered results ({0})
+If you choose to discard, you will not be able to recover these files
+Stash description
+Apply
+File name
+File type
+State
+Updated date
+Updated by
+Update set
+Compare
+Apply stash
+Created on
+Compare with committed
+ascending
+descending
+Select all
+Select
+Filter files
+Sorted by {0} in descending order
+Sorted by {0} in ascending order
+This action stashes any changed application files, pulls the latest version of application files from the repository, and then applies them to this instance. When complete, your application file versions will match those in the repository, and you will have a stash of local changes you can recover and apply at a later time. You have the option to stash or discard any local changes that have not yet been committed to your repository.
+This action pulls the latest version of application files from the repository and then applies them to this instance. When complete, your application file versions will match those in the repository.
+Applying remote changes was successful.
+Applying remote changes has failed.
+Switching to an alternate branch will result in the current application files being updated on this instance to reflect the state of those files in the alternate branch. You can save or discard any local changes that have not yet been committed to your repository.
+Switching to an alternate branch will result in the current application files being updated on this instance to reflect the state of those files in the alternate branch.
+Switching branches was successful.
+Switching branches has failed.
+Applying selected stash was successful
+Applying selected stash has failed
+A stash does not target a particular commit and can be previewed multiple times onto multiple commits. It contains changes overwritten by operation import Application
+Generating stash preview
+Applying stash preview
+Create from tag
+Invalid branch name
+Create a branch
+Creating a tag will result in a new tag being created in the remote repository that is configured for this application. Local changes will not be included.
+Tag name
+Invalid tag name
+Create a tag
+Stash changes
+This action stashes (or saves) changes made on application files, pulls the latest version of application files from the repository, and then applies them to this instance. When complete, your application file versions will match those in the repository. You will have a stash of local changes you can recover and apply at a later time.
+Update set pane
+Every file is shown only in its latest update set. To find a file and its latest update set use the filter option from 'All update sets'.
+Changed files across '{0}'
+Changed files in '{0}'
+No changes to commit
+Selected files ({0})
+Commit comment
+Continue
+Select files to commit to source control for '{0}' application
+Commit files ({0})
+Confirm files to commit to source control for '{0}' application
+Committing to source control for '{0}' application
+Committed to source control for '{0}' application
+Commit failed to source control for '{0}' application
+This application has been linked to source control successfully.
+Could not link to source control.
+All update sets
+This operation succeeded.
+Recent changes failed to commit.
+Stash local changes was successful.
+Stash local changes has failed.
+Creating the tag was successful.
+Creating the tag has failed.
+Creating a branch will result in a new branch being created in the remote repository that is configured for this application. This application, including any uncommited changes, will switch to the new branch.
+This operation creates a new branch based on a tagged revision of your application. If you do not stash or commit your local changes beforehand, they will be lost.
+--None--
+Creating the branch was successful.
+Creating the branch has failed.
+Collaboration plugin missing
+ highlighted text: {0}
+Last edited 
+Last edited {0}
+This {0} belongs to another application scope and cannot be edited in this app. 
+However, you can remove all of its access controls to remove it from this app. Open the role to edit access controls.
+Click to create object of type {0}
+Click to open object
+Referenced Object
+Object Name
+Object Type
+Object Description
+Object Timestamp
+PREVIEW
+Object Menu
+Object Alert
+Object Alert Actions
+Action {0} : {1}
+text
+Enter a search term
+Clear the search term
+Leave without saving your edits?
+Changes will be lost if you leave now.
+Yes, leave
+No, keep working
+Close tab
+Close {0} tab
+Show applications
+Import app from source control
+Quick Start
+Where do you want to add this {0}?
+{0} need to be added to an app. You can add this to an existing app or we can help you create a new one.
+Add to a new app
+This application has been imported successfully.
+Could not import application.
+Importing an application from source control will result in a new application being created in this ServiceNow Instance based on the remote repository you specify. The account credentials you supply must have read access to the remote repository. The remote repository you specify must contain a valid ServiceNow application. For more information on requirements, refer to the ServiceNow product documentation.
+App Engine Studio gives you the power to build apps in a low-code environment. Check out our tutorials and helpful resources to get started.
+Search all resources...
+We encountered an error while fetching resources.
+You need a valid App Engine Studio license to continue working.
+Any work done in App Engine Studio will be available once this license is reinstated. To reinstate your App Engine license, contact your ServiceNow admin.
+Looks like your admin hasn't finished setting up App Engine Studio
+To get started, ask your admin to finish setting up App Engine Studio.
+</required_translation_keys>
+        <source_script/>
+        <source_script_name>app-engine-studio</source_script_name>
+        <sys_class_name>sys_ux_lib_component</sys_class_name>
+        <sys_created_by>tectonic</sys_created_by>
+        <sys_created_on>2021-06-09 13:26:24</sys_created_on>
+        <sys_id>9c6e39507dbbbf81c0e5a788f84109ba</sys_id>
+        <sys_mod_count>450895</sys_mod_count>
+        <sys_name>sn-aes-role-builder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ux_lib_component_9c6e39507dbbbf81c0e5a788f84109ba</sys_update_name>
+        <sys_updated_by>tectonic</sys_updated_by>
+        <sys_updated_on>2021-06-09 13:26:24</sys_updated_on>
+        <tag>sn-aes-role-builder</tag>
+    </sys_ux_lib_component>
+</record_update>

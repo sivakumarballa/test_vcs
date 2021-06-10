@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ApplicationsListBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builds a list of sys_ids of applications that users have delegated dev access to &amp; allows those applications to be sorted in asc/desc order by a specific application field.</description>
+        <name>ApplicationsListBuilder</name>
+        <script><![CDATA[var ApplicationsListBuilder = Class.create();
+ApplicationsListBuilder.prototype = {
+    initialize: function() {
+		// array of sys_ids for sys_scope records that the user can access (or has created)
+		this.userApps = ApplicationService.getUserApplications();
+    },
+	
+	getUserApps: function() {
+		return this.userApps;
+	},
+	
+	/**
+	* Removes specific applications from the userApps list
+	*
+	* @param {string[]} applicationSysIds - array of app sys_ids in which to remove fron the userApps list
+	* @return {this} returns a reference back to the ApplicationsListBuilder (for function chaining)
+	*/
+	filterOut: function(applicationSysIds) {
+		this.userApps = this.userApps.filter(function(userApp) {
+			return this.indexOf(userApp) < 0;
+		}, applicationSysIds);
+		
+		return this;
+	},
+	
+	/**
+	* Sorts the sys_ids of sys_scope records in the userApps array based on the field and order
+	*
+	* @param {string} sort_field - application field in which data should be sorted on
+	* @param {string} sort_order - order in which data should be sorted ('asc' or 'desc')
+	* @return {this} returns a reference back to the ApplicationsListBuilder (for function chaining)
+	*/
+	sortBy: function(sort_field, sort_order) {	
+		if (gs.nil(sort_field) || !this._sortFieldValid(sort_field)) {
+			sort_field = CreatorStudioConstants.sorting.APPS_SORT_DEFAULT_FIELD;
+		}
+		
+		var appScope = new GlideRecord("sys_scope");
+		
+		// sys_scope will allow us to search for non-custom and custom apps combined & sort them appropriartely
+		appScope.addQuery("sys_id", "IN", this.userApps.join(','));
+		
+		// Sort by "updated" = sort by "sys_updated_on" in GlideRecord
+		if (sort_field === CreatorStudioConstants.sorting.APPS_SORT_DEFAULT_FIELD) {
+			var updatedApps = [];
+			
+			appScope.query();
+
+			while (appScope.next()) {
+				var sysId = appScope.getValue("sys_id");
+				
+				updatedApps.push({
+					"sys_id": sysId,
+					"updated_date": ApplicationsDataModel.getUpdatedDate(sysId, appScope).value
+				});
+			}
+			
+			// Using string instead of date object comparision because of Date.parse() browser inconsistencies
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+			updatedApps.sort(function(a, b) {
+				if (sort_order === CreatorStudioConstants.sorting.ASC_ORDER) {
+					return a.updated_date < b.updated_date ? -1 : 1;
+				} else {
+					return b.updated_date < a.updated_date ? -1 : 1;
+				}	
+			});
+			
+			this.userApps =  updatedApps.map(function(x) {return x.sys_id;});
+			
+		} else {
+			// sort by ascending
+			if (sort_order === CreatorStudioConstants.sorting.ASC_ORDER) {
+				appScope.orderBy(sort_field);
+			// sort by descending
+			} else {
+				// default to sorting by desc
+				appScope.orderByDesc(sort_field);
+			}
+
+			appScope.query();
+
+			var sortedApps = [];
+			while (appScope.next()) {
+				sortedApps.push(appScope.getUniqueValue());
+			}
+
+			this.userApps = sortedApps;
+		}
+		
+		return this;
+	},
+	
+	_sortFieldValid: function(sort_field) {
+		// is the sort_field value in the array of approved fields to sort upon?
+		if (CreatorStudioConstants.sorting.APPS_SORT_APPROVED_FIELDS.indexOf(sort_field) > -1) {
+			// yes
+			return true;
+		}
+		
+		// no
+		return false;
+	},
+
+    type: 'ApplicationsListBuilder'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-11 21:27:23</sys_created_on>
+        <sys_id>0d6258b85b63001001fb0c370581c746</sys_id>
+        <sys_mod_count>112</sys_mod_count>
+        <sys_name>ApplicationsListBuilder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_0d6258b85b63001001fb0c370581c746</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 18:55:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

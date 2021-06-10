@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <description>Register this event for the future script action, parm1 provides module name and id, parm2 provides </description>
+        <event_name>module.key.registry</event_name>
+        <fired_by>KMF module key registry</fired_by>
+        <queue/>
+        <suffix/>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-06-10 04:35:00</sys_created_on>
+        <sys_id>45055d1353a030106c4bddeeff7b12df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>module.key.registry</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sysevent_register_45055d1353a030106c4bddeeff7b12df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-10 04:35:00</sys_updated_on>
+        <table/>
+    </sysevent_register>
+</record_update>

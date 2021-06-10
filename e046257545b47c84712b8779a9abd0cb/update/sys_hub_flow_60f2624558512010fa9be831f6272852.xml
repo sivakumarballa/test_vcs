@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <compiler_build/>
+        <copied_from>b6289a925b11101001fb0c370581c7ac</copied_from>
+        <copied_from_name>Object Template Subflow</copied_from_name>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__add_or_import_data</internal_name>
+        <label_cache>[{"name":"subflow.table_data","label":"Input➛table_data","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"62f2d9ac-0201-4515-a4df-bb089c89eb69","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c.table_output","label":"1➛Table Output","reference_display":"Table Output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ce39a791-c7d0-4414-ac5d-77a488400dba"}}]</label_cache>
+        <master_snapshot>7014ae4558512010fa9be831f62728a6</master_snapshot>
+        <name>Object Template - Add or import data</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:05:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>60f2624558512010fa9be831f6272852</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Object Template - Add or import data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_hub_flow_60f2624558512010fa9be831f6272852</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:31</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=60f2624558512010fa9be831f6272852"/>
+    <sys_variable_value action="delete_multiple" query="document_key=60f2624558512010fa9be831f6272852"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852^id=60f2624558512010fa9be831f6272852"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=60f2624558512010fa9be831f6272852^sys_idNOT IN6cf2624558512010fa9be831f6272852"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>60f2624558512010fa9be831f6272852</id>
+        <name>Object Template - Add or import data</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:05:06</sys_created_on>
+        <sys_id>6cf2624558512010fa9be831f6272852</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:05:06</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=60f2624558512010fa9be831f6272852^sys_idNOT IN0a13224558512010fa9be831f627286a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=62f2d9ac-0201-4515-a4df-bb089c89eb69</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_data</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>table_data</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</model>
+        <model_id>60f2624558512010fa9be831f6272852</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_60f2624558512010fa9be831f6272852</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:05:45</sys_created_on>
+        <sys_id>0a13224558512010fa9be831f627286a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:09:57</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=60f2624558512010fa9be831f6272852^sys_idNOT INf3046e4558512010fa9be831f62728f0"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=f2595d1e-a536-445a-9eb3-e2c468a7ba9e</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>table_name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</model>
+        <model_id>60f2624558512010fa9be831f6272852</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:57</sys_created_on>
+        <sys_id>f3046e4558512010fa9be831f62728f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:09:57</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=60f2624558512010fa9be831f6272852^sys_idNOT IN3b046e4558512010fa9be831f62728fe"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Templated Table">33080ae60f1010108c9c5019c4767e59</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:58</sys_created_on>
+        <sys_id>3b046e4558512010fa9be831f62728fe</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:31</sys_updated_on>
+        <ui_id>3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=3b046e4558512010fa9be831f62728fe"/>
+    <sys_element_mapping action="delete_multiple" query="id=3b046e4558512010fa9be831f62728fe"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_input</field>
+        <id>3b046e4558512010fa9be831f62728fe</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:58</sys_created_on>
+        <sys_id>ff046e4558512010fa9be831f62728ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:09:58</sys_updated_on>
+        <table>var__m_sys_hub_action_input_33080ae60f1010108c9c5019c4767e59</table>
+        <value>{{subflow.table_data}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=60f2624558512010fa9be831f6272852^sys_idNOT INf304ae4558512010fa9be831f6272801"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">3b04ae4558512010fa9be831f6272800</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>table_name</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:58</sys_created_on>
+        <sys_id>f304ae4558512010fa9be831f6272801</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:31</sys_updated_on>
+        <ui_id>a6c60db9-6553-4ec2-bb03-a07039780dec</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=f304ae4558512010fa9be831f6272801"/>
+    <sys_element_mapping action="delete_multiple" query="id=f304ae4558512010fa9be831f6272801"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>f304ae4558512010fa9be831f6272801</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:58</sys_created_on>
+        <sys_id>b304ae4558512010fa9be831f6272804</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:09:58</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852</table>
+        <value>{{3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c.table_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_60f2624558512010fa9be831f6272852^sys_idNOT INca13224558512010fa9be831f627286e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_data</element>
+        <help/>
+        <hint/>
+        <label>table_data</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_60f2624558512010fa9be831f6272852</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:05:45</sys_created_on>
+        <sys_id>ca13224558512010fa9be831f627286e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>table_data</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_60f2624558512010fa9be831f6272852_table_data_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:05:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852^sys_idNOT INf7046e4558512010fa9be831f62728f8"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>table_name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:09:57</sys_created_on>
+        <sys_id>f7046e4558512010fa9be831f62728f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>table_name</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_output_60f2624558512010fa9be831f6272852_table_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:09:57</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=60f2624558512010fa9be831f6272852^sys_idNOT IN8514ae4558512010fa9be831f62728ec"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@50c0e2ba</plan>
+        <plan_id display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</plan_id>
+        <snapshot>7014ae4558512010fa9be831f62728a6</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8514ae4558512010fa9be831f62728ec</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:31</sys_updated_on>
+    </sys_flow_subflow_plan>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description>The base subflow for Object Templates (sys_app_template where create_app is set to false).</description>
+        <internal_name>object_template__add_or_import_data</internal_name>
+        <label_cache>[{"name":"subflow.table_data","label":"Input➛table_data","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"62f2d9ac-0201-4515-a4df-bb089c89eb69","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c.table_output","label":"1➛Table Output","reference_display":"Table Output","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ce39a791-c7d0-4414-ac5d-77a488400dba"}}]</label_cache>
+        <master>true</master>
+        <name>Object Template - Add or import data</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Object Template - Add or import data">60f2624558512010fa9be831f6272852</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7014ae4558512010fa9be831f62728a6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:31</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=7014ae4558512010fa9be831f62728a6"/>
+    <sys_variable_value action="delete_multiple" query="document_key=7014ae4558512010fa9be831f62728a6"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6^id=7014ae4558512010fa9be831f62728a6"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=7014ae4558512010fa9be831f62728a6^sys_idNOT IN7c14ae4558512010fa9be831f62728a6"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>7014ae4558512010fa9be831f62728a6</id>
+        <name>Object Template - Add or import data</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:01</sys_created_on>
+        <sys_id>7c14ae4558512010fa9be831f62728a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:01</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_hub_flow_input action="delete_multiple" query="model=7014ae4558512010fa9be831f62728a6^sys_idNOT INb414ae4558512010fa9be831f62728a8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=62f2d9ac-0201-4515-a4df-bb089c89eb69</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_data</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>table_data</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Add or import data">7014ae4558512010fa9be831f62728a6</model>
+        <model_id>7014ae4558512010fa9be831f62728a6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_7014ae4558512010fa9be831f62728a6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:01</sys_created_on>
+        <sys_id>b414ae4558512010fa9be831f62728a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=7014ae4558512010fa9be831f62728a6^sys_idNOT IN7414ae4558512010fa9be831f62728c2"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=f2595d1e-a536-445a-9eb3-e2c468a7ba9e</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>table_name</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Object Template - Add or import data">7014ae4558512010fa9be831f62728a6</model>
+        <model_id>7014ae4558512010fa9be831f62728a6</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:01</sys_created_on>
+        <sys_id>7414ae4558512010fa9be831f62728c2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_instance action="delete_multiple" query="flow=7014ae4558512010fa9be831f62728a6^sys_idNOT INb814ae4558512010fa9be831f62728db"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create Templated Table">33080ae60f1010108c9c5019c4767e59</action_type>
+        <action_type_parent display_value="Create Templated Table">16c7c2e60f1010108c9c5019c4767ef7</action_type_parent>
+        <comment/>
+        <compiled_snapshot>33080ae60f1010108c9c5019c4767e59</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Object Template - Add or import data">7014ae4558512010fa9be831f62728a6</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:02</sys_created_on>
+        <sys_id>b814ae4558512010fa9be831f62728db</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:30</sys_updated_on>
+        <ui_id>3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b814ae4558512010fa9be831f62728db"/>
+    <sys_element_mapping action="delete_multiple" query="id=b814ae4558512010fa9be831f62728db"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_input</field>
+        <id>b814ae4558512010fa9be831f62728db</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:02</sys_created_on>
+        <sys_id>f414ae4558512010fa9be831f62728dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:02</sys_updated_on>
+        <table>var__m_sys_hub_action_input_33080ae60f1010108c9c5019c4767e59</table>
+        <value>{{subflow.table_data}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=7014ae4558512010fa9be831f62728a6^sys_idNOT INb414ae4558512010fa9be831f62728d3"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">3b04ae4558512010fa9be831f6272800</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Object Template - Add or import data">7014ae4558512010fa9be831f62728a6</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>table_name</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:02</sys_created_on>
+        <sys_id>b414ae4558512010fa9be831f62728d3</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:30</sys_updated_on>
+        <ui_id>a6c60db9-6553-4ec2-bb03-a07039780dec</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=b414ae4558512010fa9be831f62728d3"/>
+    <sys_element_mapping action="delete_multiple" query="id=b414ae4558512010fa9be831f62728d3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>b414ae4558512010fa9be831f62728d3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:02</sys_created_on>
+        <sys_id>3c14ae4558512010fa9be831f62728d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:02</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6</table>
+        <value>{{3c124a97-92ea-4f7e-a70b-1aae9b7e5a9c.table_output}}</value>
+    </sys_element_mapping>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_7014ae4558512010fa9be831f62728a6^sys_idNOT INb014ae4558512010fa9be831f62728bd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_data</element>
+        <help/>
+        <hint/>
+        <label>table_data</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_7014ae4558512010fa9be831f62728a6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:01</sys_created_on>
+        <sys_id>b014ae4558512010fa9be831f62728bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>table_data</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_input_7014ae4558512010fa9be831f62728a6_table_data_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6^sys_idNOT IN7814ae4558512010fa9be831f62728cd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>table_name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 21:10:02</sys_created_on>
+        <sys_id>7814ae4558512010fa9be831f62728cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>table_name</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_flow_output_7014ae4558512010fa9be831f62728a6_table_name_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 21:10:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_flow action="update">
+        <sys_id>60f2624558512010fa9be831f6272852</sys_id>
+        <latest_snapshot>7014ae4558512010fa9be831f62728a6</latest_snapshot>
+    </sys_hub_flow>
+</record_update>

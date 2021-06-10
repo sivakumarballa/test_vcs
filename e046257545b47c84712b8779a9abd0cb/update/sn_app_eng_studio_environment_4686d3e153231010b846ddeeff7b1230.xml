@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_app_eng_studio_environment">
+    <sn_app_eng_studio_environment action="INSERT_OR_UPDATE">
+        <instance_credential display_value="sn_cicd_spoke.CICD">752a91887740001038e286a2681061fb</instance_credential>
+        <instance_url>https://fake-dev-url.com</instance_url>
+        <name>Dev Instance</name>
+        <sys_class_name>sn_app_eng_studio_environment</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-29 14:18:00</sys_created_on>
+        <sys_id>4686d3e153231010b846ddeeff7b1230</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dev Instance</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sn_app_eng_studio_environment_4686d3e153231010b846ddeeff7b1230</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-29 14:18:00</sys_updated_on>
+    </sn_app_eng_studio_environment>
+</record_update>

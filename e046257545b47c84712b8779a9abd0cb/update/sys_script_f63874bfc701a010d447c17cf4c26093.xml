@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sys_user</collection>
+        <condition>gs.getProperty('sn_app_eng_studio.user_sync_queue_enabled') === 'true'</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>AES Queue User Changes</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var nowTimeStamp = new GlideDateTime();
+	var queueItem;
+	var payload;
+	var userSyncService = new UserSyncService();
+	var userQueueService = new UserQueueService();
+	
+	var pipelineService;
+	try {
+		pipelineService = new PipelineService();
+	}
+	catch(ex) {
+		gs.warn(ex.toString() + "\n\n" + gs.getProperty("glide.servlet.uri") + current.getLink());
+	}
+	
+	// If there isn't an active pipeline at the time it is assumed
+	// this is production and the item is added to the queue. This is to avoid losing changes before
+	// the pipeline is setup.
+	if(pipelineService && !pipelineService.isProd()) { 
+		gs.info('Skipping AES queue sys_user Business Rule. Not production environment.');
+		return;
+	}
+
+	// Only AES users should be queued for syncing and changes should only be queued
+	// in production environments. 
+	if(userSyncService.isAESUser(current.sys_id)) {
+
+		if (current.operation() == 'update') {
+			payload = userSyncService.buildUserPayload(current);
+			
+			queueItem = new SyncQueueItem({
+				operation: 'update',
+				table: current.getTableName(),
+				payload: payload,
+				sequence: current.sys_updated_on,
+			});
+			
+			userQueueService.insertQueue(queueItem);
+		}
+		else if (current.operation() == 'delete') {
+			payload = { sys_id: current.sys_id.toString(), active: "false" };
+			
+			queueItem = new SyncQueueItem({
+				operation: 'delete',
+				table: current.getTableName(),
+				payload: payload,
+				sequence: nowTimeStamp,
+			});
+			
+			userQueueService.insertQueue(queueItem);
+		}
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-19 16:14:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f63874bfc701a010d447c17cf4c26093</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>AES Queue User Changes</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_f63874bfc701a010d447c17cf4c26093</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-13 19:36:53</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f63874bfc701a010d447c17cf4c26093"/>
+</record_update>

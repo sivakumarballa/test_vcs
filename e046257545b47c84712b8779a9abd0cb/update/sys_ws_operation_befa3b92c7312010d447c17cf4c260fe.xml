@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/authorization/authorized_request</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GET Authorized Request</name>
+        <operation_script><![CDATA[// Receives a salted key and does the lookup for the salted key in request_authorization_key table. This endpoint
+// most likely executes on the production environment.
+
+(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	var requestHeaderAccessToken = request.headers['x-access-token'];
+
+	if(!requestHeaderAccessToken) {
+		response.setStatus(200);
+		response.setBody({isAuthorized: false});
+		return;
+	}
+	
+	var authService = new RequestAuthService();
+
+	var hasKey;
+	try {
+		// Answers the question. Did this instance send this request?
+		hasKey = authService.hasKey(requestHeaderAccessToken);
+	}
+	catch(ex) {
+		throw new sn_ws_err.ServiceError()
+			.setStatus(500)
+			.setMessage(gs.getMessageLang("Unhandled exception {0}", "en", [ex.toString()]))
+			.setDetail(gs.getMessage("Unhandled exception {0}", [ex.toString()]));
+	}
+
+	response.setStatus(200);
+	response.setBody({isAuthorized: hasKey});
+
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/authorization/authorized_request</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/authorized_request</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-21 21:15:19</sys_created_on>
+        <sys_id>befa3b92c7312010d447c17cf4c260fe</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>GET Authorized Request</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>protected</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_befa3b92c7312010d447c17cf4c260fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-30 20:44:48</sys_updated_on>
+        <web_service_definition display_value="Authorization">2d4abf52c7312010d447c17cf4c260fe</web_service_definition>
+        <web_service_version display_value="v1">cfda7792c7312010d447c17cf4c26087</web_service_version>
+    </sys_ws_operation>
+</record_update>

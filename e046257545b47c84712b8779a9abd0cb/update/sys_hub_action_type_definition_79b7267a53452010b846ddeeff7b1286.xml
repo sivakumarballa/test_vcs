@@ -1,0 +1,1765 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-Wed_Jun_09_16_13_29_IST_2021.zip</compiler_build>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Checks sub-prod for new users who have been granted access to AES.</description>
+        <ih_action>false</ih_action>
+        <internal_name>get_new_aes_users</internal_name>
+        <label_cache>[{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].variable}}","label":"step➛Get New AES Users➛variable","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users}}","label":"step➛Get New AES Users➛new_aes_users","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.new_aes_users_child0}}","label":"step➛Get New AES Users➛new_aes_users➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.email}}","label":"step➛Get New AES Users➛new_aes_users➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.email_child1}}","label":"step➛Get New AES Users➛new_aes_users➛user➛email_child1","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user}}","label":"step➛Get New AES Users➛new_aes_users➛user","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.email}}","label":"step➛Get New AES Users➛new_aes_users➛user➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_child2}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_child2","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.sys_id}}","label":"step➛Get New AES Users➛new_aes_users➛user➛sys_id","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_child3}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_child3","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.first_name}}","label":"step➛Get New AES Users➛new_aes_users➛user➛first_name","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].dev_url}}","label":"step➛Get New AES Users➛dev_url","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.temp_pass}}","label":"step➛Get New AES Users➛new_aes_users➛user➛password_needs_reset","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.password_needs_reset}}","label":"step➛Get New AES Users➛new_aes_users➛user➛password_needs_reset","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].should_abort}}","label":"step➛Get New AES Users➛should_abort","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_child5}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_child5","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_has_been_notified}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_has_been_notified","type":"step","ref":""}]</label_cache>
+        <master_snapshot>f81eaa3e53452010b846ddeeff7b12ed</master_snapshot>
+        <name>Get New AES Users</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 21:39:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>79b7267a53452010b846ddeeff7b1286</sys_id>
+        <sys_mod_count>359</sys_mod_count>
+        <sys_name>Get New AES Users</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_79b7267a53452010b846ddeeff7b1286</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:32:08</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=79b7267a53452010b846ddeeff7b1286"/>
+    <sys_variable_value action="delete_multiple" query="document_key=79b7267a53452010b846ddeeff7b1286"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>79b7267a53452010b846ddeeff7b1286</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 20:34:01</sys_created_on>
+        <sys_id>3242afcb53c12010b846ddeeff7b120e</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:36:19</sys_updated_on>
+        <value/>
+        <variable display_value="new_aes_users">c28e227e53452010b846ddeeff7b12a6</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>79b7267a53452010b846ddeeff7b1286</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:18</sys_created_on>
+        <sys_id>80822ef153a12010b846ddeeff7b12e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:18</sys_updated_on>
+        <value>0</value>
+        <variable display_value="should_abort">7d62eaf153a12010b846ddeeff7b12b8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=79b7267a53452010b846ddeeff7b1286"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>dev_url</field>
+        <id>79b7267a53452010b846ddeeff7b1286</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:04</sys_created_on>
+        <sys_id>de61fb0353052010b846ddeeff7b127f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:04</sys_updated_on>
+        <table>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].dev_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>new_aes_users</field>
+        <id>79b7267a53452010b846ddeeff7b1286</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:22</sys_created_on>
+        <sys_id>601eaa3e53452010b846ddeeff7b12a3</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:36:19</sys_updated_on>
+        <table>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>should_abort</field>
+        <id>79b7267a53452010b846ddeeff7b1286</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:18</sys_created_on>
+        <sys_id>0c822ef153a12010b846ddeeff7b12e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:18</sys_updated_on>
+        <table>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].should_abort}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=79b7267a53452010b846ddeeff7b1286^sys_idNOT IN8c0e6a3e53452010b846ddeeff7b12d4"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</action>
+        <cid>e64e8dc4-4fcd-4a80-a219-01c2b90332b9</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Get New AES Users</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:04</sys_created_on>
+        <sys_id>8c0e6a3e53452010b846ddeeff7b12d4</sys_id>
+        <sys_mod_count>96</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:32:03</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8c0e6a3e53452010b846ddeeff7b12d4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8c0e6a3e53452010b846ddeeff7b12d4</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:22</sys_created_on>
+        <sys_id>201eaa3e53452010b846ddeeff7b129e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:22</sys_updated_on>
+        <value/>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8c0e6a3e53452010b846ddeeff7b12d4</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:04</sys_created_on>
+        <sys_id>440e6a3e53452010b846ddeeff7b12ea</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:32:03</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+	function abortAndLog(type, message) {
+		type === 'error' ? gs.error(message) : gs.info(message);
+
+		outputs['new_aes_users'] = null;
+		outputs['dev_url'] = null;
+		outputs['should_abort'] = true;
+    }
+
+	var lastProcessedGR = new GlideRecord(SyncConstants.LAST_PROCESSED_TABLE);
+	lastProcessedGR.query();
+
+	var lastProcessedDictionary = {};
+
+	while (lastProcessedGR.next()) {
+		lastProcessedDictionary[lastProcessedGR.getValue('name')] = lastProcessedGR.getValue('last_processed');
+    }
+
+	try {
+        var pipelineService = new PipelineService();
+        var aesUtils = new AesUtils();
+        var devEnvUrl = pipelineService.getEnvironmentUrl(PipelineConstants.DEV_ENV_COLUMN);
+        var SYS_USER_TABLE = 'sys_user';
+		var syncUserInformationRequest = pipelineService.buildRequest(
+          'POST',
+          PipelineConstants.DEV_ENV_COLUMN,
+          '/api/sn_app_eng_studio/generic/new_aes_users',
+          { requestBody: { lastProcessedDictionary: lastProcessedDictionary } }
+        );
+		var response = syncUserInformationRequest.execute();
+    }
+	catch (e) {
+	    abortAndLog('info', e.toString());
+
+		return;
+    }
+
+  	var status = response.getStatusCode();
+
+  	if (status !== 200) {
+	    abortAndLog('error', response.getErrorMessage());
+
+		return;
+    }
+
+	var body = JSON.parse(response.getBody());
+
+    if (!body || body.result &amp;&amp; body.result.sysUsers &amp;&amp; body.result.sysUsers.length === 0) {
+		abortAndLog('info', 'No new users with AES access have been found.');
+
+		return;
+    }
+
+	var usersWithAESRole = body.result.sysUsers;
+	var newAesUsers = [];
+
+	usersWithAESRole.forEach( function (user) {
+		if(!!user.email) { newAesUsers.push(user) }
+    });
+
+    var usersMissingEmail = usersWithAESRole.filter(function (user) { return !user.email; });
+    var usersMissingEmailDictionary = aesUtils.groupBy(usersMissingEmail, 'sys_id');
+	var sysUserGR = new GlideRecord(SYS_USER_TABLE);
+
+	sysUserGR.addQuery('sys_id', usersMissingEmail.map(function(user) { return user.sys_id }));
+	sysUserGR.addNotNullQuery('email');
+    sysUserGR.query();
+
+    while (sysUserGR.next()) {
+		var devUser = usersMissingEmailDictionary[sysUserGR.getValue('sys_id')][0];
+		var emailFromProd = sysUserGR.getValue('email');
+
+		newAesUsers.push({
+			email: emailFromProd,
+			first_name: devUser.first_name,
+			password_needs_reset: devUser.password_needs_reset,
+			sys_id: devUser.sys_id,
+		});
+    }
+
+	// If there is only one user, and that user does not have an e-mail address, we never set
+    // user properties and push to newAesUsers. When that happens, the flow will return an array
+    // with one object and it's properties set all to null.
+	if (newAesUsers.length === 0) {
+	    abortAndLog('info', 'No new users with AES access have been found.');
+
+		return;
+    }
+
+	outputs['should_abort'] = false;
+	outputs['new_aes_users'] = newAesUsers;
+	outputs['dev_url'] = devEnvUrl;
+})(inputs, outputs);
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8c0e6a3e53452010b846ddeeff7b12d4</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:22</sys_created_on>
+        <sys_id>6c1eaa3e53452010b846ddeeff7b129d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:22</sys_updated_on>
+        <value/>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8c0e6a3e53452010b846ddeeff7b12d4</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:22</sys_created_on>
+        <sys_id>a81eaa3e53452010b846ddeeff7b129d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:22</sys_updated_on>
+        <value/>
+        <variable display_value="MID Selection">cbd1070373531010791f94596bf6a776</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>8c0e6a3e53452010b846ddeeff7b12d4</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:22</sys_created_on>
+        <sys_id>e01eaa3e53452010b846ddeeff7b129e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:22</sys_updated_on>
+        <value/>
+        <variable display_value="Select MID Server">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_8c0e6a3e53452010b846ddeeff7b12d4^id=8c0e6a3e53452010b846ddeeff7b12d4"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=8c0e6a3e53452010b846ddeeff7b12d4"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=8c0e6a3e53452010b846ddeeff7b12d4^sys_idNOT IN4052aaf153a12010b846ddeeff7b1292,5661fb0353052010b846ddeeff7b126b,966eee3e53452010b846ddeeff7b1275"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=dcbc39e4-eedc-4c9a-ab98-915d2a82500a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>should_abort</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>should_abort</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get New AES Users">8c0e6a3e53452010b846ddeeff7b12d4</model>
+        <model_id>8c0e6a3e53452010b846ddeeff7b12d4</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_8c0e6a3e53452010b846ddeeff7b12d4</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:13:29</sys_created_on>
+        <sys_id>4052aaf153a12010b846ddeeff7b1292</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:13:29</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=54034ed5-5e5a-46e8-9d85-44412fa09b9f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>dev_url</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>dev_url</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get New AES Users">8c0e6a3e53452010b846ddeeff7b12d4</model>
+        <model_id>8c0e6a3e53452010b846ddeeff7b12d4</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_8c0e6a3e53452010b846ddeeff7b12d4</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:04</sys_created_on>
+        <sys_id>5661fb0353052010b846ddeeff7b126b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=user,child_name=user,child_type=object,child_type_label=Object,child_uiUniqueId=f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6,co_type_name=FDecf14f0322c12010fb14c7b68e355dff,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=d6d972ff-021a-44ac-84ad-bc806f2c2ef8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>new_aes_users</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>new_aes_users</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get New AES Users">8c0e6a3e53452010b846ddeeff7b12d4</model>
+        <model_id>8c0e6a3e53452010b846ddeeff7b12d4</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_8c0e6a3e53452010b846ddeeff7b12d4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:08:52</sys_created_on>
+        <sys_id>966eee3e53452010b846ddeeff7b1275</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:08:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_action_output action="delete_multiple" query="model=79b7267a53452010b846ddeeff7b1286^sys_idNOT IN1261fb0353052010b846ddeeff7b1278,7d62eaf153a12010b846ddeeff7b12b8,c28e227e53452010b846ddeeff7b12a6"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=6b5038f2-7fd8-451e-9361-c3676e5d6ea2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>dev_url</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>dev_url</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</model>
+        <model_id>79b7267a53452010b846ddeeff7b1286</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:04</sys_created_on>
+        <sys_id>1261fb0353052010b846ddeeff7b1278</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:04</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=1261fb0353052010b846ddeeff7b1278^sys_idNOT IN1a61fb0353052010b846ddeeff7b127f"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>dev_url</input_name>
+        <instance>1261fb0353052010b846ddeeff7b1278</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"dev_url":{"scriptActive":false}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:04</sys_created_on>
+        <sys_id>1a61fb0353052010b846ddeeff7b127f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:04</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=7c47ad7c-548f-4c4a-b0b9-6bd4f21b0c56</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>should_abort</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>should_abort</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</model>
+        <model_id>79b7267a53452010b846ddeeff7b1286</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:13:52</sys_created_on>
+        <sys_id>7d62eaf153a12010b846ddeeff7b12b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:13:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=user,child_name=user,child_type=object,child_type_label=Object,child_uiUniqueId=f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6,co_type_name=FDeaea678f52c12010ff51ea0a1e24276b,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=e64e8dc4-4fcd-4a80-a219-01c2b90332b9,sourceType=step,sourceUiUniqueId=d6d972ff-021a-44ac-84ad-bc806f2c2ef8,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=6a502972-e687-4f0e-b275-a3f3559f5799</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>new_aes_users</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>new_aes_users</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</model>
+        <model_id>79b7267a53452010b846ddeeff7b1286</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:09:23</sys_created_on>
+        <sys_id>c28e227e53452010b846ddeeff7b12a6</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:43:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286^sys_idNOT IN1e61fb0353052010b846ddeeff7b127c,7d62eaf153a12010b846ddeeff7b12bd,828e227e53452010b846ddeeff7b12b8"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>dev_url</element>
+        <help/>
+        <hint/>
+        <label>dev_url</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:04</sys_created_on>
+        <sys_id>1e61fb0353052010b846ddeeff7b127c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dev_url</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286_dev_url_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:04</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>should_abort</element>
+        <help/>
+        <hint/>
+        <label>should_abort</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:13:52</sys_created_on>
+        <sys_id>7d62eaf153a12010b846ddeeff7b12bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>should_abort</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286_should_abort_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:13:52</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>new_aes_users</element>
+        <help/>
+        <hint/>
+        <label>new_aes_users</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:09:23</sys_created_on>
+        <sys_id>828e227e53452010b846ddeeff7b12b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>new_aes_users</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_79b7267a53452010b846ddeeff7b1286_new_aes_users_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:09:23</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=79b7267a53452010b846ddeeff7b1286^sys_idNOT INcd1eea3e53452010b846ddeeff7b1257"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</action_id>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"cd1eea3e53452010b846ddeeff7b1257","name":"plan"}}</plan>
+        <snapshot>fecafaac530a2010b846ddeeff7b12ce</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cd1eea3e53452010b846ddeeff7b1257</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:19:25</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Checks sub-prod for new users who have been granted access to AES.</description>
+        <internal_name>get_new_aes_users</internal_name>
+        <label_cache>[{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].variable}}","label":"step➛Get New AES Users➛variable","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users}}","label":"step➛Get New AES Users➛new_aes_users","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.new_aes_users_child0}}","label":"step➛Get New AES Users➛new_aes_users➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.email}}","label":"step➛Get New AES Users➛new_aes_users➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.email_child1}}","label":"step➛Get New AES Users➛new_aes_users➛user➛email_child1","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user}}","label":"step➛Get New AES Users➛new_aes_users➛user","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.email}}","label":"step➛Get New AES Users➛new_aes_users➛user➛email","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_child2}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_child2","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.sys_id}}","label":"step➛Get New AES Users➛new_aes_users➛user➛sys_id","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.user_child3}}","label":"step➛Get New AES Users➛new_aes_users➛user➛user_child3","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.first_name}}","label":"step➛Get New AES Users➛new_aes_users➛user➛first_name","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].dev_url}}","label":"step➛Get New AES Users➛dev_url","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.temp_pass}}","label":"step➛Get New AES Users➛new_aes_users➛user➛password_needs_reset","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users.user.password_needs_reset}}","label":"step➛Get New AES Users➛new_aes_users➛user➛password_needs_reset","type":"step","ref":""},{"name":"{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].should_abort}}","label":"step➛Get New AES Users➛should_abort","type":"step","ref":""}]</label_cache>
+        <master>true</master>
+        <name>Get New AES Users</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Get New AES Users">79b7267a53452010b846ddeeff7b1286</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f81eaa3e53452010b846ddeeff7b12ed</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 17:48:38</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=f81eaa3e53452010b846ddeeff7b12ed"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f81eaa3e53452010b846ddeeff7b12ed"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>f81eaa3e53452010b846ddeeff7b12ed</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:20</sys_created_on>
+        <sys_id>3c826ef153a12010b846ddeeff7b128d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:20</sys_updated_on>
+        <value>0</value>
+        <variable display_value="should_abort">38826ef153a12010b846ddeeff7b1285</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>f81eaa3e53452010b846ddeeff7b12ed</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-06 20:29:17</sys_created_on>
+        <sys_id>60016e6553212010b846ddeeff7b12d9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:37:14</sys_updated_on>
+        <value/>
+        <variable display_value="new_aes_users">1e8e627e53452010b846ddeeff7b125e</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=f81eaa3e53452010b846ddeeff7b12ed"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>dev_url</field>
+        <id>f81eaa3e53452010b846ddeeff7b12ed</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:06</sys_created_on>
+        <sys_id>47613f0353052010b846ddeeff7b1206</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:06</sys_updated_on>
+        <table>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].dev_url}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>new_aes_users</field>
+        <id>f81eaa3e53452010b846ddeeff7b12ed</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>8d1eea3e53452010b846ddeeff7b1209</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:37:14</sys_updated_on>
+        <table>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].new_aes_users}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>should_abort</field>
+        <id>f81eaa3e53452010b846ddeeff7b12ed</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:20</sys_created_on>
+        <sys_id>b8826ef153a12010b846ddeeff7b128d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:20</sys_updated_on>
+        <table>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</table>
+        <value>{{step[e64e8dc4-4fcd-4a80-a219-01c2b90332b9].should_abort}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=f81eaa3e53452010b846ddeeff7b12ed^sys_idNOT IN381eaa3e53452010b846ddeeff7b12f1"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Get New AES Users">f81eaa3e53452010b846ddeeff7b12ed</action>
+        <cid>e64e8dc4-4fcd-4a80-a219-01c2b90332b9</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Get New AES Users</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>381eaa3e53452010b846ddeeff7b12f1</sys_id>
+        <sys_mod_count>51</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:32:08</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=381eaa3e53452010b846ddeeff7b12f1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>381eaa3e53452010b846ddeeff7b12f1</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>381eaa3e53452010b846ddeeff7b12ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:24</sys_updated_on>
+        <value/>
+        <variable display_value="Select MID Server">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>381eaa3e53452010b846ddeeff7b12f1</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>741eaa3e53452010b846ddeeff7b12ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:24</sys_updated_on>
+        <value/>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>381eaa3e53452010b846ddeeff7b12f1</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>b01eaa3e53452010b846ddeeff7b12ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:24</sys_updated_on>
+        <value/>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>381eaa3e53452010b846ddeeff7b12f1</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>f81eaa3e53452010b846ddeeff7b12ff</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 16:32:08</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+	function abortAndLog(type, message) {
+		type === 'error' ? gs.error(message) : gs.info(message);
+
+		outputs['new_aes_users'] = null;
+		outputs['dev_url'] = null;
+		outputs['should_abort'] = true;
+    }
+
+	var lastProcessedGR = new GlideRecord(SyncConstants.LAST_PROCESSED_TABLE);
+	lastProcessedGR.query();
+
+	var lastProcessedDictionary = {};
+
+	while (lastProcessedGR.next()) {
+		lastProcessedDictionary[lastProcessedGR.getValue('name')] = lastProcessedGR.getValue('last_processed');
+    }
+
+	try {
+        var pipelineService = new PipelineService();
+        var aesUtils = new AesUtils();
+        var devEnvUrl = pipelineService.getEnvironmentUrl(PipelineConstants.DEV_ENV_COLUMN);
+        var SYS_USER_TABLE = 'sys_user';
+		var syncUserInformationRequest = pipelineService.buildRequest(
+          'POST',
+          PipelineConstants.DEV_ENV_COLUMN,
+          '/api/sn_app_eng_studio/generic/new_aes_users',
+          { requestBody: { lastProcessedDictionary: lastProcessedDictionary } }
+        );
+		var response = syncUserInformationRequest.execute();
+    }
+	catch (e) {
+	    abortAndLog('info', e.toString());
+
+		return;
+    }
+
+  	var status = response.getStatusCode();
+
+  	if (status !== 200) {
+	    abortAndLog('error', response.getErrorMessage());
+
+		return;
+    }
+
+	var body = JSON.parse(response.getBody());
+
+    if (!body || body.result &amp;&amp; body.result.sysUsers &amp;&amp; body.result.sysUsers.length === 0) {
+		abortAndLog('info', 'No new users with AES access have been found.');
+
+		return;
+    }
+
+	var usersWithAESRole = body.result.sysUsers;
+	var newAesUsers = [];
+
+	usersWithAESRole.forEach( function (user) {
+		if(!!user.email) { newAesUsers.push(user) }
+    });
+
+    var usersMissingEmail = usersWithAESRole.filter(function (user) { return !user.email; });
+    var usersMissingEmailDictionary = aesUtils.groupBy(usersMissingEmail, 'sys_id');
+	var sysUserGR = new GlideRecord(SYS_USER_TABLE);
+
+	sysUserGR.addQuery('sys_id', usersMissingEmail.map(function(user) { return user.sys_id }));
+	sysUserGR.addNotNullQuery('email');
+    sysUserGR.query();
+
+    while (sysUserGR.next()) {
+		var devUser = usersMissingEmailDictionary[sysUserGR.getValue('sys_id')][0];
+		var emailFromProd = sysUserGR.getValue('email');
+
+		newAesUsers.push({
+			email: emailFromProd,
+			first_name: devUser.first_name,
+			password_needs_reset: devUser.password_needs_reset,
+			sys_id: devUser.sys_id,
+		});
+    }
+
+	// If there is only one user, and that user does not have an e-mail address, we never set
+    // user properties and push to newAesUsers. When that happens, the flow will return an array
+    // with one object and it's properties set all to null.
+	if (newAesUsers.length === 0) {
+	    abortAndLog('info', 'No new users with AES access have been found.');
+
+		return;
+    }
+
+	outputs['should_abort'] = false;
+	outputs['new_aes_users'] = newAesUsers;
+	outputs['dev_url'] = devEnvUrl;
+})(inputs, outputs);
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>381eaa3e53452010b846ddeeff7b12f1</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:07:24</sys_created_on>
+        <sys_id>fc1eaa3e53452010b846ddeeff7b12fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:07:24</sys_updated_on>
+        <value/>
+        <variable display_value="MID Selection">cbd1070373531010791f94596bf6a776</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_381eaa3e53452010b846ddeeff7b12f1^id=381eaa3e53452010b846ddeeff7b12f1"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=381eaa3e53452010b846ddeeff7b12f1"/>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=381eaa3e53452010b846ddeeff7b12f1^sys_idNOT IN5a8e627e53452010b846ddeeff7b1249,ba61fb0353052010b846ddeeff7b12f1,f4826ef153a12010b846ddeeff7b1277"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=user,child_name=user,child_type=object,child_type_label=Object,child_uiUniqueId=f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6,co_type_name=FD30f18f035ec12010b1cda6f4f0053b57,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=d6d972ff-021a-44ac-84ad-bc806f2c2ef8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>new_aes_users</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>new_aes_users</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get New AES Users">381eaa3e53452010b846ddeeff7b12f1</model>
+        <model_id>381eaa3e53452010b846ddeeff7b12f1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_381eaa3e53452010b846ddeeff7b12f1</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:09:25</sys_created_on>
+        <sys_id>5a8e627e53452010b846ddeeff7b1249</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:13:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=54034ed5-5e5a-46e8-9d85-44412fa09b9f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>dev_url</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>dev_url</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get New AES Users">381eaa3e53452010b846ddeeff7b12f1</model>
+        <model_id>381eaa3e53452010b846ddeeff7b12f1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_381eaa3e53452010b846ddeeff7b12f1</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:06</sys_created_on>
+        <sys_id>ba61fb0353052010b846ddeeff7b12f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=dcbc39e4-eedc-4c9a-ab98-915d2a82500a</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>should_abort</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>should_abort</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get New AES Users">381eaa3e53452010b846ddeeff7b12f1</model>
+        <model_id>381eaa3e53452010b846ddeeff7b12f1</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_381eaa3e53452010b846ddeeff7b12f1</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:20</sys_created_on>
+        <sys_id>f4826ef153a12010b846ddeeff7b1277</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_action_output action="delete_multiple" query="model=f81eaa3e53452010b846ddeeff7b12ed^sys_idNOT IN1e8e627e53452010b846ddeeff7b125e,3661fb0353052010b846ddeeff7b12fe,38826ef153a12010b846ddeeff7b1285"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=user,child_name=user,child_type=object,child_type_label=Object,child_uiUniqueId=f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6,co_type_name=FD74f18f03ebc12010e7cb19e7055c8365,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,sourceId=e64e8dc4-4fcd-4a80-a219-01c2b90332b9,sourceType=step,sourceUiUniqueId=d6d972ff-021a-44ac-84ad-bc806f2c2ef8,uiType=array.object,uiTypeLabel=Array.Object,uiUniqueId=6a502972-e687-4f0e-b275-a3f3559f5799</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>new_aes_users</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>new_aes_users</label>
+        <mandatory>true</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get New AES Users">f81eaa3e53452010b846ddeeff7b12ed</model>
+        <model_id>f81eaa3e53452010b846ddeeff7b12ed</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:09:25</sys_created_on>
+        <sys_id>1e8e627e53452010b846ddeeff7b125e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-06 20:43:22</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=6b5038f2-7fd8-451e-9361-c3676e5d6ea2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>dev_url</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>dev_url</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get New AES Users">f81eaa3e53452010b846ddeeff7b12ed</model>
+        <model_id>f81eaa3e53452010b846ddeeff7b12ed</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:06</sys_created_on>
+        <sys_id>3661fb0353052010b846ddeeff7b12fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3661fb0353052010b846ddeeff7b12fe^sys_idNOT IN3e613f0353052010b846ddeeff7b1205"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>dev_url</input_name>
+        <instance>3661fb0353052010b846ddeeff7b12fe</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"dev_url":{"scriptActive":false}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:06</sys_created_on>
+        <sys_id>3e613f0353052010b846ddeeff7b1205</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:06</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=7c47ad7c-548f-4c4a-b0b9-6bd4f21b0c56</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>should_abort</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>should_abort</label>
+        <mandatory>true</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get New AES Users">f81eaa3e53452010b846ddeeff7b12ed</model>
+        <model_id>f81eaa3e53452010b846ddeeff7b12ed</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:20</sys_created_on>
+        <sys_id>38826ef153a12010b846ddeeff7b1285</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed^sys_idNOT IN168e627e53452010b846ddeeff7b1264,32613f0353052010b846ddeeff7b1203,f0826ef153a12010b846ddeeff7b128a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>new_aes_users</element>
+        <help/>
+        <hint/>
+        <label>new_aes_users</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-16 22:09:25</sys_created_on>
+        <sys_id>168e627e53452010b846ddeeff7b1264</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>new_aes_users</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed_new_aes_users_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-16 22:09:25</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>dev_url</element>
+        <help/>
+        <hint/>
+        <label>dev_url</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 21:40:06</sys_created_on>
+        <sys_id>32613f0353052010b846ddeeff7b1203</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dev_url</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed_dev_url_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 21:40:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>should_abort</element>
+        <help/>
+        <hint/>
+        <label>should_abort</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-07 15:14:20</sys_created_on>
+        <sys_id>f0826ef153a12010b846ddeeff7b128a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>should_abort</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_f81eaa3e53452010b846ddeeff7b12ed_should_abort_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-07 15:14:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_type_definition action="update">
+        <sys_id>79b7267a53452010b846ddeeff7b1286</sys_id>
+        <latest_snapshot>f81eaa3e53452010b846ddeeff7b12ed</latest_snapshot>
+    </sys_hub_action_type_definition>
+</record_update>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_page_registry">
+    <sys_ux_page_registry action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_panel>eb9ccef9536020100f29ddeeff7b122c</admin_panel>
+        <admin_panel_table>sys_ux_app_config</admin_panel_table>
+        <auth_routes/>
+        <page display_value="Role Builder">c0b06461532020100f29ddeeff7b1288</page>
+        <path>rolebuilder</path>
+        <root_macroponent/>
+        <sys_class_name>sys_ux_page_registry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-17 18:05:18</sys_created_on>
+        <sys_id>bf406061532020100f29ddeeff7b12d4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Role builder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ux_page_registry_bf406061532020100f29ddeeff7b12d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-18 20:36:39</sys_updated_on>
+        <title>Role builder</title>
+    </sys_ux_page_registry>
+</record_update>

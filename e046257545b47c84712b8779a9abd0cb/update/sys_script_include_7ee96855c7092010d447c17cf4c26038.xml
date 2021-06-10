@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.UserSyncService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>UserSyncService</name>
+        <script><![CDATA[var UserSyncService = Class.create();
+UserSyncService.prototype = {
+	initialize: function() {},
+	
+	userInsert: function(queueItem) {
+		var insertedUser;
+		var userRecord;
+		var user = queueItem.payload;
+
+		userRecord = this.getUser('sys_id', user.sys_id);
+		
+		// The user already exists
+		if(userRecord) {
+			queueItem.setState(SyncConstants.SKIPPED, "User already exists");
+			return queueItem;
+		}
+		
+		// The user name is taken
+		userRecord = this.getUser('user_name', user.user_name);
+		
+		if(userRecord) {
+			queueItem.setState(SyncConstants.FAILED, "Duplicate entry '" +  user.user_name + "' for key 'user_name'");
+			return queueItem;
+		}
+		
+		var grSysUsr = new GlideRecord('sys_user');
+
+		Object.keys(user).forEach(function(property) {
+			if (property === 'sys_id') {
+				// The sys_id is set in this way because cross-scope security restrictions 
+				// prevent just setting the value as normal. A user must have the same sys_id 
+				// across different environments.
+				grSysUsr.setNewGuidValue(user[property]);
+			}
+			else {
+				grSysUsr.setValue(property, user[property]);
+			}
+		});
+
+		// New users need to create a new password because passwords aren't synced.
+		grSysUsr.setValue('password_needs_reset', true);
+
+		insertedUser = grSysUsr.insert();
+
+		if(insertedUser) { queueItem.setState(SyncConstants.SYNCED); }
+		else { queueItem.setState(SyncConstants.FAILED, "Failed for unknown reason."); } 
+		
+		return queueItem;
+	},
+	
+	userUpdate: function(queueItem) {
+		var updatedUser;
+		var payload = queueItem.payload;
+		
+		var grSysUser = new GlideRecord('sys_user');
+		if (grSysUser.get(payload.sys_id)){
+			// Filter the sys_id out of the payload because it can't be updated
+			var filteredPayloadProperties = Object.keys(payload).filter(function (i) { return i != 'sys_id'; });
+
+			filteredPayloadProperties.forEach(function(property) {
+				grSysUser[property] = payload[property];
+			});
+
+			updatedUser = grSysUser.update();
+			
+			if(updatedUser) { queueItem.setState(SyncConstants.SYNCED); }
+			else { queueItem.setState(SyncConstants.FAILED, "Failed for unknown reason."); } 
+		}
+		else {
+			// Inserting the user this way instead of relying on update to ensure password_needs_reset
+			// is checked and so that the user has the exact same sys_id as in prod.
+			this.userInsert(queueItem);
+		}
+		
+		return queueItem;
+	},
+
+	// Users aren't actually deleted. Instead the user is deactivated and removed from the group.
+	userDelete: function(queueItem) {
+		var item = this.userUpdate(queueItem);
+		return item;
+	},
+		
+	groupInsert: function(queueItem) {
+		var userId = queueItem.payload.user;
+		var groupId = queueItem.payload.group;
+		var insertUsrGrpId;
+		
+		if (!userId) { queueItem.setState(SyncConstants.FAILED, 'No user property provided.'); return queueItem; }
+		if (!groupId) { queueItem.setState(SyncConstants.FAILED, 'No group property provided.'); return queueItem; }					   
+		
+		var grUG = new GlideRecord('sys_user_grmember');
+		grUG.addQuery('user', userId);
+		grUG.addQuery('group', groupId);
+		grUG.query();
+
+		// Check if the user is already in the group
+		if(!grUG.next()) {
+			grUG.user = userId;
+			grUG.group = groupId;
+
+			insertUsrGrpId = grUG.insert();
+		}
+		else {
+			queueItem.setState(SyncConstants.SKIPPED, "User is already in the group");
+		}
+		
+		if (insertUsrGrpId) {queueItem.setState(SyncConstants.SYNCED);}
+		else { queueItem.setState(SyncConstants.FAILED, "Failed for unknown reason."); } 
+		
+		return queueItem;
+		
+	},
+	
+	groupDelete: function(queueItem) {
+		var payload = queueItem.payload;
+
+		if (!payload.user) { queueItem.setState(SyncConstants.FAILED, 'No user property provided.'); return queueItem; }
+		if (!payload.group) { queueItem.setState(SyncConstants.FAILED, 'No group property provided.'); return queueItem; }	
+		
+		var userId = payload.user;
+		var groupId = payload.group;
+		
+		var userGroupMember = this.getUserGroupMember(userId, groupId);
+		
+		if(!userGroupMember) {
+			queueItem.setState(SyncConstants.SKIPPED, "No user found in group");
+			return queueItem;
+		}
+
+		var pipelineService;
+		
+		try {
+			pipelineService = new PipelineService();
+			var deleteUserGroupRequest = pipelineService.buildRequest("DELETE", PipelineConstants.DEV_ENV_COLUMN, 'api/now/table/sys_user_grmember/' +  userGroupMember.sys_id);
+		
+
+			var response = deleteUserGroupRequest.execute();
+			
+			var status = response.getStatusCode();
+			
+			if (status == '204') {
+				queueItem.setState(SyncConstants.SYNCED);
+			}
+			else if (response.haveError()) {
+				queueItem.setState(SyncConstants.FAILED, response.getErrorMessage());
+			}
+			else {
+				queueItem.setState(SyncConstants.FAILED, "Failed for unknown reasons");
+			}
+			
+			return queueItem;
+		}
+		catch(ex) {
+			
+			queueItem.setState(SyncConstants.FAILED, ex.toString() + " Can't remove the user from the group" );
+
+			return queueItem;
+		}
+	},
+	
+	getUser: function(key, value) {
+		var grUser = new GlideRecord('sys_user');
+		grUser.get(key, value); 
+		
+		return grUser.isValidRecord() ? grUser : null;
+	},
+	
+	
+	operationNotImplemented: function (operation) {
+		return(
+			function (queueItem) {
+				queueItem.setState(SyncConstants.FAILED, operation + ' operation not supported');
+				return queueItem;
+			}
+		);
+	},
+	
+	getUserGroupMember: function(userId, groupId) {
+		var grUG = new GlideRecord('sys_user_grmember');
+		
+		grUG.addQuery('user', userId);
+		grUG.addQuery('group', groupId);
+
+		grUG.query();
+		
+		if (grUG.next()) {
+			return grUG;
+		}
+		else {
+			return null;
+		}		
+	},
+	
+	buildUserGroupPayload: function (userGroupRecord) {
+		return ({ 
+			group: userGroupRecord.getValue('group'), 
+			user: userGroupRecord.getValue('user') 
+		});
+	},
+	
+	buildUserPayload: function(userRecord) {
+		return ({
+			sys_id: userRecord.getValue('sys_id'),
+			user_name: userRecord.getValue('user_name'),
+			first_name: userRecord.getValue('first_name'),
+			last_name: userRecord.getValue('last_name'),
+			name: userRecord.getValue('name'),
+			email: userRecord.getValue('email'),
+			active: userRecord.getValue('active')
+		});
+	},
+	
+	isAESUser: function(userId) {
+		return !!this.getUserGroupMember(userId, SyncConstants.AES_USER_GROUP_ID);
+	},
+	
+	sync: function() {
+		var pipelineService = new PipelineService();
+		var userQueueService = new UserQueueService();
+		var queuedRecords = userQueueService.getQueuedRecords();
+		
+		if (queuedRecords.length == 0) { return({}); }
+		
+		var requestBody = queuedRecords.map(function(queued) {
+			return ({
+				sys_id: queued.sysId,
+				operation: queued.operation,
+				table: queued.table,
+				payload: queued.payload
+			});
+
+		});
+		
+		try {
+			var userRequest = pipelineService.buildRequest(
+				"POST", 
+				PipelineConstants.DEV_ENV_COLUMN, 
+				SyncConstants.USER_SYNC_ENDPOINT, 
+				{requestBody: requestBody}
+			);
+
+			var userResponse;
+			var responseBody;
+
+			userResponse = userRequest.execute();
+			
+			if (userResponse.haveError()) {
+				var error = new Error(userResponse.getErrorMessage());
+				error.code = userResponse.getStatusCode();
+				
+				throw error;
+			}
+			
+			responseBody = userResponse.getBody();
+			
+			return JSON.parse(responseBody).result ;
+			
+		} catch (ex) {
+			gs.info(ex.toString());
+		}
+	},
+
+	/**
+	 * Updates the password for a user.
+     * @param {String} user: Example - { sysId: '62826bf03710200044e0bfc8bcbe5df1', tempPass: 'wsr3se', tokenPayload: '{}' }
+	 * @returns {Void}
+	 */
+	setSyncUserTempPassword: function(user) {
+		try {
+			var pipelineService = new PipelineService();
+
+			var requestAuthService = new RequestAuthService();
+			var authKey = requestAuthService.createKey(JSON.stringify(user.tokenPayload));
+
+			var updatePasswordRequest = pipelineService.buildRequest(
+				"PATCH", 
+				PipelineConstants.DEV_ENV_COLUMN,
+				'/api/sn_app_eng_studio/generic/update_user_password', 
+				{
+					requestBody: user,
+					requestHeaders: { "x-access-token": authKey }
+				}
+			);
+
+			var updatePasswordResponse = updatePasswordRequest.execute();
+
+			if (updatePasswordResponse.haveError()) {
+				var error = new Error(updatePasswordResponse.getErrorMessage());
+				error.code = updatePasswordResponse.getStatusCode();
+
+				throw error;
+			}
+
+			return updatePasswordResponse.getStatusCode();
+			
+		} catch (ex) {
+			gs.info(ex.toString());
+
+			return ex.code;
+		}
+	},
+
+    type: 'UserSyncService'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-11 20:40:05</sys_created_on>
+        <sys_id>7ee96855c7092010d447c17cf4c26038</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>UserSyncService</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_7ee96855c7092010d447c17cf4c26038</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 19:02:18</sys_updated_on>
+    </sys_script_include>
+</record_update>

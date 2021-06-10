@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>AES Utils</description>
+        <name>AesUtils</name>
+        <script><![CDATA[var AesUtils = Class.create();
+AesUtils.prototype = {
+    initialize: function() {},
+	
+    removeTrailingSlash: function(input) {
+        var pattern = /\/+$/;
+
+        return pattern.test(input) ? input.replace(pattern, '') : input;
+    },
+    getDataFromInstance: function(instanceUrl, path, credSysId, queryParams) {
+		var provider = new sn_cc.StandardCredentialsProvider();
+        var credential = provider.getCredentialByID(credSysId);
+        var request = new sn_ws.RESTMessageV2();
+
+        request.setEndpoint(this.removeTrailingSlash(instanceUrl) + path);
+        request.setHttpMethod('GET');
+        request.setBasicAuth(credential.getAttribute("user_name"), credential.getAttribute("password"));
+        request.setRequestHeader("Accept", "application/json");
+		
+		for(param in queryParams) {
+            request.setQueryParameter(param, queryParams[param]);
+        }
+
+        var response = request.execute();
+		
+        return {
+            body: response.getBody(),
+            hasError: response.haveError(),
+            errorMessage: response.getErrorMessage(),
+            statusCode: response.getStatusCode()
+        };
+	},
+	getResponseFromRemoteInstanceFlow: function(instanceUrl, path, credentialSysId, queryParams) {
+		var inputs = {
+			credential_sys_id: credentialSysId,
+			instance_url: instanceUrl,
+			path: path,
+			stringified_query_params_object: JSON.stringify(queryParams || {})
+		};
+
+		// Run an action from a server-side script synchronously.
+		return sn_fd.FlowAPI.executeSubflow('sn_app_eng_studio.get_data_from_remote_instance_api', inputs);
+    },
+    getObjectFromGlideRecord: function(gr, fields) {
+        if (!Array.isArray(fields) || fields.length === 0) {
+			return {};
+		}
+
+		var resultObj = {};
+		fields.forEach(function(field) {
+			resultObj[field] = gr.getValue(field);
+		});
+		
+		return resultObj;
+    },
+	getUserImageString: function(gr, field) {
+        var image = gr.getDisplayValue(field);
+		if (image) {
+			return '/' + image;
+		}
+		return null;
+    },
+	getVendorUrlPrefix: function (scopeName) {
+		if (!scopeName) {
+			return null;
+		}
+		// Constants
+		var PREFIX_VENDOR = "x";
+		var PREFIX_NOW = "now";
+		var ALT_NOW_VENDOR_PREFIXES = ["sn", "snc"];
+
+		var scopeParts = scopeName.split("_");
+		var isCustomVendorApp = scopeParts[0] === PREFIX_VENDOR;
+		
+		if (isCustomVendorApp && scopeParts.length < 3) {
+			return null;
+		}
+		
+		var vendorCode = isCustomVendorApp ? scopeParts[1] : PREFIX_NOW;
+		vendorCode = ALT_NOW_VENDOR_PREFIXES.indexOf(vendorCode) > -1 ? PREFIX_NOW : vendorCode;
+		
+		var vendorUrlPrefix = vendorCode === PREFIX_NOW ? PREFIX_NOW : PREFIX_VENDOR + "/" + vendorCode;
+		return vendorUrlPrefix;
+	},
+	
+	/**
+	 * Accepts iteratee which is invoked for each element in array for which uniqueness is determined. The order of result values is 
+	 * determined by the order they occur in the array.
+	 * @returns {Array}
+	*/
+	uniqBy: function(arr, iteratee) {
+		if(arr.length == 0) {
+			return [];
+		}
+		
+		var dict = {};
+		var uniques = [];
+		
+		for (var i = 0; i < arr.length; i++) {
+			var item = arr[i];
+			var key = item[iteratee];
+
+			if (dict[key] !== true) {
+				dict[key] = true;
+				uniques.push(item);
+			}
+		}
+		
+		return uniques;
+		
+	},
+	
+	groupBy: function(arr, iteratee) {
+		var groupedBy = {};
+		
+		arr.forEach(function(i) {
+			var v = i[iteratee].toLowerCase();
+
+			groupedBy[v] = groupedBy[v] || [];
+			groupedBy[v].push(i);
+		});
+		
+		return groupedBy;
+	},
+    type: 'AesUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-12 21:51:23</sys_created_on>
+        <sys_id>5fe1f552c3221010a9f5e548fa40dd9f</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>AesUtils</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_5fe1f552c3221010a9f5e548fa40dd9f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-18 03:50:46</sys_updated_on>
+    </sys_script_include>
+</record_update>

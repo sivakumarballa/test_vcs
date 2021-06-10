@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="help_guidance_step">
+    <help_guidance_step action="INSERT_OR_UPDATE">
+        <actions_label>{"next":"Next","prev":"Previous","submit":"Get Started"}</actions_label>
+        <callout_position>default</callout_position>
+        <description/>
+        <guidance display_value="Getting Started">bdb5c857c3d020100389006c2840dd67</guidance>
+        <has_decision>false</has_decision>
+        <layout>text</layout>
+        <name>Learn how App Engine Studio Works</name>
+        <order>1</order>
+        <parent/>
+        <roles/>
+        <skippable>false</skippable>
+        <sys_class_name>help_guidance_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 16:46:25</sys_created_on>
+        <sys_decision/>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f25b441bc3d020100389006c2840ddcf</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Learn how App Engine Studio Works</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>help_guidance_step_f25b441bc3d020100389006c2840ddcf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-17 15:42:35</sys_updated_on>
+        <target_element/>
+        <task_type/>
+        <type/>
+        <unlock_by_decision_step>false</unlock_by_decision_step>
+    </help_guidance_step>
+    <sys_translated_text action="delete_multiple" query="documentkey=f25b441bc3d020100389006c2840ddcf"/>
+</record_update>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>21fec2a60fc62010f23ff722ff767ec3</image>
+        <name>aes_resources_test.svg</name>
+        <size_bytes>1957</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 19:05:51</sys_created_on>
+        <sys_id>5a8a89f10f712010f23ff722ff767ed7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>aes_resources_test.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_5a8a89f10f712010f23ff722ff767ed7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 18:15:46</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>d0eaa8f6c0427117e815f67b6d6e2d4dd5760f6b9fadb4d34300a0b12be024df</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1957</size_bytes>
+        <size_compressed>850</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:15:46</sys_created_on>
+        <sys_id>21fec2a60fc62010f23ff722ff767ec3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 18:15:46</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>5a8a89f10f712010f23ff722ff767ed7</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="21fec2a60fc62010f23ff722ff767ec3">21fec2a60fc62010f23ff722ff767ec3</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:15:46</sys_created_on>
+        <sys_id>61fec2a60fc62010f23ff722ff767ec3</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>rVVNb1NBDLzzK1aP+2a9ttdrRJAggHLhmgM3BKWpVFpUIgL/nvG+fNBSCQlxepnnXX/MjF+ef/t+mfZXn3bb5VRbn9L24upyu1tOJDal71cX+1e3P5ZTSSUhnMbbz1fX18vp5vbmYko/vlzffFtO293u67PFYr/f5z3n27vLRS2lLJB8evHk+dcPu236tJzekVHuzokK50Z1w5aJe10d3zPnXkUTNc+1WGIacWCd4zNekxDu24bxWpTWVC1Xa5tTvPDKPbfeTneS2yl9/Jwrb4hw0hJRy0ySjpeIPJqM5/pQfHVsasSOgxzunTFvDsO9PxL1VKw1ezkt7jEhnju64p69176RklWpr5E8F5LN4T0mkezN0SfGUEUznL3aOT7nORd742/LW3pYbNB1pOIBbXqmDdNQpUiuClVmmBikaIMqZOjN0ugVolAf4RmuSUs2oxUpqLB2OqU1Xp+THPGosXmg6HmOTq/05TzH3cXHXYIJqQra5Sn9hFdh1aNtS64s7Wxdw3TSaUp3uFRPGavzayl/MqPQr2OUXvqK4AuB7o6cjaE1t5AjOSpL+B/UKTzgPbM1HJdsOOaGRwwHh7l4YCLlgcmAWxbTSE+ZRzY3UES152YSx5UVmMEZc7iwaAWVXHMNd5aC+9GN5CKxPgQT0OimhyPhODCwim5Z5/XqEt2iD6WB3QcEMwOGUCEB9wEjaVhqFAuB4rQPtQMX8VVgitl6Ln1Q4yiGZULtHl8GZKkIY0LIsSIBUzqIFJURbnh2WKgLRr1P/F+WRcMsLXhqrcCYCsKwpaC1eMN8ilpEyRU0WGDO2j1wF+NhyWJ9yOBRO0awoLmG2CSH5Uc6xpcjWq+thkxgHkwIGID4SGdu8yxUh+hQAsdDlR7ppFkwodlLG6rNGOV0QEfvWFiKpNCwME5hbajLHC54oleaJYc4o3WvfeAaNCscR20YsKqO0Tl6hRgSzQB3m+/DHimoGjOEhWJW4O7jvHOHqqDWbHz44FCEIToYRHqoFuXuMf+oTKf1JEEPMtYTAkhzO+0ojM1Kft5R7FPz6g939LG0UAdueTQtYUiKL8I/pP2t2ya5a/z+D2nrEP/RtP9AQvyDvnjyC0GxtKKlBwAA</data>
+        <length>1120</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="21fec2a60fc62010f23ff722ff767ec3">21fec2a60fc62010f23ff722ff767ec3</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:15:46</sys_created_on>
+        <sys_id>e1fec2a60fc62010f23ff722ff767ec3</sys_id>
+    </sys_attachment_doc>
+</record_update>

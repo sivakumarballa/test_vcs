@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesEmailScript</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Script to generate email template for AES apps </description>
+        <name>AesEmailScript</name>
+        <script><![CDATA[var AesEmailScript = Class.create();
+AesEmailScript.prototype = {
+    initialize: function() {},
+    getStyles: function() {
+        return {
+            container: "font-family:  Open Sans, Arial, sans-serif;",
+            main: "padding-bottom: 56px;",
+            center: "text-align: center;",
+            header: "font-size: 24px;",
+            content: "padding-right: 10%; padding-left: 10%; line-height: 20px;",
+            message: "color: #3C3C3C; font-size: 15px;",
+            row: "display: table; width:100%;",
+            label: "display: table-cell;  width: 20%; padding: 10px 10px 10px 0;",
+            labelValue: "display: table-cell; width: 70%; padding: 10px 10px 10px 0;",
+            link: "color: #01778E",
+            footer: "width: 100%; background-color: #2A3E40; color: #FFFFFF; padding-top: 20px; font-size: 12px; line-height: 20px;  height: 56px;",
+        };
+    },
+    getBody: function(userName, headerMessage, bodyMessage, footerMessage) {
+        var body = '<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">';
+        var style = this.getStyles();
+        var imageName = "servicenow_logo.svg";
+        var trailingSlashRegex = /\/+$/;
+        var instanceUrl =
+            gs.getProperty("glide.servlet.uri") &&
+            gs.getProperty("glide.servlet.uri").replace(trailingSlashRegex, "");
+        var currentDateTime = new GlideDateTime(); // Current DateTime
+        var currentYear = currentDateTime.getYearUTC();
+        var dbImages = new GlideRecord("db_image");
+        var imageUrl =
+            instanceUrl && dbImages.get("name", imageName) ?
+            instanceUrl + "/" + dbImages.getDisplayValue("image") :
+            undefined;
+        var footer = '<div style="' + style.center + '">' + footerMessage + '</div>';
+
+		footer += gs.getMessage('{0}{1} ServiceNow | All Rights Reserved{2}', ['<div style="' + style.center + '">&copy; ' , currentYear, '</div>']);
+        body += '<div style="' + style.container + '">';
+        body += '<div style="' + style.main + '">';
+        body += imageUrl ? '<div style="' + style.center + '"><img src="' + imageUrl + '"/></div>' : '';
+        body += '<br /><br />';
+        body += '<div style="' + style.content + '">';
+        body += '<div style="' + style.header + '"><strong>' + headerMessage + '</strong></div>';
+        body += '<br /><br />';
+        body += '<div style="' + style.message + '">';
+        body += '<div>' + gs.getMessage('Hi {0},', userName) + '</div>';
+        body += '<br />';
+        body += bodyMessage;
+        body += '<br />';
+        body += '<div>' + gs.getMessage('Thank you,') + '</div>';
+        body += '<div>' + gs.getMessage('Your IT team') + '</div>';
+        body += '</div>';
+        body += '</div>';
+        body += '</div>';
+        body += '<div style="' + style.footer + '">' + footer + '</div>';
+        body += '</div>';
+
+        return body;
+    },
+	getTrailingSlashRegex: function() {
+		return /\/+$/;
+	},
+
+    type: "AesEmailScript",
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-28 20:06:52</sys_created_on>
+        <sys_id>24d9c8a1b0121010fa9b7381c6884abf</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>AesEmailScript</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_24d9c8a1b0121010fa9b7381c6884abf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:13:22</sys_updated_on>
+    </sys_script_include>
+</record_update>

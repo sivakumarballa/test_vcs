@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/applications/{application_sys_id}/details</default_operation_uri>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>POST App Details</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    try {
+        var appSysId = request.pathParams.application_sys_id;
+        var appDetailsSysId = AppDetailsService.createAppDetails(appSysId, request.body.data);
+    } catch (exception) {
+        switch (exception) {
+            case CreatorStudioConstants.errors.APPLICATION_DOES_NOT_EXIST:
+                throw new sn_ws_err.ServiceError()
+                    .setStatus(404)
+                    .setMessage(gs.getMessageLang("Application does not exist.", "en"))
+                    .setDetail(gs.getMessage("Application does not exist."));
+            case CreatorStudioConstants.errors.APPLICATION_ACCESS_DENIED:
+                throw new sn_ws_err.ServiceError()
+                    .setStatus(403)
+                    .setMessage(gs.getMessageLang("Access denied to application.", "en"))
+                    .setDetail(gs.getMessage("Access denied to application."));
+            case CreatorStudioConstants.errors.IMPROPER_FORMAT:
+                throw new sn_ws_err.ServiceError()
+                    .setStatus(500)
+                    .setMessage(gs.getMessageLang("Operations must be an array.", "en"))
+                    .setDetail(gs.getMessage("Operations must be an array."));
+            case CreatorStudioConstants.errors.INSERT_FAILURE:
+                throw new sn_ws_err.ServiceError()
+                    .setStatus(500)
+                    .setMessage(gs.getMessageLang("Failed to insert sn_app_eng_studio_app_metadata record.", "en"))
+                    .setDetail(gs.getMessage("Failed to insert sn_app_eng_studio_app_metadata record."));
+            default:
+                throw new sn_ws_err.ServiceError()
+                    .setStatus(500)
+                    .setMessage(gs.getMessageLang("Unhandled exception {0}", "en", exception))
+                    .setDetail(gs.getMessage("Unhandled exception {0}", exception));
+        }
+    }
+
+    response.setBody({
+        details: appDetailsSysId,
+        app_sys_id: appSysId
+    });
+    response.setStatus(201);
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/applications/{application_sys_id}/details</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/{application_sys_id}/details</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description>Creates a record that holds metadata relating to an App Engine Studio app.</short_description>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-27 20:19:03</sys_created_on>
+        <sys_id>f41aa2c3b7321010835d6f54ce11a929</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>POST App Details</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_f41aa2c3b7321010835d6f54ce11a929</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-26 20:15:17</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Applications API">4c41d3287700001001fb4311a81061ae</web_service_definition>
+        <web_service_version display_value="v1">eff91f2c7700001001fb4311a8106131</web_service_version>
+    </sys_ws_operation>
+</record_update>

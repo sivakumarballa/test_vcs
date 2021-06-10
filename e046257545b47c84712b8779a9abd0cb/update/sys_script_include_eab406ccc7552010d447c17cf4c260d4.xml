@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.SyncQueueItem</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Represents a single item in the sync queue</description>
+        <name>SyncQueueItem</name>
+        <script><![CDATA[var SyncQueueItem = Class.create();
+SyncQueueItem.prototype = {
+	initialize: function(args) {
+		this.sysId = args.sysId; // sys_id of the queue item record
+		this.table = args.table; // name of the table the operation took place
+		this.operation = args.operation; // insert, update, delete
+		this.state = args.state || SyncConstants.QUEUED, // queued, failed, processed
+		this.payload = args.payload; // payload for the operation script
+		this.sequence = args.sequence; // datetime when the operation took place. User for queue order
+		this.message = ''; // string message used there are errors or warning messages
+    },
+	
+	isValid: function() {
+		var isValid;
+		isValid = !!this.sysId && !!this.operation && !!this.table && !!this.payload;
+		
+		if (typeof this.payload !== 'object' || Object.keys(this.payload).length == 0) {
+			isValid = false;
+		}
+		return isValid;
+	},
+	
+	getJSONPayload: function () {
+		return JSON.stringify(this.payload);
+	},
+	
+	// Returns the current status of the queue item
+	getStatus: function() {
+		return {sys_id: this.sysId, state: this.state, message: this.message};
+	},
+	
+	setState: function(state, message) {
+		this.state = state;
+		if (message) {
+			this.message = message;
+		}
+	},
+	
+	type: 'SyncQueueItem'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-20 16:25:14</sys_created_on>
+        <sys_id>eab406ccc7552010d447c17cf4c260d4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SyncQueueItem</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_eab406ccc7552010d447c17cf4c260d4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 17:25:40</sys_updated_on>
+    </sys_script_include>
+</record_update>

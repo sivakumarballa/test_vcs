@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/object_template_category</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Object Template Category</name>
+        <operation_script><![CDATA[// Returns an array of template manifest records
+// format -> [{tableName, tableNameId, templateId}]
+function getTemplateManifests() {
+    var templateManifests = [];
+
+    var templateManifestRecords = new GlideRecord("sys_app_template_manifest");
+    templateManifestRecords.addJoinQuery("sys_app_template");
+    templateManifestRecords.addQuery("template.active", true);
+    templateManifestRecords.query();
+
+    while (templateManifestRecords.next()) {
+        templateManifests.push({
+            tableName: templateManifestRecords.table_name
+                .getRefRecord()
+                .getValue("name"),
+            tableNameId: templateManifestRecords.getValue('table_name'),
+            templateId: templateManifestRecords.getValue('template')
+        });
+    }
+
+    return templateManifests;
+}
+
+// Returns taxonomy lookup from sn_app_eng_studio_taxonomy table.
+// format -> { taxonomyName: {taxonomyId, taxonomyName, taxonomyCategorySysId, taxonomyCategoryDisplayValue} }
+function getTaxonomyLookup(templateManifests) {
+    if (!templateManifests || !templateManifests.length) {
+        // Return empty lookup if there are no manifests
+        return {};
+    }
+
+    var taxonomyDefinitionsDataModel = new TaxonomyDefinitionsDataModel();
+    var getImageUrl = taxonomyDefinitionsDataModel._getImageUrl;
+    var getTableType = taxonomyDefinitionsDataModel._getTableType;
+    var taxonomyLookup = {};
+    var taxonomyRecords = new GlideRecord("sn_app_eng_studio_taxonomy");
+    var taxonomyQuery = null;
+    templateManifests.forEach(function(templateManifest, index) {
+        if (index === 0) {
+            taxonomyQuery = taxonomyRecords.addQuery('table', templateManifest.tableName);
+        } else {
+            taxonomyQuery = taxonomyQuery.addOrCondition('table', templateManifest.tableName);
+        }
+    });
+
+    taxonomyRecords.query();
+
+    while (taxonomyRecords.next()) {
+        var tableName = taxonomyRecords.getValue('table');
+        var tableNameOverride = taxonomyRecords.getDisplayValue("table_name_override") || "";
+
+        taxonomyLookup[tableName] = {
+            taxonomyId: taxonomyRecords.getValue('sys_id'),
+            taxonomyName: tableName,
+            taxonomyCategorySysId: taxonomyRecords.getValue('category'),
+            taxonomyCategoryDisplayValue: taxonomyRecords.getDisplayValue('category'),
+            taxonomyIcon: getImageUrl(taxonomyRecords, 'icon'),
+            taxonomyType: getTableType(tableName, tableNameOverride)
+        };
+    }
+
+    return taxonomyLookup;
+}
+
+// Returns a lookup which has templateId as the key and
+// format -> {templateId: {categoryList: [{taxonomyId, taxonomyName, taxonomyCategorySysId, taxonomyCategoryDisplayValue}] }}
+function combineData(templateManifests, taxonomyLookup) {
+    var templateCategoryLookup = {};
+
+    templateManifests.forEach(function(templateManifest) {
+        var templateId = templateManifest.templateId;
+
+        if (!templateCategoryLookup[templateId]) {
+            // First occurrence of a template
+            // Initialize the value in the lookup
+            templateCategoryLookup[templateId] = {
+                templateId: templateId,
+                categoryLookup: {}
+            };
+        }
+
+        var categoryObject = taxonomyLookup[templateManifest.tableName];
+
+        // Only add category if the categoryObject was found in the creator studio taxonomy table
+        if (categoryObject) {
+            categoryObject.tableSysId = templateManifest.tableNameId;
+            templateCategoryLookup[templateId].categoryLookup[templateManifest.tableNameId] = categoryObject;
+        }
+    });
+
+    return templateCategoryLookup;
+}
+
+// Formats templateCategoryLookup for api response
+function formatApiResponse(templateCategoryLookup) {
+    var response = [];
+
+    // Convert templateCategoryLookup lookup to an array 
+    Object.keys(templateCategoryLookup).forEach(function(key) {
+        var categories = [];
+        Object.keys(templateCategoryLookup[key].categoryLookup)
+            .forEach(function(categoryKey) {
+                categories.push(templateCategoryLookup[key].categoryLookup[categoryKey]);
+            });
+
+        response.push({
+            templateId: templateCategoryLookup[key].templateId,
+            categories: categories
+        });
+    });
+
+    return response;
+}
+
+function process(request, response) {
+    var templateManifests = getTemplateManifests();
+    var taxonomyLookup = getTaxonomyLookup(templateManifests);
+    var templateCategoryLookup = combineData(templateManifests, taxonomyLookup);
+
+    response.setStatus(200);
+    response.setBody(formatApiResponse(templateCategoryLookup));
+}
+
+process(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/object_template_category</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description>Returns  object template categories using template manifest table </short_description>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-01 21:15:51</sys_created_on>
+        <sys_id>68377e47530150100f29ddeeff7b1200</sys_id>
+        <sys_mod_count>133</sys_mod_count>
+        <sys_name>Get Object Template Category</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_68377e47530150100f29ddeeff7b1200</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-09 22:16:56</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Template Category API">46b47a07530150100f29ddeeff7b12e8</web_service_definition>
+        <web_service_version display_value="v1">a1744edd53d150100f29ddeeff7b12e3</web_service_version>
+    </sys_ws_operation>
+</record_update>

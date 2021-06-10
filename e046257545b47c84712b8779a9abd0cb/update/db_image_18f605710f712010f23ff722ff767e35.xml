@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>7c7e8e660fc62010f23ff722ff767e89</image>
+        <name>aes_resources_workspace.svg</name>
+        <size_bytes>920</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 18:50:05</sys_created_on>
+        <sys_id>18f605710f712010f23ff722ff767e35</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>aes_resources_workspace.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_18f605710f712010f23ff722ff767e35</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 18:13:32</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>c8891ba131dfa9d46edf8c4c8a238945b5b16ea336f4cdefe06bc84235e87d61</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>920</size_bytes>
+        <size_compressed>395</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:13:31</sys_created_on>
+        <sys_id>7c7e8e660fc62010f23ff722ff767e89</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 18:13:32</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>18f605710f712010f23ff722ff767e35</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="7c7e8e660fc62010f23ff722ff767e89">7c7e8e660fc62010f23ff722ff767e89</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:13:31</sys_created_on>
+        <sys_id>bc7e8e660fc62010f23ff722ff767e89</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>nZM9T8MwEIZ3foVldsfn89chUqmkrbqwdmBDITSRSluFiMC/xzZNWhAd2sU5O+fn3vNr379/rFnfvHR1zpX1nNVVs667nIN2nH00Vf+w+8y5ZJKF3yytvjabTc63u23F2efbZvue87rr9ndZ1ve96FHs2nWmpJRZgPPJzX1blR0LFJKcfYU6xIeSno4VY9yGLDtUuJ0XC7kAngXE/rmr2UvOH0kyNEUcQVhvkZH6+SpiZMO4BIcFOCsQdFwER2Nuis1KmzB1ZklyheZpLKcIZ1qmcmXTlpuKlVE0CYdac1YG6egEagzH1OZcC3Dg/bjdG0Ka/d0OEPRpddH202YHrSBJaEsrAL8kWwxdhykLWQAm9ZtCNTR40hpioX2CD2YAOOFBJUdM1CjtaItSQpmjM4dpNEeNSO2sddPfSO1FwlyJNPMpFnhWpXeRri5CgqH5bHFW5TVIDw9mCr+RygoTzjciEaOxxyuutTgh+ngB3IGJ/5kfH83k5huDfWYFmAMAAA==</data>
+        <length>516</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="7c7e8e660fc62010f23ff722ff767e89">7c7e8e660fc62010f23ff722ff767e89</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 18:13:31</sys_created_on>
+        <sys_id>307e8e660fc62010f23ff722ff767e8a</sys_id>
+    </sys_attachment_doc>
+</record_update>

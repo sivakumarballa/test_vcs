@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesNotifyUserOfAESAccessEmail</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AesNotifyUserOfAESAccessEmail</name>
+        <script><![CDATA[var AesNotifyUserOfAESAccessEmail = Class.create();
+AesNotifyUserOfAESAccessEmail.prototype = {
+    initialize: function(emailProps) {
+		this.userFirstName = emailProps.userFirstName || 'AES User';
+		this.devUrl = emailProps.devUrl;
+		this.tempPass = emailProps.tempPass;
+    },
+
+	getBody: function() {
+		var divStartTag = '<div>';
+		var divEndTag = '</div>';
+		var brTag = '<br/>';
+		
+		var aesEmailScript = new AesEmailScript();
+        var style = aesEmailScript.getStyles();
+		var headerMessage = gs.getMessage('You now have access to App Engine Studio');
+		var innerBody = '';
+
+		innerBody += gs.getMessage('{0}App Engine Studio is a fast, intuitive, low-code visual development environment that empowers you to build applications that can transform your world of work.{1}', [divStartTag, divEndTag]);
+
+		if (this.tempPass) {
+			var passwordHtml = '<span style="font-size: 18px">' +  this.tempPass + '</span>';
+			
+			innerBody += brTag;
+			innerBody += gs.getMessage('{0}Your temporary password is: {1}{2}', [divStartTag, passwordHtml, divEndTag]);
+		}
+
+		var linkToAppEngineStudio = '<a style="' + style.link + '" href="' + this.devUrl + 'now/appenginestudio/home" target="_blank">App Engine Studio</a>';
+		innerBody += gs.getMessage('{0}{1}To start building apps, go to {2}{3}', [brTag, divStartTag, linkToAppEngineStudio, divEndTag]);
+
+
+		return aesEmailScript.getBody(this.userFirstName, headerMessage, innerBody, '');
+	},
+    type: 'AesNotifyUserOfAESAccessEmail'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-09 21:31:02</sys_created_on>
+        <sys_id>b3251e60a7096010b84676a9ce7901ac</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>AesNotifyUserOfAESAccessEmail</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_b3251e60a7096010b84676a9ce7901ac</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-28 20:14:46</sys_updated_on>
+    </sys_script_include>
+</record_update>

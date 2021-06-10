@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.DeploymentHelpers</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves environment credentials for the active pipeline</description>
+        <name>DeploymentHelpers</name>
+        <script><![CDATA[var DeploymentHelpers = Class.create();
+var ENVIRONMENT_TABLE = 'sn_app_eng_studio_environment';
+var PIPELINE_TABLE = 'sn_app_eng_studio_pipeline';
+var DISCOVERY_CREDENTIALS = 'discovery_credentials';
+var SYS_ALIAS = 'sys_alias';
+
+DeploymentHelpers.prototype = {
+    initialize: function() {
+    },
+	/**
+	 * Simple query to get the `active` record for sn_app_engine_studio_pipeline
+	 *
+	 * @typedef {Object} GlideRecord
+	 */
+	getGlideRecordForActivePipeline: function () {
+		var pipelineRecord = new GlideRecord(PIPELINE_TABLE);		
+		pipelineRecord.addQuery('active', true);
+		pipelineRecord.query();
+
+		if (pipelineRecord.getRowCount() === 0) {
+			throw new sn_ws_err.ServiceError()
+				.setStatus(404)
+				.setMessage(gs.getMessageLang("No active pipeline found in sn_app_eng_studio_pipeline.", "en"))
+				.setDetail(gs.getMessage("No active pipeline found in sn_app_eng_studio_pipeline."));
+		}
+
+		return pipelineRecord;
+	},
+	/**
+	 * Queries sn_app_engine_studio_pipeline for `active` record and then builds object `prodCreds`. The properties returned are references
+	 * to sn_app_engine_studio_environment and defined by the admin.
+	 *
+	 * @typedef {Object} prodCreds
+     * @property {string} prodBaseInstanceUrl Value of instance_url for production instance.
+     * @property {string} prodCredRef Value of instance_credential for production instance.
+	 */
+	getProdCredentials: function () {
+		var prodCreds = {};
+		var activePipelineRecord = this.getGlideRecordForActivePipeline();
+
+		while (activePipelineRecord.next()) {
+			prodBaseInstanceUrl = activePipelineRecord.prod_environment.getRefRecord().getValue('instance_url');
+			prodCredRef = activePipelineRecord.prod_environment.getRefRecord().getValue('instance_credential');
+		}
+
+		if (!prodBaseInstanceUrl || !prodCredRef) {
+			// Usually happens if the pipeline has no prod environment.
+			throw new sn_ws_err.ServiceError()
+				.setStatus(404)
+				.setMessage(gs.getMessageLang("Prod environment has not been setup correctly in sn_app_eng_studio_pipeline.", "en"))
+				.setDetail(gs.getMessage("Prod environment has not been setup correctly in sn_app_eng_studio_pipeline."));
+		}
+
+		prodCreds['prodBaseInstanceUrl'] = prodBaseInstanceUrl;
+		prodCreds['prodCredRef'] = prodCredRef;
+
+		return prodCreds;
+	},
+	/**
+	 * Creates GlideRecord for `discovery_credentials` and `sys_connection` table
+	 *
+	 * @returns {string} credentialID Return value is ultimately `discovery_credentials.sys_id` or a reference to it
+	 */
+	getCredentialID: function() {
+		var credentialID = null;
+		var prodCredRef = this.getProdCredentials().prodCredRef;
+		var discoveryRecord = new GlideRecord(DISCOVERY_CREDENTIALS);
+		discoveryRecord.addQuery('tag', prodCredRef);
+		discoveryRecord.query();
+
+		if (discoveryRecord.getRowCount() === 0) return null;
+
+		while (discoveryRecord.next()) {
+			credentialID = discoveryRecord.getValue('sys_id');
+		}
+
+		return credentialID;
+	},
+	getDeploymentRequestResponse: function(flowName, appParams) {
+		var prodCredentials = this.getProdCredentials();
+		var prodBaseInstanceUrl = prodCredentials.prodBaseInstanceUrl;
+		var prodCredentialSysID = this.getCredentialID();
+
+		var inputs = {
+			prod_cred_sys_id: prodCredentialSysID,
+			url: prodBaseInstanceUrl,
+			application_sys_id: appParams.application_sys_id,
+			application_version: appParams.application_version,
+		};
+
+		// Run an action from a server-side script synchronously.
+		return sn_fd.FlowAPI.executeSubflow(flowName, inputs);
+	},
+	getGlideRecord: function(table) {
+		var gr = new GlideRecord(table);
+		gr.addQuery();
+		gr.query();
+
+		return gr;
+	},
+	getActivePipelineRecord: function() {
+		var glideRecordForActivePipeline = this.getGlideRecordForActivePipeline();
+		var activePipelineRecord;
+
+		while (glideRecordForActivePipeline.next()) {
+			activePipelineRecord = glideRecordForActivePipeline;
+		}
+
+		return activePipelineRecord;
+	},
+    type: 'DeploymentHelpers'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-22 18:01:12</sys_created_on>
+        <sys_id>b853de3b53741010b846ddeeff7b1207</sys_id>
+        <sys_mod_count>85</sys_mod_count>
+        <sys_name>DeploymentHelpers</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_b853de3b53741010b846ddeeff7b1207</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 20:29:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

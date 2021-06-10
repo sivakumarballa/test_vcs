@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="sn_table_builder.user" name="sn_table_builder.user">e8bae937735910107419c907fbf6a763</contains>
+        <role display_value="sn_app_eng_studio.user" name="sn_app_eng_studio.user">97f4a0c20f123300e54f3c71df767ea2</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-27 07:11:12</sys_created_on>
+        <sys_id>ba783ff2733210107419c907fbf6a7d2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sn_table_builder.user.sn_app_eng_studio.user</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_user_role_contains_ba783ff2733210107419c907fbf6a7d2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-27 07:11:12</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

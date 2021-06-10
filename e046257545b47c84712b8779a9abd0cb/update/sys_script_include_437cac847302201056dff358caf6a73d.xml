@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AppPromotionAISearchPublishing</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AppPromotionAISearchPublishing</name>
+        <script><![CDATA[var AppPromotionAISearchPublishing = Class.create();
+AppPromotionAISearchPublishing.prototype = {
+    initialize: function() {
+    },
+	
+	// Take a sys_app sys_id and publish the dictionaries, profiles, and indexes required for searching
+	publish: function (appSysId) {
+		try {
+			sn_fd.FlowAPI.startAction('global.publish_app_template_ai_search_configuration', {'app_sys_id': appSysId});
+		} catch (err) {
+			gs.error("The search publishing flow encountered an error: " + err.toString());
+		}
+	},
+	
+	publishToTestInstance: function (appSysId) {
+		try {
+			var pipelineService = new PipelineService();
+
+			var publishSearchRequest = pipelineService.buildRequest(
+				"POST", 
+				PipelineConstants.TEST_ENV_COLUMN,
+				'/api/sn_app_eng_studio/applications/' + appSysId + '/publish_search_config'
+			);
+
+			var publishResponse = publishSearchRequest.execute();
+
+			if (publishResponse.haveError()) {
+				var error = new Error(publishResponse.getErrorMessage());
+				error.code = publishResponse.getStatusCode();
+
+				throw error;
+			}
+			
+		} catch (err) {
+			gs.error(err.toString());
+		}
+	},
+
+    type: 'AppPromotionAISearchPublishing'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-26 16:40:54</sys_created_on>
+        <sys_id>437cac847302201056dff358caf6a73d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>AppPromotionAISearchPublishing</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_437cac847302201056dff358caf6a73d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-27 16:50:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

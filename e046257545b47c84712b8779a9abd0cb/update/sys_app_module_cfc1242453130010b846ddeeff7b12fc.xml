@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="App Engine Studio">0381642453130010b846ddeeff7b1273</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DIRECT</link_type>
+        <map_page/>
+        <mobile_title>App Engine Studio ➚</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sn_app_eng_studio_project_application_m2m</name>
+        <order>10</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>/now/appenginestudio</query>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-02-27 16:08:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cfc1242453130010b846ddeeff7b12fc</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>App Engine Studio ➚</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_app_module_cfc1242453130010b846ddeeff7b12fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-24 21:57:22</sys_updated_on>
+        <timeline_page/>
+        <title>App Engine Studio ➚</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name>App Engine Studio Window</window_name>
+    </sys_app_module>
+</record_update>

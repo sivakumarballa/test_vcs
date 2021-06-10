@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_app_eng_studio_taxonomy">
+    <sn_app_eng_studio_taxonomy action="INSERT_OR_UPDATE">
+        <category display_value="Experience">db5663577703330001fb4311a81061b9</category>
+        <creator_url>/sys_ux_page_registry.do?sys_id=-1</creator_url>
+        <description/>
+        <details/>
+        <editor_url>/now/build/ui/apps/${admin_panel}</editor_url>
+        <form_view/>
+        <help_text/>
+        <icon>4bdeb78f53c120100f29ddeeff7b1207</icon>
+        <launch_url>/${skipencode:path}</launch_url>
+        <name>title</name>
+        <name_override/>
+        <override_name>false</override_name>
+        <sys_class_name>sn_app_eng_studio_taxonomy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-08-11 22:05:09</sys_created_on>
+        <sys_id>402b6c4eb7a21010b94e6f54ce11a958</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>sys_ux_page_registry</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sn_app_eng_studio_taxonomy_402b6c4eb7a21010b94e6f54ce11a958</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:23:05</sys_updated_on>
+        <table>sys_ux_page_registry</table>
+        <table_name_override>Now Experience</table_name_override>
+        <use_description>false</use_description>
+    </sn_app_eng_studio_taxonomy>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>icon</file_name>
+        <hash>3e6fe63a621cab772c8936d7bd5f72277d60aa6a665d38567449ce15dba70467</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>972</size_bytes>
+        <size_compressed>398</size_compressed>
+        <state>available</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:50</sys_created_on>
+        <sys_id>4bdeb78f53c120100f29ddeeff7b1207</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 22:38:50</sys_updated_on>
+        <table_name>ZZ_YYsn_app_eng_studio_taxonomy</table_name>
+        <table_sys_id>402b6c4eb7a21010b94e6f54ce11a958</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="icon" sys_id="4bdeb78f53c120100f29ddeeff7b1207">4bdeb78f53c120100f29ddeeff7b1207</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:50</sys_created_on>
+        <sys_id>8bdeb78f53c120100f29ddeeff7b1207</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>lZNNTwIxEIbv/opJvXfbTjttjWsCBcLFKwdvRpDdBIHAhtV/b/ergsGoyWZ3Ovv2mTed6f3xtIa6XFZFzkgzKFbluqi6+FSu6vHuPWcCBJCGJvdabjY52+62Kwbvb5vtMWdFVe3vsqyua14j3x3WmRJCZBHMHm7uD6uX6qcCHex2GmZiJlkW1fvnqoBlzh4JxNy4QJKjRNvVV5wcKd9aWUgVn7lYUBDpx/CNahBPia88TrS45FvwwXEy5Ax4kAJsv4ghhfjSHDVKA4MIwQIG02cRdFJEN0Gn/YPCR73/8uCMRz+59CCJKycpOpGWe3S6ceK7XLLTr6OnPhrKDnsQBg4GqTkpbZscflNj4uC3Cv0enzi/2BYQD17qBek5hbOexINL3TKua9BZExCDdi2pHYk4Vkow+MiZtGwYEElfA9LEh0aVENoS2dEFQqv/Icx0hAGvuWhIf0JI46eT2TUXf0Y4OTYjeemiO/uWgwmD6uzCdBS81pvmsj3cfALNYvxPzAMAAA==</data>
+        <length>520</length>
+        <position>1</position>
+        <sys_attachment display_value="icon" sys_id="4bdeb78f53c120100f29ddeeff7b1207">4bdeb78f53c120100f29ddeeff7b1207</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:50</sys_created_on>
+        <sys_id>0fdeb78f53c120100f29ddeeff7b1207</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>illustration</file_name>
+        <hash>3e6fe63a621cab772c8936d7bd5f72277d60aa6a665d38567449ce15dba70467</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>972</size_bytes>
+        <size_compressed>398</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:57</sys_created_on>
+        <sys_id>fceef78f53c120100f29ddeeff7b120a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-17 22:38:57</sys_updated_on>
+        <table_name>ZZ_YYsn_app_eng_studio_taxonomy</table_name>
+        <table_sys_id>402b6c4eb7a21010b94e6f54ce11a958</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="illustration" sys_id="fceef78f53c120100f29ddeeff7b120a">fceef78f53c120100f29ddeeff7b120a</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:57</sys_created_on>
+        <sys_id>30eef78f53c120100f29ddeeff7b120b</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>lZNNTwIxEIbv/opJvXfbTjttjWsCBcLFKwdvRpDdBIHAhtV/b/ergsGoyWZ3Ovv2mTed6f3xtIa6XFZFzkgzKFbluqi6+FSu6vHuPWcCBJCGJvdabjY52+62Kwbvb5vtMWdFVe3vsqyua14j3x3WmRJCZBHMHm7uD6uX6qcCHex2GmZiJlkW1fvnqoBlzh4JxNy4QJKjRNvVV5wcKd9aWUgVn7lYUBDpx/CNahBPia88TrS45FvwwXEy5Ax4kAJsv4ghhfjSHDVKA4MIwQIG02cRdFJEN0Gn/YPCR73/8uCMRz+59CCJKycpOpGWe3S6ceK7XLLTr6OnPhrKDnsQBg4GqTkpbZscflNj4uC3Cv0enzi/2BYQD17qBek5hbOexINL3TKua9BZExCDdi2pHYk4Vkow+MiZtGwYEElfA9LEh0aVENoS2dEFQqv/Icx0hAGvuWhIf0JI46eT2TUXf0Y4OTYjeemiO/uWgwmD6uzCdBS81pvmsj3cfALNYvxPzAMAAA==</data>
+        <length>520</length>
+        <position>1</position>
+        <sys_attachment display_value="illustration" sys_id="fceef78f53c120100f29ddeeff7b120a">fceef78f53c120100f29ddeeff7b120a</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 22:38:57</sys_created_on>
+        <sys_id>b0eef78f53c120100f29ddeeff7b120b</sys_id>
+    </sys_attachment_doc>
+</record_update>

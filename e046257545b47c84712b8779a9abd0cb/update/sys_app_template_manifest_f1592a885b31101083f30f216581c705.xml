@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_template_manifest">
+    <sys_app_template_manifest action="INSERT_OR_UPDATE">
+        <description/>
+        <order/>
+        <sys_class_name>sys_app_template_manifest</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-29 19:19:29</sys_created_on>
+        <sys_id>f1592a885b31101083f30f216581c705</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_app_template_manifest_f1592a885b31101083f30f216581c705</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-18 00:23:05</sys_updated_on>
+        <table_name display_value="Role" name="sys_user_role">7f34fb1248203010b203c71061e2e4f1</table_name>
+        <template display_value="Security">db0896405b31101083f30f216581c714</template>
+    </sys_app_template_manifest>
+</record_update>

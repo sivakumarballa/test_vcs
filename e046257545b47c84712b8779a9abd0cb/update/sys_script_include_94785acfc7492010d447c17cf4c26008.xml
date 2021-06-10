@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.UserQueueService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>UserQueueService</name>
+        <script><![CDATA[var UserQueueService = Class.create();
+UserQueueService.prototype = {
+	initialize: function() {},
+	
+	getQueuedRecords: function () {
+		var queued = [];
+		var syncQueue = new GlideRecord(SyncConstants.SYNC_QUEUE_TABLE);
+		syncQueue.addQuery("state", SyncConstants.QUEUED);
+		syncQueue.orderBy('sequence');
+		
+		syncQueue.query();
+		
+		while(syncQueue.next()) {
+			queued.push({
+				sysId: syncQueue.getValue('sys_id'),
+				operation: syncQueue.getValue('operation'),
+				table: syncQueue.getValue('table'),
+				payload: JSON.parse(syncQueue.getValue('payload')),
+			});
+		}
+		
+		return queued;
+	},
+	
+	updateQueue: function (queueId, params) {
+		if (!params) 
+			return;
+
+		var updated;
+		
+		var syncQueue = new GlideRecord(SyncConstants.SYNC_QUEUE_TABLE);
+		syncQueue.get("sys_id",  queueId);
+		
+		if (syncQueue.isValidRecord()) {
+			
+			Object.keys(params).forEach(function(property) {
+				syncQueue[property] = params[property];
+			});
+
+			updated = syncQueue.update();
+		}
+		
+		return updated;
+	},
+
+	updateMultipleQueue: function (queueIds, state) {
+		if (!state) {return;}
+		if (!queueIds || queueIds.length == 0) {
+			gs.info('No queues found');
+			return [];
+		}
+		
+		var users = [];
+		
+		var syncQueue = new GlideRecord(SyncConstants.SYNC_QUEUE_TABLE);
+		syncQueue.addQuery("sys_id", "IN", queueIds.join(","));
+		syncQueue.state = state;
+		
+		syncQueue.updateMultiple();
+	},
+
+	/**
+	* @param {Object} syncQueueItem: class SyncQueueItem
+	 * @returns {Array<String>} - new queued sys_ids
+	*/
+	insertQueue: function (syncQueueItem) {
+		if (!syncQueueItem || !syncQueueItem.operation || !syncQueueItem.table || !syncQueueItem.payload) {
+			gs.info('Unable to add to AES Sync Queue. Insufficient information provided.');
+			return;
+		}
+
+		var queued;
+		var syncQueue = new GlideRecord(SyncConstants.SYNC_QUEUE_TABLE);
+		
+		syncQueue.initialize();
+		
+		syncQueue.table = syncQueueItem.table;
+		syncQueue.operation = syncQueueItem.operation;
+		syncQueue.state = syncQueueItem.state;
+		syncQueue.payload = syncQueueItem.getJSONPayload();
+		syncQueue.sequence = syncQueueItem.sequence;
+		
+		queued = syncQueue.insert();
+		
+		return queued;
+	},
+	
+	/**
+	 * Deletes queue records after specified number of days if state is `failed`, `synced` or `skipped.`
+	 * Basically anything that is not `queued`.
+	 * @returns {Void}
+	*/
+	deleteMultipleQueue: function () {
+		var deleteDate = new GlideDateTime().getDate();
+		var deleteGracePeriod = parseInt(gs.getProperty('sn_app_eng_studio.delete_user_sync_queue_in_x_days')) * -1; // Number of days the record will stay in the queue before we delete
+		deleteDate.addDaysUTC(deleteGracePeriod);
+
+		var syncQueue = new GlideRecord(SyncConstants.SYNC_QUEUE_TABLE);
+		syncQueue.addQuery("state", [SyncConstants.FAILED, SyncConstants.SYNCED, SyncConstants.SKIPPED]);
+		syncQueue.addQuery("sys_created_on", "<=", deleteDate);
+		syncQueue.query();
+
+		while(syncQueue.next()) {
+
+			syncQueue.deleteRecord();
+
+		}
+	},
+	
+    type: 'UserQueueService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 15:14:00</sys_created_on>
+        <sys_id>94785acfc7492010d447c17cf4c26008</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>UserQueueService</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_94785acfc7492010d447c17cf4c26008</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-13 21:53:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ApplicationsDataModel</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builds a model object of application-related data for App Engine Studio projects</description>
+        <name>ApplicationsDataModel</name>
+        <script><![CDATA[var ApplicationsDataModel = (function() {
+	
+	return {
+		generate: function(applicationSysId /*object of key/value pairs representing an app*/) {
+			var applicationRecord = new GlideRecord("sys_scope");
+				
+			if (!applicationRecord.get(applicationSysId))
+				return;
+			
+			var updatedDate = this.getUpdatedDate(applicationSysId, applicationRecord);
+			
+			var appData = {
+				"sys_id": applicationSysId,
+				"class_name": applicationRecord.getValue("sys_class_name"),
+				"name": ValueDisplayValueModel(applicationRecord, "name"),
+				"description": ValueDisplayValueModel(applicationRecord, "short_description"),
+				"version": applicationRecord.getValue("version") || "",
+				"scope_name": applicationRecord.getValue("scope") || "",
+				"created": ValueDisplayValueModel(applicationRecord, "sys_created_on"),
+				"created_by": ValueDisplayValueModel(applicationRecord, "sys_created_by"),
+				"updated": updatedDate,
+				"updated_by": ValueDisplayValueModel(applicationRecord, "sys_updated_by"),
+				"type": {
+					"value": "Application",
+					"display_value": gs.getMessage("Application")
+				},
+				"icon": applicationRecord.getValue("icon") || "configuration-item-outline",
+				"illustration": this._getIllustration(applicationRecord.getDisplayValue("logo"))
+			};
+
+			return appData;
+		},
+		
+		/**
+		* Query the sys_metadata table to get the created date of the most recently created object 
+		* inside of the application and compare it to the updated date of the application (sys_scope).
+		*
+		* @param {string} sysId - sys_id of the application scope record
+		* @param {GlideRecord} sysScopeRecord - sys_scope GlideRecord after querying on sys_id
+		* @return {ValueDisplayValueModel} returns object containing the most recent updated date
+		*/
+		getUpdatedDate: function(sysId, sysScopeRecord) {
+			var sysMetadataRecord = new GlideRecord('sys_metadata');
+			var sysScopeDate = sysScopeRecord.getValue('sys_updated_on');
+			var updatedDate = {};
+			
+			sysMetadataRecord.setLimit(1);
+			sysMetadataRecord.orderByDesc('sys_updated_on');
+			sysMetadataRecord.addQuery('sys_scope', '=', sysId);
+			sysMetadataRecord.addQuery('sys_updated_on', '>', sysScopeDate);
+
+			// Commenting out for now, system records may be generated as a side effect of other processes
+			// running, resulting in more recent updated dates than the user expects
+			// sysMetadataRecord.addQuery('sys_updated_by', '!=', 'system');
+			
+			sysMetadataRecord.query();
+			
+			// Not all applications will have sys_metadata entries, if they exist, use the 
+			// metadata updated date if they are more recent, else, use the sys_scope app date
+			if (sysMetadataRecord.next()) {
+				updatedDate = ValueDisplayValueModel(sysMetadataRecord, 'sys_updated_on');
+			} else {
+				updatedDate = ValueDisplayValueModel(sysScopeRecord, 'sys_updated_on');
+			}
+			
+			return updatedDate;
+		},
+		
+		_getIllustration: function(logoAttachmentFile) {
+			// logo url stored in Appliction record
+			if (!gs.nil(logoAttachmentFile))
+				return "/" + logoAttachmentFile;
+			
+			return "";
+		}
+	};
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-30 13:44:10</sys_created_on>
+        <sys_id>e829f7c6b723330001fb99adde11a932</sys_id>
+        <sys_mod_count>102</sys_mod_count>
+        <sys_name>ApplicationsDataModel</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_e829f7c6b723330001fb99adde11a932</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-02 20:16:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

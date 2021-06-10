@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.PipelineConstants</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>PipelineConstants</name>
+        <script><![CDATA[var PipelineConstants = {
+	PIPELINE_TABLE: "sn_app_eng_studio_pipeline",
+	DISCOVERY_CREDENTIALS: "discovery_credentials",
+	DEV_ENV_COLUMN: "dev_environment",
+	TEST_ENV_COLUMN: "test_environment",
+	PROD_ENV_COLUMN:  "prod_environment",
+	
+	errors: {
+		PIPELINE_ERROR: 'PipelineError',
+		NO_ENV_URL_ERROR: "No environment url found",
+		INVAILD_PIPELINE_ERROR: "The setup for the sn_app_eng_studio_pipeline table is incomplete. Please ensure that you have an active record, with dev_environment and prod_environment setup.",
+	},
+};
+	]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-13 21:20:24</sys_created_on>
+        <sys_id>0fe58331c7812010d447c17cf4c260a1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PipelineConstants</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_0fe58331c7812010d447c17cf4c260a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 17:26:14</sys_updated_on>
+    </sys_script_include>
+</record_update>

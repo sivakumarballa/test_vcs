@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesAppApprovalEmail</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AesAppApprovalEmail</name>
+        <script><![CDATA[var AesAppApprovalEmail = Class.create();
+AesAppApprovalEmail.prototype = {
+    initialize: function(deploymentRequest) {
+        this.deploymentRequest = deploymentRequest;
+    },
+    getBody: function() {
+        var aesEmailScript = new AesEmailScript();
+		var style = aesEmailScript.getStyles();
+        var deploymentRequest = this.deploymentRequest;
+        var userName = deploymentRequest.requestor_user_name;
+		var adminEmailPropertyValue = gs.getProperty('sn_app_eng_studio.aes_admin_contact');
+		var htmlLinkStart = "";
+		var htmlLinkEnd = "";
+		
+		if (adminEmailPropertyValue) {
+			htmlLinkStart = '<a style="' + style.link + '" href="mailto:' + adminEmailPropertyValue + '">';
+			htmlLinkEnd = '</a>';
+		}
+		
+		var adminContactMessage = gs.getMessage('{0}Contact your administrator{1} if you have questions on accessing your app.', [htmlLinkStart, htmlLinkEnd]);
+
+        var footerMessage = gs.getMessage('You have received this email to update you about your recent App Engine Studio creation.');
+        var headerMessage = gs.getMessage('{0} app was approved.', deploymentRequest.app_name);
+        var innerBody = gs.getMessage('{0}Congratulations! Your administrator has published your app {1} and it is available to use. {2}{3}', ['<div>', deploymentRequest.app_name, adminContactMessage, '</div><br />']);
+
+        return aesEmailScript.getBody(userName, headerMessage, innerBody, footerMessage);
+    },
+    type: 'AesAppApprovalEmail'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 21:38:42</sys_created_on>
+        <sys_id>610dc5d30f102010310be3d1df767eaf</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>AesAppApprovalEmail</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_610dc5d30f102010310be3d1df767eaf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 15:49:40</sys_updated_on>
+    </sys_script_include>
+</record_update>

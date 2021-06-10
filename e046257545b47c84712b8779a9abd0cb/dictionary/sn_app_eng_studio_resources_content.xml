@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Resources Content" max_length="40" name="sn_app_eng_studio_resources_content" type="collection">
+        <element attributes="edge_encryption_enabled=true" hint="URL of the content" label="Content URL" mandatory="true" max_length="1024" name="content_url" type="url"/>
+        <element label="Description" max_length="255" name="description" type="translated_text"/>
+        <element attributes="encode_utf8=false" label="Icon" max_length="32" name="icon" reference="db_image" type="reference"/>
+        <element attributes="encode_utf8=false" hint="An image or screenshot of the content" label="Image" max_length="32" name="image" reference="db_image" type="reference"/>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+        <element label="Title" mandatory="true" max_length="100" name="title" type="translated_text"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" hint="Select all topics that the content may refer to" label="Topics" mandatory="true" max_length="1024" name="topics" reference="sn_app_eng_studio_resources_content_topic" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" hint="Type of content" label="Type" mandatory="true" max_length="40" name="type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Video" sequence="1" value="video"/>
+                <element inactive_on_update="false" label="Document" sequence="2" value="document"/>
+                <element inactive_on_update="false" label="Learning Module" sequence="3" value="learning_module"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="image"/>
+        </index>
+        <index name="index2">
+            <element name="icon"/>
+        </index>
+    </element>
+</database>

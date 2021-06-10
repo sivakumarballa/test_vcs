@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Deployment Request" max_length="40" name="sn_app_eng_studio_deployment_request" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" hint="Deployment actions" label="Action" max_length="40" name="action" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Deploy to Test Env" sequence="1" value="deploy_to_test_env"/>
+                <element inactive_on_update="false" label="Deploy to Prod Env" sequence="2" value="deploy_to_prod_env"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" hint="Details of latest action execution context" label="Action Operational Context" max_length="32" name="action_execution_context_id" reference="sys_flow_context" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="Application name" label="App name" max_length="80" name="app_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Application Sys ID" label="App Sys ID" max_length="32" name="app_sys_id" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Application version" label="App version" max_length="32" name="app_version" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Stringified array of objects used to display URLs for objects like Portal and Workspace" label="Launch URLs" max_length="4000" name="launch_urls" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Name of deployment request" label="Name" max_length="255" name="name" type="string"/>
+        <element attributes="encode_utf8=false" hint="Pipeline for deployment flow" label="Pipeline" max_length="32" name="pipeline" reference="sn_app_eng_studio_pipeline" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="Reason request was rejected" label="Rejection Reason" max_length="4000" name="rejection_reason" type="string"/>
+        <element hint="Email address of user creating deployment request" label="Requestor Email Address" max_length="40" name="requestor_email" type="email"/>
+        <element attributes="edge_encryption_enabled=true" hint="First name of user creating deployment request" label="Requestor First Name" max_length="50" name="requestor_first_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="Last name of user creating deployment request" label="Requestor Last Name" max_length="50" name="requestor_last_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="User ID of user creating deployment request" label="Requestor User Name" max_length="40" name="requestor_user_name" type="string"/>
+    </element>
+</database>

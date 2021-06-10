@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AccessibleApplicationDataBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builds the App Engine Studio API response body for getting a list of Applications or Application meta-data</description>
+        <name>AccessibleApplicationDataBuilder</name>
+        <script><![CDATA[var AccessibleApplicationDataBuilder = Class.create();
+AccessibleApplicationDataBuilder.prototype = {
+	
+    initialize: function() {
+		this.accessibleApps = ApplicationService.getAccessibleAppSysIds();
+    },
+	
+	// removes specific applications stored in the applicationSysIds array from the decoratedApplicationList
+	filterOut: function(applicationSysIds) {
+		this.accessibleApps = this.accessibleApps.filter(function(appSysId) {
+			return this.indexOf(appSysId) < 0;
+		}, applicationSysIds);
+		
+		return this;
+	},
+	
+	
+	/** 
+	* @return {string[]} of sys_ids of applications that are accessible (IE can be switched into via the scope picker)
+	*/
+	getAccessibleApps : function() {
+		return this.accessibleApps;
+	},
+	
+		// returns application information for the array of application sys_ids passed into the function
+	getAccessibleAppsByIds: function(applicationSysIds /*array of strings*/) {
+		return this.accessibleApps.filter(function(appSysId) {
+			return applicationSysIds.indexOf(appSysId) > -1;
+		});
+	},
+	
+
+    type: 'AccessibleApplicationDataBuilder'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-20 16:54:29</sys_created_on>
+        <sys_id>b8bde8857700001001fb4311a81061ae</sys_id>
+        <sys_mod_count>51</sys_mod_count>
+        <sys_name>AccessibleApplicationDataBuilder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_b8bde8857700001001fb4311a81061ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-12 14:05:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sn_app_eng_studio_deployment_request</collection>
+        <condition/>
+        <description>Validate Deployment request insert/update operations. Abort if on update a newer deployment exists for app or if an open one exists. On insert, abort operation if an open deployment request exists for the app.</description>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Validation of Deployment Requests</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var openDeploymentStates = [
+        CreatorStudioConstants.deploymentStates.PENDING_APPROVAL,
+        CreatorStudioConstants.deploymentStates.IN_VALIDATION
+    ];
+
+    var sysId = current.getValue('sys_id');
+    var appSysId = current.getValue('app_sys_id');
+    var currentState = current.getValue('state');
+    var operation = current.operation();
+    var createdOn = current.getValue('sys_created_on');
+	
+    var check = current.operation() === 'insert' ?
+        isInsertOrUpdateInvalid(sysId, appSysId, currentState, operation, openDeploymentStates) :
+        isNewerDeploymentRequestPresent(sysId, appSysId, createdOn) || isInsertOrUpdateInvalid(sysId, appSysId, currentState, operation, openDeploymentStates);
+
+    if (check) {
+        current.setAbortAction(true);
+    }
+
+    /*
+    	Checks for presence of newer deployment request for the same app.
+    */
+    function isNewerDeploymentRequestPresent(sysId, appSysId, createdOn) {
+        var depReq = new GlideRecord('sn_app_eng_studio_deployment_request');
+
+        depReq.addQuery("sys_id", '!=', sysId);
+        depReq.addQuery("app_sys_id", appSysId);
+        depReq.addQuery("sys_created_on", ">=", createdOn);
+        depReq.query();
+
+        if (depReq.next()) {
+			var errorMessage = gs.getMessage("Deployment Request update operation failed: Application with application_sys_id {0} has a newer deployment request than request with sys_id {1}.", [appSysId, sysId]);
+			
+			gs.addErrorMessage(errorMessage);
+			gs.error(errorMessage);
+			
+            return true;
+        }
+
+        return false;
+    }
+
+    /*
+    	On insert/update, ensure there are other open deployment requests for the app.
+    */
+    function isInsertOrUpdateInvalid(sysId, appSysId, currentState, operation, openDeploymentStates) {
+		if (openDeploymentStates.indexOf(currentState) >= 0) {
+            var depReq = new GlideRecord('sn_app_eng_studio_deployment_request');
+
+            depReq.addQuery("app_sys_id", appSysId);
+            depReq.addQuery("state", openDeploymentStates);
+
+            if (operation === 'update') {
+                depReq.addQuery('sys_id', '!=', sysId);
+            }
+			depReq.query();
+			
+            if (depReq.next()) {
+				var message = gs.getMessage("Deployment Request {0} operation failed: Application with application_sys_id {1} has an open deployment request.", [operation, appSysId]);
+				
+				gs.addErrorMessage(message);
+				gs.error(message);
+				
+                return true;
+            }
+
+            return false;
+        }
+    }
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-02 03:10:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9ff5f9c6c3c22010a9f5e548fa40ddc2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Validation of Deployment Requests</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_9ff5f9c6c3c22010a9f5e548fa40ddc2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-02 19:43:05</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=9ff5f9c6c3c22010a9f5e548fa40ddc2"/>
+</record_update>

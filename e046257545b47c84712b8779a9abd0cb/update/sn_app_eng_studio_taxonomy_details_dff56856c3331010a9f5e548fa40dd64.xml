@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sn_app_eng_studio_taxonomy_details">
+    <sn_app_eng_studio_taxonomy_details action="INSERT_OR_UPDATE">
+        <name_override><![CDATA[(function nameOverride(file) {
+	return file.name ? file.getValue("name") : gs.getMessage("(empty)");
+})(globalFileObjectRecord);]]></name_override>
+        <name_override_enabled>true</name_override_enabled>
+        <references_script><![CDATA[(function dataRetrievalScript(applicationIds) {
+    var aclRoleRecords = new GlideRecord('sys_security_acl_role');
+    var aclRecords = aclRoleRecords.addJoinQuery('sys_security_acl', 'sys_security_acl', 'sys_id');
+
+    // And the sys_security_acl is in the scope of the passed applicationIds
+    aclRecords.addCondition('sys_scope', 'IN', applicationIds);
+
+    // Query
+    aclRoleRecords.query();
+
+    var validRoles = {};
+
+    while (aclRoleRecords.next()) {
+        validRoles[aclRoleRecords.getValue('sys_user_role')] = true;
+
+    }
+
+    var uniqueRoles = Object.keys(validRoles);
+    var roleRecords = new GlideRecord('sys_user_role');
+    roleRecords.addQuery('sys_id', 'IN', uniqueRoles);
+
+    // Where the sys_user_role record is not in the scope of the passed applicationIds
+    roleRecords.addQuery('sys_scope', 'NOT IN', applicationIds);
+
+    roleRecords.query();
+
+    return roleRecords;
+})(sysIds);]]></references_script>
+        <sys_class_name>sn_app_eng_studio_taxonomy_details</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-13 19:37:31</sys_created_on>
+        <sys_id>dff56856c3331010a9f5e548fa40dd64</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sn_app_eng_studio_taxonomy_details_dff56856c3331010a9f5e548fa40dd64</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-18 22:51:45</sys_updated_on>
+        <taxonomy_id display_value="sys_user_role">ff714484b763330001fb99adde11a918</taxonomy_id>
+    </sn_app_eng_studio_taxonomy_details>
+</record_update>

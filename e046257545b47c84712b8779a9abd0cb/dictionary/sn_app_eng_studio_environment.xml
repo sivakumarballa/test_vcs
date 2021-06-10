@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="synch_attachments=true,update_synch=true" extends="sys_metadata" label="Environment" max_length="40" name="sn_app_eng_studio_environment" type="collection">
+        <element attributes="encode_utf8=false" hint="Credentials used to authenticate to remote instance" label="Instance credential" mandatory="true" max_length="32" name="instance_credential" reference="sys_alias" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="URL for remote instance" label="Instance url" mandatory="true" max_length="1024" name="instance_url" type="url"/>
+        <element attributes="edge_encryption_enabled=true" display="true" hint="Name of environment" label="Name" max_length="80" name="name" type="string"/>
+        <index name="index">
+            <element name="instance_credential"/>
+        </index>
+    </element>
+</database>

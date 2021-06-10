@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Resources Content Topic" max_length="40" name="sn_app_eng_studio_resources_content_topic" type="collection">
+        <element display="true" label="Label" mandatory="true" max_length="40" name="label" type="translated_text"/>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Value" mandatory="true" max_length="40" name="value" type="string"/>
+    </element>
+</database>

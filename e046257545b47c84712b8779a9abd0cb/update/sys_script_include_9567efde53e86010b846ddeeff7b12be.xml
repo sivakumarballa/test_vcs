@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesNotifyAdminOfDeploymentRequest</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AesNotifyAdminOfDeploymentRequest</name>
+        <script><![CDATA[var AesNotifyAdminOfDeploymentRequest = Class.create();
+AesNotifyAdminOfDeploymentRequest.prototype = {
+    initialize: function(emailProps) {
+		if (emailProps ) {
+			this.appName = emailProps.appName || '';
+			this.requestorName = emailProps.requestorName || '';
+			this.deploymentRequestUrl = emailProps.deploymentRequestUrl || '';
+			this.taskNumber = emailProps.taskNumber || '';
+		}
+    },
+	getBody: function() {
+		var aesEmailScript = new AesEmailScript();
+        var style = aesEmailScript.getStyles();
+		var headerMessage = gs.getMessage('Review "{0}" for deployment', this.appName);
+		var innerBody = '';
+
+		innerBody += '<div>' + gs.getMessage('{0} submitted an app for you to review. To review the deployment request, see ', this.requestorName);
+			innerBody += '<a style="' + style.link + '" href="' + this.deploymentRequestUrl + '">' + this.taskNumber + '</a>';
+		innerBody += '</div>';
+
+		return aesEmailScript.getBody('Administrator', headerMessage, innerBody, '');
+	},
+    type: 'AesNotifyAdminOfDeploymentRequest'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-20 16:54:52</sys_created_on>
+        <sys_id>9567efde53e86010b846ddeeff7b12be</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>AesNotifyAdminOfDeploymentRequest</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_9567efde53e86010b846ddeeff7b12be</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 22:39:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

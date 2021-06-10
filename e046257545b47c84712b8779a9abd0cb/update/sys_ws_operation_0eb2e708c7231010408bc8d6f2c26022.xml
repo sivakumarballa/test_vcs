@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/resources_content</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GET Resources Content</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var aesUtils = new AesUtils();
+	var topics = [];
+	var content = [];
+
+    var grTopics = new GlideRecord('sn_app_eng_studio_resources_content_topic');
+	grTopics.orderBy('order');
+	grTopics.query();
+	while (grTopics.next()) {
+		var topicObj = aesUtils.getObjectFromGlideRecord(grTopics, ['sys_id', 'value', 'order']);
+		topicObj.label = grTopics.getDisplayValue('label');
+		topics.push(topicObj);
+	}
+	
+	var grContent = new GlideRecord('sn_app_eng_studio_resources_content');
+	grContent.query();
+
+	while (grContent.next()) {
+		var contentItem = aesUtils.getObjectFromGlideRecord(grContent, ['sys_id', 'content_url', 'type', 'topics', 'order']);
+		contentItem.title = grContent.getDisplayValue('title');
+		contentItem.description = grContent.getDisplayValue('description');
+		contentItem.topicLabels = grContent.getDisplayValue('topics');
+		contentItem.icon = aesUtils.getUserImageString(grContent, 'icon');
+		contentItem.image = aesUtils.getUserImageString(grContent, 'image');
+		content.push(contentItem);
+	}
+	
+	response.setStatus(200);
+	response.setBody({
+		topics: topics,
+		content: content
+	});
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/resources_content</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-24 23:37:30</sys_created_on>
+        <sys_id>0eb2e708c7231010408bc8d6f2c26022</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>GET Resources Content</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_0eb2e708c7231010408bc8d6f2c26022</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-09 19:49:44</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Resources Content API">47ad9384c7231010408bc8d6f2c260ef</web_service_definition>
+        <web_service_version display_value="v1">955e5784c7231010408bc8d6f2c26052</web_service_version>
+    </sys_ws_operation>
+</record_update>

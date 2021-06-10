@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="synch_attachments=true,update_synch=true" extends="sys_metadata" label="Pipeline" max_length="40" name="sn_app_eng_studio_pipeline" type="collection">
+        <element hint="If checked, the record will set the current pipeline used for deployment." label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="encode_utf8=false" hint="Dev Environment configuration" label="Dev environment" max_length="32" name="dev_environment" reference="sn_app_eng_studio_environment" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="Name of pipeline" label="Name" mandatory="true" max_length="255" name="name" type="string"/>
+        <element attributes="encode_utf8=false" hint="Prod Environment configuration" label="Prod environment" max_length="32" name="prod_environment" reference="sn_app_eng_studio_environment" type="reference"/>
+        <element attributes="encode_utf8=false" hint="Test Environment configuration" label="Test environment" max_length="32" name="test_environment" reference="sn_app_eng_studio_environment" type="reference"/>
+        <index name="index">
+            <element name="dev_environment"/>
+        </index>
+        <index name="index2">
+            <element name="test_environment"/>
+        </index>
+        <index name="index3">
+            <element name="prod_environment"/>
+        </index>
+    </element>
+</database>

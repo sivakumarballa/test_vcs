@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/sync/users</default_operation_uri>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>POST - Sync AES Users</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var requestData = request.body.data;
+	
+	if(!requestData) {
+		response.setStatus(200);
+		response.setBody({synced: [], failed: []});
+		return;
+	}
+	
+	var queueItems = requestData.map(function (item) {
+		return (
+			new SyncQueueItem({
+				sysId: item.sys_id,
+				operation: item.operation,
+				table: item.table,
+				payload: item.payload
+			})
+		);
+	});
+	
+	var syncService = new UserSyncService();
+	
+	var fnMap = {
+		'sys_user': {
+			'insert': syncService.userInsert.bind(syncService),
+			'update': syncService.userUpdate.bind(syncService),
+			'delete': syncService.userDelete.bind(syncService)
+		},
+		'sys_user_grmember': {
+			'insert': syncService.groupInsert.bind(syncService),
+			'update': syncService.operationNotImplemented('UPDATE').bind(syncService),
+			'delete': syncService.groupDelete.bind(syncService),
+
+		}
+	};
+	
+	var responseBody = { synced: [], failed: [], skipped: [] };
+
+	var addToResponseBody = function(processedQueueItem) {
+		if(!processedQueueItem) { return; }
+
+		var status = processedQueueItem.getStatus();
+
+		if (responseBody.hasOwnProperty(status.state)) {
+			responseBody[status.state].push(status);
+		}
+	};
+
+	queueItems.forEach(function (queuedItem) {
+		if (!queuedItem.isValid()) {
+			queuedItem.setState(SyncConstants.FAILED, 'Invalid queue item, insufficent information provided.');
+			addToResponseBody(queuedItem);
+			return;
+		}
+
+		var operationFn = fnMap[queuedItem.table][queuedItem.operation];
+		var processedQueueItem = operationFn(queuedItem);
+
+		addToResponseBody(processedQueueItem);
+	});
+	
+	response.setStatus(200);
+	response.setBody(responseBody);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/sync/users</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/users</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-08 15:42:14</sys_created_on>
+        <sys_id>6c584018c7452010d447c17cf4c26077</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>POST - Sync AES Users</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_6c584018c7452010d447c17cf4c26077</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-09 20:29:01</sys_updated_on>
+        <web_service_definition display_value="Sync">0674310cc7012010d447c17cf4c260fa</web_service_definition>
+        <web_service_version display_value="v1">5a15b50cc7012010d447c17cf4c260d6</web_service_version>
+    </sys_ws_operation>
+</record_update>

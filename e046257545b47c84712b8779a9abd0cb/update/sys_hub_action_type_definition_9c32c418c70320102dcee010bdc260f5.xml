@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <ih_action>false</ih_action>
+        <internal_name>create_templated_mobile_app_v2</internal_name>
+        <label_cache>[{"name":"{{action.mobile_applet_data}}","label":"action➛Mobile Applet Data","type":"action","ref":""},{"name":"{{action.mobile_app_data}}","label":"action➛Mobile Applet Data","type":"action","ref":""},{"name":"{{step[1dce2acd-e9a2-450b-9c60-a727e5aa1d50].output_data}}","label":"step➛Create Templated Mobile App Step➛Output Data","type":"step","ref":""}]</label_cache>
+        <master_snapshot>ae530458c70320102dcee010bdc26070</master_snapshot>
+        <name>Create Templated Mobile App v2</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:17:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9c32c418c70320102dcee010bdc260f5</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>Create Templated Mobile App v2</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_9c32c418c70320102dcee010bdc260f5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 15:34:41</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=9c32c418c70320102dcee010bdc260f5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=9c32c418c70320102dcee010bdc260f5"/>
+    <sys_element_mapping action="delete_multiple" query="id=9c32c418c70320102dcee010bdc260f5"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>applet_launcher_sys_id</field>
+        <id>9c32c418c70320102dcee010bdc260f5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:21:47</sys_created_on>
+        <sys_id>bf33c058c70320102dcee010bdc26029</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:21:47</sys_updated_on>
+        <table>var__m_sys_hub_action_output_9c32c418c70320102dcee010bdc260f5</table>
+        <value>{{step[1dce2acd-e9a2-450b-9c60-a727e5aa1d50].output_data}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=9c32c418c70320102dcee010bdc260f5^sys_idNOT IN75a28c18c70320102dcee010bdc2601d"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Create Templated Mobile App v2">9c32c418c70320102dcee010bdc260f5</action>
+        <cid>1dce2acd-e9a2-450b-9c60-a727e5aa1d50</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <inputs/>
+        <label>Create Templated Mobile App Step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Create Templated Object">429eae010f0010108c9c5019c4767e6e</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:19:13</sys_created_on>
+        <sys_id>75a28c18c70320102dcee010bdc2601d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:10</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=75a28c18c70320102dcee010bdc2601d"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>75a28c18c70320102dcee010bdc2601d</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:19:13</sys_created_on>
+        <sys_id>75a28c18c70320102dcee010bdc26023</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:46:43</sys_updated_on>
+        <value>mobile_app.v2</value>
+        <variable display_value="Object Type">6a203e410f0010108c9c5019c4767e98</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=75a28c18c70320102dcee010bdc2601d"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>input_data</field>
+        <id>75a28c18c70320102dcee010bdc2601d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:19:13</sys_created_on>
+        <sys_id>f9a28c18c70320102dcee010bdc26022</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:10</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_429eae010f0010108c9c5019c4767e6e</table>
+        <value>{{action.mobile_app_data}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>object_type</field>
+        <id>75a28c18c70320102dcee010bdc2601d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:19:13</sys_created_on>
+        <sys_id>f1a28c18c70320102dcee010bdc26023</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:19:13</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_429eae010f0010108c9c5019c4767e6e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_input action="delete_multiple" query="model=9c32c418c70320102dcee010bdc260f5^sys_idNOT INd3a4ef945b03201083f30f216581c721"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=efbbc9b7-8181-453f-b20b-a3b1445d2dc3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[
+      (function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>mobile_app_data</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Mobile Applet Data</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create Templated Mobile App v2">9c32c418c70320102dcee010bdc260f5</model>
+        <model_id>9c32c418c70320102dcee010bdc260f5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_9c32c418c70320102dcee010bdc260f5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:46:43</sys_created_on>
+        <sys_id>d3a4ef945b03201083f30f216581c721</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 15:34:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_output action="delete_multiple" query="model=9c32c418c70320102dcee010bdc260f5^sys_idNOT IN0ae20058c70320102dcee010bdc2602b"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=59dae91e-4fac-4a77-aab2-855d59dbe134</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[
+      (function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>applet_launcher_sys_id</element>
+        <element_prototype display_value="Output Data" element="output_data" name="var__m_sys_flow_step_definition_output_429eae010f0010108c9c5019c4767e6e">2e50fe410f0010108c9c5019c4767ede</element_prototype>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Applet Launcher Sys ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create Templated Mobile App v2">9c32c418c70320102dcee010bdc260f5</model>
+        <model_id>9c32c418c70320102dcee010bdc260f5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_9c32c418c70320102dcee010bdc260f5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:20:19</sys_created_on>
+        <sys_id>0ae20058c70320102dcee010bdc2602b</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 15:34:40</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0ae20058c70320102dcee010bdc2602b^sys_idNOT IN2333c058c70320102dcee010bdc26029"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>applet_launcher_sys_id</input_name>
+        <instance>0ae20058c70320102dcee010bdc2602b</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"applet_launcher_sys_id":{"scriptActive":false}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:21:47</sys_created_on>
+        <sys_id>2333c058c70320102dcee010bdc26029</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:21:47</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_9c32c418c70320102dcee010bdc260f5^sys_idNOT IN53a4ef945b03201083f30f216581c726"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>mobile_app_data</element>
+        <help/>
+        <hint/>
+        <label>Mobile Applet Data</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_9c32c418c70320102dcee010bdc260f5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:46:43</sys_created_on>
+        <sys_id>53a4ef945b03201083f30f216581c726</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Mobile Applet Data</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_9c32c418c70320102dcee010bdc260f5_mobile_app_data_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:46:43</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_9c32c418c70320102dcee010bdc260f5^sys_idNOT INcee20058c70320102dcee010bdc26030"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>applet_launcher_sys_id</element>
+        <help/>
+        <hint/>
+        <label>Applet Launcher Sys ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_9c32c418c70320102dcee010bdc260f5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:20:19</sys_created_on>
+        <sys_id>cee20058c70320102dcee010bdc26030</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Applet Launcher Sys ID</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_9c32c418c70320102dcee010bdc260f5_applet_launcher_sys_id_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:20:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=9c32c418c70320102dcee010bdc260f5^sys_idNOT IN83530458c70320102dcee010bdc260af"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Create Templated Mobile App v2">9c32c418c70320102dcee010bdc260f5</action_id>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"83530458c70320102dcee010bdc260af","name":"plan"}}</plan>
+        <snapshot>36b48498c70320102dcee010bdc260f8</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>83530458c70320102dcee010bdc260af</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:28:17</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category display_value="Template">ee4ddd62b7301010835d6f54ce11a90f</category>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>create_templated_mobile_app_v2</internal_name>
+        <label_cache>[{"name":"{{action.mobile_applet_data}}","label":"action➛Mobile Applet Data","type":"action","ref":""},{"name":"{{action.mobile_app_data}}","label":"action➛Mobile Applet Data","type":"action","ref":""},{"name":"{{step[1dce2acd-e9a2-450b-9c60-a727e5aa1d50].output_data}}","label":"step➛Create Templated Mobile App Step➛Output Data","type":"step","ref":""}]</label_cache>
+        <master>true</master>
+        <name>Create Templated Mobile App v2</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Create Templated Mobile App v2">9c32c418c70320102dcee010bdc260f5</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ae530458c70320102dcee010bdc26070</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:22:16</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=ae530458c70320102dcee010bdc26070"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ae530458c70320102dcee010bdc26070"/>
+    <sys_element_mapping action="delete_multiple" query="id=ae530458c70320102dcee010bdc26070"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>applet_launcher_sys_id</field>
+        <id>ae530458c70320102dcee010bdc26070</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>3e530458c70320102dcee010bdc2608d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:22:16</sys_updated_on>
+        <table>var__m_sys_hub_action_output_ae530458c70320102dcee010bdc26070</table>
+        <value>{{step[1dce2acd-e9a2-450b-9c60-a727e5aa1d50].output_data}}</value>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=ae530458c70320102dcee010bdc26070^sys_idNOT IN3a530458c70320102dcee010bdc2607b"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Create Templated Mobile App v2">ae530458c70320102dcee010bdc26070</action>
+        <cid>1dce2acd-e9a2-450b-9c60-a727e5aa1d50</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <inputs/>
+        <label>Create Templated Mobile App Step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Create Templated Object">429eae010f0010108c9c5019c4767e6e</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>3a530458c70320102dcee010bdc2607b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:11</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=3a530458c70320102dcee010bdc2607b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>3a530458c70320102dcee010bdc2607b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>ba530458c70320102dcee010bdc2607f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:11</sys_updated_on>
+        <value>mobile_app.v2</value>
+        <variable display_value="Object Type">6a203e410f0010108c9c5019c4767e98</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=3a530458c70320102dcee010bdc2607b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>input_data</field>
+        <id>3a530458c70320102dcee010bdc2607b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>76530458c70320102dcee010bdc2607f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:11</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_429eae010f0010108c9c5019c4767e6e</table>
+        <value>{{action.mobile_app_data}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>object_type</field>
+        <id>3a530458c70320102dcee010bdc2607b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>3a530458c70320102dcee010bdc2607f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:22:16</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_429eae010f0010108c9c5019c4767e6e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_action_input action="delete_multiple" query="model=ae530458c70320102dcee010bdc26070^sys_idNOT IN0ec423d45b03201083f30f216581c7c8"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=efbbc9b7-8181-453f-b20b-a3b1445d2dc3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[
+      (function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>mobile_app_data</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Mobile Applet Data</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create Templated Mobile App v2">ae530458c70320102dcee010bdc26070</model>
+        <model_id>ae530458c70320102dcee010bdc26070</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_ae530458c70320102dcee010bdc26070</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:47:11</sys_created_on>
+        <sys_id>0ec423d45b03201083f30f216581c7c8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 15:34:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_output action="delete_multiple" query="model=ae530458c70320102dcee010bdc26070^sys_idNOT INfe530458c70320102dcee010bdc26080"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=59dae91e-4fac-4a77-aab2-855d59dbe134</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[
+      (function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>applet_launcher_sys_id</element>
+        <element_prototype display_value="Output Data" element="output_data" name="var__m_sys_flow_step_definition_output_429eae010f0010108c9c5019c4767e6e">2e50fe410f0010108c9c5019c4767ede</element_prototype>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Applet Launcher Sys ID</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Create Templated Mobile App v2">ae530458c70320102dcee010bdc26070</model>
+        <model_id>ae530458c70320102dcee010bdc26070</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_ae530458c70320102dcee010bdc26070</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>fe530458c70320102dcee010bdc26080</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 15:34:41</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=fe530458c70320102dcee010bdc26080^sys_idNOT INf2530458c70320102dcee010bdc2608d"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>applet_launcher_sys_id</input_name>
+        <instance>fe530458c70320102dcee010bdc26080</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"applet_launcher_sys_id":{"scriptActive":false}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>f2530458c70320102dcee010bdc2608d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:22:16</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_ae530458c70320102dcee010bdc26070^sys_idNOT IN82c423d45b03201083f30f216581c7cd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>mobile_app_data</element>
+        <help/>
+        <hint/>
+        <label>Mobile Applet Data</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_ae530458c70320102dcee010bdc26070</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:47:11</sys_created_on>
+        <sys_id>82c423d45b03201083f30f216581c7cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Mobile Applet Data</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_input_ae530458c70320102dcee010bdc26070_mobile_app_data_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_ae530458c70320102dcee010bdc26070^sys_idNOT INb2530458c70320102dcee010bdc26086"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>applet_launcher_sys_id</element>
+        <help/>
+        <hint/>
+        <label>Applet Launcher Sys ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_ae530458c70320102dcee010bdc26070</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 01:22:16</sys_created_on>
+        <sys_id>b2530458c70320102dcee010bdc26086</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Applet Launcher Sys ID</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_documentation_var__m_sys_hub_action_output_ae530458c70320102dcee010bdc26070_applet_launcher_sys_id_en</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 01:22:16</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_type_definition action="update">
+        <sys_id>9c32c418c70320102dcee010bdc260f5</sys_id>
+        <latest_snapshot>ae530458c70320102dcee010bdc26070</latest_snapshot>
+    </sys_hub_action_type_definition>
+</record_update>

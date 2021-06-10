@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_page_element">
+    <sys_ux_page_element action="INSERT_OR_UPDATE">
+        <attrs/>
+        <children/>
+        <component display_value="sn-app-engine-studio">39b11dcf1ef8c4b844ba25b5cbd374e5</component>
+        <is_root>true</is_root>
+        <layout/>
+        <macroponent/>
+        <macroponent_config/>
+        <name>App Engine Studio Root</name>
+        <order>0</order>
+        <page display_value="App Engine Studio">fadf558477a700108a370870a81061bc</page>
+        <parent/>
+        <parent_slot/>
+        <picker/>
+        <picker_condition/>
+        <sys_class_name>sys_ux_page_element</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-09 17:39:16</sys_created_on>
+        <sys_id>5e20a98477a700108a370870a8106100</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>App Engine Studio Root</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ux_page_element_5e20a98477a700108a370870a8106100</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-06-23 19:21:17</sys_updated_on>
+        <tree_root/>
+    </sys_ux_page_element>
+    <sys_variable_value action="delete_multiple" query="document_key=5e20a98477a700108a370870a8106100"/>
+</record_update>

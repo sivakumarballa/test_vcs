@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="table" label="Table name" language="en" table="sn_app_eng_studio_sync_queue">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>table</element>
+            <help/>
+            <hint>Name of the table where the change took place.</hint>
+            <label>Table name</label>
+            <language>en</language>
+            <name>sn_app_eng_studio_sync_queue</name>
+            <plural>Table names</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-06-09 11:41:05</sys_created_on>
+            <sys_id>30fc698b532030106c4bddeeff7b12d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Table name</sys_name>
+            <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+            <sys_update_name>sys_documentation_sn_app_eng_studio_sync_queue_table_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-06-09 11:41:05</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

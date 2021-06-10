@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="synch_attachments=true,update_synch=true" extends="sys_metadata" label="Taxonomy" max_length="40" name="sn_app_eng_studio_taxonomy" type="collection">
+        <element attributes="encode_utf8=false" label="Category" mandatory="true" max_length="32" name="category" reference="sn_app_eng_studio_taxonomy_category" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="If this field is empty, the url will be the default form view for the associated table" label="Creator url" max_length="1024" name="creator_url" type="string"/>
+        <element label="Description" max_length="100" name="description" type="translated_text"/>
+        <element attributes="is_multi_text=false" dependent="table" dependent_on_field="table" label="Details" max_length="255" name="details" type="field_list"/>
+        <element attributes="edge_encryption_enabled=true" label="Editor url" max_length="1024" name="editor_url" type="string"/>
+        <element attributes="encode_utf8=false" hint="If provided, the Editor url will be based on this field and the Table name field" label="Editor form view" max_length="32" name="form_view" reference="sys_ui_view" reference_qual="javascript:new global.UiViewRefQual().getUiViews(current.table);" type="reference"/>
+        <element label="Help text" max_length="100" name="help_text" type="translated_text"/>
+        <element attributes="pdf_cell_type=image" hint="If no icon (.svg format) is provided, the icon will fall back to the associated Taxonomy Category's icon (if no icon is present there, a default icon will be used)" label="Icon" max_length="40" name="icon" type="user_image"/>
+        <element attributes="edge_encryption_enabled=true" label="Launch url" max_length="1024" name="launch_url" type="string"/>
+        <element default="javascript: current.getDisplayName();" dependent="table" label="Name" max_length="80" name="name" type="field_name"/>
+        <element hint="Override the objects standard name using a script" label="Name override" max_length="4000" name="name_override" type="script"/>
+        <element hint="Check this box to override the object's standard name using a script" label="Override name" max_length="40" name="override_name" type="boolean"/>
+        <element attributes="allow_public=true,base_start=true" display="true" hint="Table label will be used to surface the type of object in App Engine Studio" label="Table name" mandatory="true" max_length="80" name="table" table_reference="true" type="table_name"/>
+        <element hint="Table name to override label defined in type of App Engine Studio" label="Table name override" max_length="100" name="table_name_override" type="translated_field"/>
+        <element hint="If unchecked, the description of this taxonomy type will be pulled from sys_documentation" label="Use description" max_length="40" name="use_description" type="boolean"/>
+        <index name="index">
+            <element name="category"/>
+        </index>
+        <index name="index2">
+            <element name="form_view"/>
+        </index>
+    </element>
+</database>

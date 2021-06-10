@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.SyncConstants</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>All constants pertaining to AES syncing. </description>
+        <name>SyncConstants</name>
+        <script><![CDATA[var SyncConstants = {
+	SYNC_QUEUE_TABLE: "sn_app_eng_studio_sync_queue",
+	USER_SYNC_ENDPOINT: "/api/sn_app_eng_studio/v1/sync/users",
+	AES_USER_GROUP_ID: '72910dd8779050108a370870a81061a9',
+	USER_SYNC_JOB_ID: '9b088db0c7912010d447c17cf4c2601b',
+	AES_USER_ROLE_ID: "97f4a0c20f123300e54f3c71df767ea2",
+	QUEUED: "queued",
+	SYNCED: "synced",
+	FAILED: "failed",
+	SKIPPED: "skipped",
+	USER_ACCESS_GRANTED_JOB_NAME: "sn_app_eng_studio.notify_user_when_granted_aes_access",
+	LAST_PROCESSED_TABLE: 'sn_app_eng_studio_last_processed',
+	USER_ACCESS_GRANTED: 'user.access.granted'
+};
+	]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-21 16:05:26</sys_created_on>
+        <sys_id>533a83d4c7916010d447c17cf4c26092</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>SyncConstants</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_533a83d4c7916010d447c17cf4c26092</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 17:25:25</sys_updated_on>
+    </sys_script_include>
+</record_update>

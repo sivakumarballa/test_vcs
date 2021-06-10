@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDd7a4af94b1032010a258835125339eb0</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>e046257545b47c84712b8779a9abd0cb</scope_name>
+        <serialized_content>{"FlowDesigner:FDd7a4af94b1032010a258835125339eb0":{},"FlowDesigner:FDd7a4af94b1032010a258835125339eb0.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"default_value\":\"\",\"label\":\"Mobile Applet Data\",\"mandatory\":\"true\",\"uiUniqueId\":\"efbbc9b7-8181-453f-b20b-a3b1445d2dc3\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDd7a4af94b1032010a258835125339eb0\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:46:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9ba4af945b03201083f30f216581c7b0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>FDd7a4af94b1032010a258835125339eb0</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_complex_object_9ba4af945b03201083f30f216581c7b0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:10</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+</record_update>

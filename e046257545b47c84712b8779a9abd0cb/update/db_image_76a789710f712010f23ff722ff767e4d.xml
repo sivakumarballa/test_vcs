@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>3bc02cd00f122010f23ff722ff767eaa</image>
+        <name>aes_resources_portal.svg</name>
+        <size_bytes>2313</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-19 18:53:16</sys_created_on>
+        <sys_id>76a789710f712010f23ff722ff767e4d</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>aes_resources_portal.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_76a789710f712010f23ff722ff767e4d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-08 20:43:52</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>f88d20e7f13f330bdca24d705fbf5cd72a8ae31506cb4c0b97fd8c70372649ea</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2313</size_bytes>
+        <size_compressed>737</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-08 20:43:52</sys_created_on>
+        <sys_id>3bc02cd00f122010f23ff722ff767eaa</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-08 20:43:52</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>76a789710f712010f23ff722ff767e4d</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="3bc02cd00f122010f23ff722ff767eaa">3bc02cd00f122010f23ff722ff767eaa</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-08 20:43:52</sys_created_on>
+        <sys_id>7bc02cd00f122010f23ff722ff767eaa</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>zVY9b9swEN3zKwh2Ls3jN4soQKsk0NJVQ7cgVmMDrh04bpz++x4/jlayBHAzdBHv8Xjv7p5EUpdPzw/suF4eVh1XLnC2mtYPq0PHwXjOntfT8dvupeOSSYZulmd/rjebjm9324mzl1+b7VPHV4fD45fF4ng8iqMWu/3DQkkpF0jOry4uH+8Oqxz1ef97M3V8ep62u+WSs/vN+vHt3LLj30NkSvXBChecRpMFfJqCkhlGkKZHC6QXGgyjpQCSYTAOQ7SjkX20TLvii76M2mAY4DCAh1GFHofGDi5kQswJzuIwhPiDWv5009/KW+CLc3qKgRnd41PHmkrKZDDt0TQ4DBBkD0HnAtJsctJitI0eAWKfTFAqr6LVoCzaMo1Dkoa40zympOXJhDga/R+1ZI0I3g4xvCpLRX1t5HllAWiRGjdWKNs35IVVAV8rgFAeK49Ce1RNxmqiaE54fPHNkys7BRIutISUiB5QVwqGnC3TZrNvCauH6qHAebWt/2Cjjtdn9q+sCMFToYSoDfzU8d1QkwqEd6pJAFGYcPIC7hk9iyVcla2odVKDa6NEXWWoeclZq6LYec0fo0J9Qc6W9ASxCiXTEWCF98zp+rpc8WaIBwM6McbjrLVtkfdizlBh5h89bswyEaTAZLj3anQAVvjQGmqivqZPvlpYC6vYx7FQnzaF8c75r2fKYUwuIZb0FQUsIrWCsjuD2OfUYFz2ZvRWDFpTmyWGCjM9HlOmhORJAJsjiQEg01dRChpKzp4qoTWlzsZAMA1jSXaSR8p4e2PP/VocfnhNnoqoObxlYCaPDNlb5dE+bwaNF8dMHjzl5gwVvpanTLbmKgO1nnmbPDlnT5XQmlJnYyD4njz76f7A8FoHbQTm4exPx8vG5PQzYMzpXyDkPbnHAP0hW/P9613HcilYISXgFYOjwyM0XeUQ003uVYB/ucln90v6S7m6+Avz5KyZCQkAAA==</data>
+        <length>972</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="3bc02cd00f122010f23ff722ff767eaa">3bc02cd00f122010f23ff722ff767eaa</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-08 20:43:52</sys_created_on>
+        <sys_id>fbc02cd00f122010f23ff722ff767eaa</sys_id>
+    </sys_attachment_doc>
+</record_update>

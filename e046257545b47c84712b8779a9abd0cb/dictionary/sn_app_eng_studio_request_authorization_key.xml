@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Request Authorization Key" max_length="40" name="sn_app_eng_studio_request_authorization_key" type="collection">
+        <element attributes="edge_encryption_enabled=true" hint="The salted key value used in a request." label="Key" mandatory="true" max_length="255" name="key" type="string"/>
+        <index name="index" unique="true">
+            <element name="key"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/generic/redirect_details</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GET Redirect Details</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var aesUtils = new AesUtils();
+    var deploymentHelpers = new DeploymentHelpers();
+    var activePipelineRecord;
+
+    try {
+        activePipelineRecord = deploymentHelpers.getActivePipelineRecord();
+    } catch (e) {
+		throw new sn_ws_err.ServiceError()
+			.setStatus(404)
+			.setMessage(gs.getMessageLang("The setup for the sn_app_eng_studio_pipeline table is incomplete. Please ensure that you have an active record, with dev_environment and prod_environment setup.", "en"))
+			.setDetail(gs.getMessage("The setup for the sn_app_eng_studio_pipeline table is incomplete. Please ensure that you have an active record, with dev_environment and prod_environment setup."));
+    }
+
+    var urls = {
+        currentInstanceUrl: gs.getProperty('glide.servlet.uri'),
+        prodInstanceUrl: activePipelineRecord.prod_environment.getRefRecord().getValue('instance_url'),
+        devInstanceUrl: activePipelineRecord.dev_environment.getRefRecord().getValue('instance_url'),
+    };
+
+    // remove trailing '/' before comparing the user's currentInstanceUrl with the prodInstanceUrl
+    for (url in urls) {
+        urls[url] = aesUtils.removeTrailingSlash(urls[url]);
+    }
+
+    if (!urls.prodInstanceUrl || !urls.devInstanceUrl) {
+		throw new sn_ws_err.ServiceError()
+			.setStatus(500)
+			.setMessage(gs.getMessageLang("The setup for the sn_app_eng_studio_pipeline table is incomplete. Please ensure that you have an active record, with dev_environment and prod_environment setup.", "en"))
+			.setDetail(gs.getMessage("The setup for the sn_app_eng_studio_pipeline table is incomplete. Please ensure that you have an active record, with dev_environment and prod_environment setup."));
+    }
+
+    if (urls.prodInstanceUrl === urls.devInstanceUrl) {
+		throw new sn_ws_err.ServiceError()
+			.setStatus(500)
+			.setMessage(gs.getMessageLang("The setup for the sn_app_eng_studio_pipeline table is incorrect. The dev_environment and prod_environment cannot be the same.", "en"))
+			.setDetail(gs.getMessage("The setup for the sn_app_eng_studio_pipeline table is incorrect. The dev_environment and prod_environment cannot be the same."));
+    }
+
+    response.setBody({
+        isProdInstance: urls.currentInstanceUrl === urls.prodInstanceUrl,
+        currentInstanceUrl: urls.currentInstanceUrl,
+        prodUrl: urls.prodInstanceUrl,
+        devUrl: urls.devInstanceUrl,
+    });
+
+    response.setStatus(200);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/generic/redirect_details</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/redirect_details</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-18 21:51:03</sys_created_on>
+        <sys_id>b4bd5a79c3202010a9f5e548fa40dd3a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>GET Redirect Details</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_b4bd5a79c3202010a9f5e548fa40dd3a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 22:39:34</sys_updated_on>
+        <web_service_definition display_value="Generic API">37cc9e39c3202010a9f5e548fa40ddef</web_service_definition>
+        <web_service_version display_value="v1">f7ec1279c3202010a9f5e548fa40dd4d</web_service_version>
+    </sys_ws_operation>
+</record_update>

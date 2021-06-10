@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.FileDataDecorator</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Decorates the file data objects with data from the taxonomy definition</description>
+        <name>FileDataDecorator</name>
+        <script><![CDATA[var FileDataDecorator = (function() {
+
+    return {
+
+        decorate: function( /* GlideRecord */ fileObjectRecord, /* GlideRecord */ taxonomyDefinitionRecord, /* Object */ referencedData) {
+
+            return {
+                "name": getFileObjectName(fileObjectRecord, taxonomyDefinitionRecord, referencedData.taxonomyDetailRecord),
+                "name_value": fileObjectRecord.getValue("name"),
+                "sys_id": fileObjectRecord.getValue("sys_id"),
+                "scope": {
+                    value: fileObjectRecord.getValue("sys_scope"),
+					display_value: fileObjectRecord.getDisplayValue("sys_scope"),
+                },
+                "updated": ValueDisplayValueModel(fileObjectRecord, "sys_updated_on"),
+                "updated_by": ValueDisplayValueModel(fileObjectRecord, "sys_updated_by"),
+                "application": fileObjectRecord.getValue("sys_scope"),
+                "description": getDescription(fileObjectRecord, taxonomyDefinitionRecord),
+                "taxonomy_category": taxonomyDefinitionRecord.getValue("category"),
+                "taxonomy_definition": taxonomyDefinitionRecord.getValue("sys_id"),
+                "editor_url": getFileObjectEditorUrl(fileObjectRecord, taxonomyDefinitionRecord),
+                "launch_url": getFileObjectLaunchUrl(fileObjectRecord, taxonomyDefinitionRecord),
+                "details": getFileObjectDetails(fileObjectRecord, taxonomyDefinitionRecord),
+                "is_referenced": referencedData.isReference
+            };
+
+        }
+    };
+	
+	function validDescription(descriptionObj){
+		return descriptionObj.display_value && descriptionObj.value;
+	}
+
+    function getDescription(fileObjectRecord, taxonomyDefinitionRecord) {
+		var file_description = ValueDisplayValueModel(fileObjectRecord, "description");
+		if(validDescription(file_description))
+			return file_description;
+		
+		var file_short_description = ValueDisplayValueModel(fileObjectRecord, "short_description");
+		if(validDescription(file_short_description))
+			return file_short_description;
+		
+		return ValueDisplayValueModel(taxonomyDefinitionRecord, "description");
+    }
+
+    function evaluateScript(/* GlideRecord */ fileObjectRecord, /* GlideRecord */ recordWithScript, /* String */ fieldName){
+      var evaluator = new GlideScopedEvaluator();
+      return evaluator.evaluateScript(
+          recordWithScript,
+          fieldName, {
+              globalFileObjectRecord: fileObjectRecord
+          }
+      );
+    }
+
+    function getFileObjectName( /* GlideRecord */ fileObjectRecord, /* GlideRecord */ taxonomyDefinitionRecord, /* GlideRecord */ taxonomyDetailRecord) {
+		if (taxonomyDetailRecord){
+          return evaluateScript(fileObjectRecord, taxonomyDetailRecord, 'name_override');
+		}
+        if (!taxonomyDefinitionRecord.override_name || gs.nil(taxonomyDefinitionRecord.name_override)) {
+            return getDisplayValue(fileObjectRecord, taxonomyDefinitionRecord.name);
+        } else {
+            return evaluateScript(fileObjectRecord, taxonomyDefinitionRecord, 'name_override');
+        }
+
+    }
+
+    function getFileObjectDetails(fileObjectRecord, taxonomyDefinitionRecord) {
+
+        var details = {};
+
+        var commaSeparatedDetails = taxonomyDefinitionRecord.getValue("details");
+
+        var fieldNames = !gs.nil(commaSeparatedDetails) ? commaSeparatedDetails.split(',') : [];
+
+        for (i = 0; i < fieldNames.length; i++) {
+
+            var fieldName = fieldNames[i];
+            var fieldLabel = gs.nil(fileObjectRecord.getElement(fieldName)) ? fieldName : fileObjectRecord.getElement(fieldName).getLabel();
+
+            var detailsObj = {
+                "label": fieldLabel,
+                "value": "",
+                "display_value": ""
+            };
+
+            if (AccessValidator.canReadField(fileObjectRecord, fieldName)) {
+                detailsObj["value"] = fileObjectRecord.getValue(fieldName);
+                detailsObj["display_value"] = fileObjectRecord.getDisplayValue(fieldName);
+            }
+
+            details[fieldName] = detailsObj;
+        }
+
+        return details;
+    }
+
+    function getFileObjectEditorUrl(fileObjectRecord, taxonomyDefinitionRecord) {
+
+        var editorFormat = taxonomyDefinitionRecord.getValue("editor_url");
+
+        if (!gs.nil(editorFormat)) {
+            var editorUrl = getInterpolatedUrl(editorFormat, fileObjectRecord, taxonomyDefinitionRecord);
+            var queryParams = {};
+
+            queryParams[CreatorStudioConstants.sysparms.REFERRING_URL] = CreatorStudioConstants.clientParams.REFERRING_URL;
+
+            return UriUtil.createCanonicalizedUri(editorUrl, queryParams);
+        }
+
+        return getFormViewUrl(fileObjectRecord, taxonomyDefinitionRecord);
+
+    }
+
+    function getFileObjectLaunchUrl(fileObjectRecord, taxonomyDefinitionRecord) {
+
+        var launchFormat = taxonomyDefinitionRecord.getValue("launch_url");
+
+        if (!gs.nil(launchFormat)) {
+			if (taxonomyDefinitionRecord.getValue("table") === "sys_ux_page_registry") {
+				var aesUtils = new AesUtils();
+				launchFormat = aesUtils.getVendorUrlPrefix(fileObjectRecord.sys_scope.getRefRecord().getValue("scope")) + launchFormat;
+			}
+            var launchUrl = getInterpolatedUrl(launchFormat, fileObjectRecord, taxonomyDefinitionRecord);
+
+            return UriUtil.createCanonicalizedUri(launchUrl, {});
+        }
+
+        return "";
+
+    }
+
+    function getFormViewUrl(fileObjectRecord, taxonomyDefinitionRecord) {
+
+        var tableName = taxonomyDefinitionRecord.getValue("table");
+
+        var formView = "";
+
+        if (!gs.nil(taxonomyDefinitionRecord.getElement("form_view")))
+            formView = taxonomyDefinitionRecord.getElement("form_view").getRefRecord().getValue("name") || "";
+
+        var queryParams = {};
+
+        queryParams["sys_id"] = fileObjectRecord.getValue("sys_id");
+        queryParams[CreatorStudioConstants.sysparms.VIEW] = formView;
+        queryParams[CreatorStudioConstants.sysparms.REFERRING_URL] = CreatorStudioConstants.clientParams.REFERRING_URL;
+
+        return UriUtil.createDefaultTableUri(tableName, queryParams);
+
+    }
+
+    function getInterpolatedUrl(rawUrl, fileObjectRecord, taxonomyDefinitionRecord) {
+
+        var interpolatedUrl = rawUrl;
+
+        // Find the ${} parameters embedded in the url
+        var interpolatedFieldsRegEx = /\$\{(.*?)}/g;
+
+        var skipEncodeRegex = /skipencode:/i;
+
+        var match = interpolatedFieldsRegEx.exec(rawUrl);
+
+        while (match !== null) {
+
+            var replacementStr = match[0];
+
+            /**
+             * If the string contains 'skipencode:', we will not call gs.urlEncode.
+             * This is required if we want to include slashes in a path param and want
+             * that param to extend the url.
+             *
+             * Ex. launch_url: '/now/${skipencode:path}'
+             *     with encoding: '/now/uxf%2Fdemo'
+             *.    without encoding: '/now/uxf/demo'
+             */
+            var skipEncode = match[1].search(skipEncodeRegex) !== -1;
+            var interpolatedFieldName = match[1].replace(skipEncodeRegex, '');
+
+            if (AccessValidator.canReadField(fileObjectRecord, interpolatedFieldName)) {
+
+                // TODO: Do we need an canRead() check here for the value?
+
+                var interpolatedFieldValue = fileObjectRecord.getValue(interpolatedFieldName);
+
+                if (!skipEncode) {
+                    interpolatedFieldValue = gs.urlEncode(interpolatedFieldValue);
+                }
+
+                interpolatedUrl = interpolatedUrl.replace(replacementStr, interpolatedFieldValue);
+
+            } else {
+                gs.info("Field '" + interpolatedFieldName + "' could not be found'");
+            }
+
+            match = interpolatedFieldsRegEx.exec(rawUrl);
+
+        }
+
+        return interpolatedUrl;
+
+    }
+
+    function getDisplayValue(record, fieldName) {
+        return AccessValidator.canReadField(record, fieldName) ? record.getDisplayValue(fieldName) : "";
+    }
+
+    function getValueAndDisplayValue(record, fieldName) {
+
+        var emptyValues = {
+            "value": "",
+            "display_value": ""
+        };
+
+        return AccessValidator.canReadField(record, fieldName) ? ValueDisplayValueModel(record, fieldName) : emptyValues;
+
+    }
+
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-28 22:12:22</sys_created_on>
+        <sys_id>bf095f650f2333004c885019c4767e7a</sys_id>
+        <sys_mod_count>189</sys_mod_count>
+        <sys_name>FileDataDecorator</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_bf095f650f2333004c885019c4767e7a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-21 18:17:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

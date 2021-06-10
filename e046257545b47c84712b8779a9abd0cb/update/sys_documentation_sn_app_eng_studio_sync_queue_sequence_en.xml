@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="sequence" label="Sequence" language="en" table="sn_app_eng_studio_sync_queue">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>sequence</element>
+            <help/>
+            <hint>Timestamp for when the change happened. This determines the order of the queue.</hint>
+            <label>Sequence</label>
+            <language>en</language>
+            <name>sn_app_eng_studio_sync_queue</name>
+            <plural>Sequences</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-06-09 11:41:05</sys_created_on>
+            <sys_id>b4fc698b532030106c4bddeeff7b12d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Sequence</sys_name>
+            <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+            <sys_update_name>sys_documentation_sn_app_eng_studio_sync_queue_sequence_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-06-09 11:41:05</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

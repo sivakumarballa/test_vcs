@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_template_input_var">
+    <sys_app_template_input_var action="INSERT_OR_UPDATE">
+        <default/>
+        <description/>
+        <flow_input_variable display_value="available_offline">5913d59120212010fa9badcfe9bc0532</flow_input_variable>
+        <label/>
+        <mandatory>true</mandatory>
+        <name>available_offline</name>
+        <sys_class_name>sys_app_template_input_var</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-05 20:10:21</sys_created_on>
+        <sys_id>4c13591520212010fa9badcfe9bc05ce</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>available_offline</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_app_template_input_var_4c13591520212010fa9badcfe9bc05ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-05 20:10:21</sys_updated_on>
+        <template display_value="Mobile">1681115120212010fa9badcfe9bc052d</template>
+        <type>string</type>
+    </sys_app_template_input_var>
+</record_update>

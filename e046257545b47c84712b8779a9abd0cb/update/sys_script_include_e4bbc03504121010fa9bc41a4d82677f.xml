@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.AesAppDeploymentErrorEmail</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Script to generate email body for error during app deployment.</description>
+        <name>AesAppDeploymentErrorEmail</name>
+        <script><![CDATA[var AesAppDeploymentErrorEmail = Class.create();
+AesAppDeploymentErrorEmail.prototype = {
+    initialize: function(flowContextId, deploymentRequest, environment) {
+		this.flowContextId = flowContextId;
+		this.deploymentRequest = deploymentRequest;
+		this.environment = environment;
+	},
+    getBody: function() {
+		var aesEmailScript = new AesEmailScript();
+        var style = aesEmailScript.getStyles();
+        var trailingSlashRegex = aesEmailScript.getTrailingSlashRegex();
+		var path = '/$flow-designer.do?sysparm_nostack=true#/operations/context/';
+		var flowContextId = this.flowContextId;
+        var deploymentRequest = this.deploymentRequest;
+		var environment = this.environment;
+        var instanceUrl =
+            gs.getProperty("glide.servlet.uri") &&
+            gs.getProperty("glide.servlet.uri").replace(trailingSlashRegex, "");
+        var appName = deploymentRequest.app_name;
+		var userName = deploymentRequest.sys_updated_by;
+        var url = instanceUrl && instanceUrl + path + flowContextId;
+		
+        var footerMessage = gs.getMessage('You have received this email to notify you about an error in recent app deployment to {0}.', [environment]);
+        var headerMessage = gs.getMessage('Error in deployment of {0} app to {1}.', [appName, environment]);
+        var innerBody = '';
+
+        innerBody += '<div>' + gs.getMessage('There was an error that occurred in the automated deployment process triggered from the action on the sn_app_eng_studio_deployment_request table.') + '</div>';
+        innerBody += '<br />';
+		innerBody += '<div style="' + style.row + '">';
+		innerBody += '<div style="' + style.label + '">' + gs.getMessage('App Name:') + '</div>';
+		innerBody += '<div style="' + style.labelValue + '">' + appName + '</div>';
+		innerBody += '</div>';
+		innerBody += '<div style="' + style.row + '">';
+		innerBody += '<div style="' + style.label + '">' + gs.getMessage('Deploying to Environment:') + '</div>';
+		innerBody += '<div style="' + style.labelValue + '">' + environment + '</div>';
+		innerBody += '</div>';
+		innerBody += '<br />';
+        innerBody += '<a style="' + style.link + '" href="' + url + '">' + gs.getMessage('Review the error') + '</a>';
+        innerBody += '<br />';
+
+        return aesEmailScript.getBody(userName, headerMessage, innerBody, footerMessage);
+    },
+    type: 'AesAppDeploymentErrorEmail'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-29 15:03:19</sys_created_on>
+        <sys_id>e4bbc03504121010fa9bc41a4d82677f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>AesAppDeploymentErrorEmail</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_e4bbc03504121010fa9bc41a4d82677f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-29 18:10:46</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Project" max_length="40" name="sn_app_eng_studio_project" type="collection">
+        <element attributes="encode_utf8=false" default="javascript:gs.getUserID()" label="Created by" max_length="32" name="created_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="4000" name="description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:new GlideDateTime();" label="Last opened" max_length="40" name="last_opened" type="glide_date_time"/>
+        <element attributes="encode_utf8=false" default="javascript:gs.getUserID()" label="Last opened by" max_length="32" name="last_opened_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="auto_number"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="255" name="short_description" type="string"/>
+        <element default="global" label="Domain" max_length="32" name="sys_domain" reference="domain" type="domain_id"/>
+        <index name="index">
+            <element name="sys_domain"/>
+        </index>
+        <index name="index2">
+            <element name="last_opened_by"/>
+        </index>
+        <index name="index3">
+            <element name="created_by"/>
+        </index>
+    </element>
+</database>

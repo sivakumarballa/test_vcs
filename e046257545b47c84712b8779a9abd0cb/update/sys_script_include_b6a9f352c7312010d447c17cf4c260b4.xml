@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.RequestAuthService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Service used to verify that a request is coming from a known source.</description>
+        <name>RequestAuthService</name>
+        <script><![CDATA[var RequestAuthService = Class.create();
+RequestAuthService.prototype = {
+	initialize: function(salt) {
+		this.salt = salt || SecretAESConstants.DEFAULT_SALT;
+	},
+	
+	/**
+	 * Returns returns key that is generated from the given payload. It will produce the same key given the same input.
+	 * @param {String} payload - string used to create the encrytped key
+	 * @returns {String} returns encrypted string
+	 */
+	generateKey: function(payload) {
+		if (!payload) { return null; }
+
+		var certificateEncryption = new CertificateEncryption;
+		var key = gs.base64Encode(payload);
+
+		return certificateEncryption.generateMac(key, 'HmacSHA256');
+	},
+	
+	/**
+	 * Returns the provided key with the <String> salt value prepended.
+	 * @param {String} key - string used to append the salt to
+	 * @returns {String|null} returns the salted key
+	 */
+	saltKey: function(key) {
+		if (!key) { return null; }
+		
+		var saltedKey = this.salt + key;
+		return saltedKey;
+	},
+	
+	/**
+	 * Adds the salted key to the database
+	 * @param {String} saltedKey - string that insert in to the request_authorization_key table
+	 * @returns {String|null} sysId of the new request_authorization_key record.
+	 */
+	insertKey: function(saltedKey) {		
+		if (!saltedKey) { return null; }
+
+		// hashing saltedKey to prevent exposure of salt in db
+		var hashedSaltedKey = this.generateKey(saltedKey);
+		var grAuthKey = new GlideRecord('sn_app_eng_studio_request_authorization_key');
+
+		grAuthKey.setValue('key', hashedSaltedKey);
+
+		return grAuthKey.insert();
+	},
+	
+	/**
+	 * Generates a SHA from the provided payload and then prepends the salt to SHA. Next the
+	 * salted SHA is inserted into request_authorization_key table.
+	 * @param {String} payload - unique string that is used to create the encrypted key
+	 * @returns {String|null} returns the unsalted key the was generated from the payload
+	 */	
+	createKey: function(payload) {
+		if (!payload) { return null; }
+		
+		var key = this.generateKey(payload);
+		var saltedKey =  this.saltKey(key);
+		this.insertKey(saltedKey);
+		
+		return key;
+	},
+	
+	/**
+	 * Determines if the provided key exist in the request_authorization_key. Answers
+	 * the question, did this enviroment send this request? If the key is found the record
+	 * is then deleted. This ensures the key is single use.
+	 * @param {String} saltedKey - key used to lookup the request_authorization_key record
+	 * @returns {Boolean} Returns boolean to indicate if the provided key was found or not.
+	 */	
+	hasKey: function(saltedKey) {
+		if (!saltedKey) { return false; }
+		
+		// hashing saltedKey to prevent exposure of salt in db
+		var hashedSaltedKey = this.generateKey(saltedKey);
+		var grAuthKey = new GlideRecord('sn_app_eng_studio_request_authorization_key');
+		var hasKey = grAuthKey.get('key', hashedSaltedKey);
+
+		if (hasKey) {
+			this.destroyKey(grAuthKey.getValue('sys_id'));
+		}
+		
+		return hasKey;
+	},
+	
+	/**
+	 * Deletes the request_authorization_key record for the provided sys_id
+	 * @param {String} sys_id of the record to delete
+	 * @returns {Void}
+	 */	
+	destroyKey: function(sysId) {
+		var grAuthKey = new GlideRecord('sn_app_eng_studio_request_authorization_key');
+		
+		if(grAuthKey.get(sysId)) {
+			grAuthKey.deleteRecord();		   
+		}
+	},
+
+	/**
+	 * Makes a call to the authorized_request endpoint and verifies the salted key
+	 * can be trusted. Queries table sn_app_eng_studio_request_authorization_key on specified `environment`
+	 * @param {String} environment - column in sn_app_eng_studio_pipeline that defines where the API will be called
+	 * @param {String} authKey - unsalted key that's used to confirm true
+	 * @returns {Boolean}
+	 */	
+	isAuthorized: function(environment, authKey) {
+		if (!environment || !authKey) { return false; }
+
+		try {
+			var saltedKey = this.saltKey(authKey);
+			var pipelineService = new PipelineService();
+			var authorizedRequest = pipelineService.buildRequest(
+				"GET",
+				environment,
+				'/api/sn_app_eng_studio/authorization/authorized_request',
+				{ requestHeaders: { "x-access-token": saltedKey } }
+			);
+
+			var authorizedResponse = authorizedRequest.execute();
+
+			if (authorizedResponse.haveError()) {
+				var error = new Error(authorizedResponse.getErrorMessage());
+				error.code = authorizedResponse.getStatusCode();
+
+				throw error;
+			}
+
+			var body = JSON.parse(authorizedResponse.getBody());
+
+			return !!(body && body.result.isAuthorized);
+
+		} catch(ex) {
+			gs.warn(ex.toString());
+
+			return false;
+		}
+
+
+	},
+
+    type: 'RequestAuthService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-21 21:09:04</sys_created_on>
+        <sys_id>b6a9f352c7312010d447c17cf4c260b4</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>RequestAuthService</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>protected</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_b6a9f352c7312010d447c17cf4c260b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-29 20:46:57</sys_updated_on>
+    </sys_script_include>
+</record_update>

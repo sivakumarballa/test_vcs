@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="synch_attachments=true,update_synch=true" extends="sys_metadata" label="Taxonomy Details" max_length="40" name="sn_app_eng_studio_taxonomy_details" type="collection">
+        <element hint="Override the objects standard name using a script" label="Name override" max_length="4000" name="name_override" type="script"/>
+        <element hint="Check this box to enable overriding the object's standard name using a script" label="Name override enabled" max_length="40" name="name_override_enabled" type="boolean"/>
+        <element hint="Retrieves additional data for taxonomy record based on the script" label="References script" max_length="4000" name="references_script" type="script"/>
+        <element attributes="encode_utf8=false" hint="Taxonomy record" label="Taxonomy" max_length="32" name="taxonomy_id" reference="sn_app_eng_studio_taxonomy" type="reference"/>
+        <index name="index">
+            <element name="taxonomy_id"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/plugin_activations/mobile_offline_active</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Mobile Offline Plugin Activation Check</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	var isActive = GlidePluginManager.isActive('com.glide.sg.offline');
+	response.setBody({ active: isActive });
+	response.setStatus(200);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/plugin_activations/mobile_offline_active</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/mobile_offline_active</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-10-14 17:59:32</sys_created_on>
+        <sys_id>227859260f7f1010f23ff722ff767e17</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Mobile Offline Plugin Activation Check</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_227859260f7f1010f23ff722ff767e17</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-05 20:46:23</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Plugin Activations">f9f715260f7f1010f23ff722ff767e29</web_service_definition>
+        <web_service_version display_value="v1">d3940d53c302201085c091294440dd1a</web_service_version>
+    </sys_ws_operation>
+</record_update>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Allows App Engine Studio users to launch a mobile app via App Engine Studio's UI. </description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>true</is_private>
+        <name>sn_app_eng_studio.mobile_studio_access</name>
+        <read_roles>admin</read_roles>
+        <suffix>mobile_studio_access</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 20:29:55</sys_created_on>
+        <sys_id>d3edf4db0f502010f23ff722ff767efc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sn_app_eng_studio.mobile_studio_access</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_properties_d3edf4db0f502010f23ff722ff767efc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-05 17:36:42</sys_updated_on>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles>admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=d3edf4db0f502010f23ff722ff767efc"/>
+</record_update>

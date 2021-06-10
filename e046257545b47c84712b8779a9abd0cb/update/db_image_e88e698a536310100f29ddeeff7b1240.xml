@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>43ae298a536310100f29ddeeff7b12f5</image>
+        <name>aes_submit_tourpoint.svg</name>
+        <size_bytes>1029</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-30 20:00:41</sys_created_on>
+        <sys_id>e88e698a536310100f29ddeeff7b1240</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>aes_submit_tourpoint.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_e88e698a536310100f29ddeeff7b1240</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-30 20:00:46</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>7e4274e97ccb7b98e0656773cbc5bfa4ba110c8fcf91ccb2463569dab8bf4e63</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>1029</size_bytes>
+        <size_compressed>511</size_compressed>
+        <state>available</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-30 20:00:46</sys_created_on>
+        <sys_id>43ae298a536310100f29ddeeff7b12f5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>guest</sys_updated_by>
+        <sys_updated_on>2021-06-10 04:32:44</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>e88e698a536310100f29ddeeff7b1240</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="43ae298a536310100f29ddeeff7b12f5">43ae298a536310100f29ddeeff7b12f5</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-30 20:00:46</sys_created_on>
+        <sys_id>83ae298a536310100f29ddeeff7b12f5</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>rVNNTxsxEL3zKyz33Ml8euyKRYKliAO99tAbKimJmiYIUsLP73gbGiL11q5Wst58vHnjGZ8+Pd+n3fJuuxhy0ZwW8+X9Yjtkk5yel/PdxeZlyJgwFU3d9m25Wg15vVnPc3r5sVo/DXmx3T58mM12ux3sBDaP9zNGxFkQ57OT04fb7SLdDfmTKWBpiQpUZRpNoLkkh0IkkrQAubeEQOIecVLAkCnhKAhqUsOFhR25JlaoTC0xNG1WEhMot+ByLsIjNWjVPUUlJNFEFbjWGlio1zcjn4B5G4mgeDS3xxOJUiRFuVoOUMGl1PENrk29+6XTkQEaT/FaQnZgJrTxjV8DH/gMylvgtdkogF5QumBU7neBJb7EHJo1hsAOUUTG0EZNkSiJgmL0alALR3vSeydL1LmsJcVrDR4mHePk36b4Q02TKToqd2weV7zHPdS5HvlrQZ9SKWobd2KjGEMbrYLpPrnGWaSfXZk3o744XEF6f5OnUe/H3WOhGlQpIdZjkFHmeEW+vG7bO8R29dHy7HidplFWttEYEKt3LIU1aQhpJAdcX0OvTQ+sfnV+cXl+zCoClow+s+f0tH3cfJ9HIDe5VHw1vN+/FvljWC3X86+3D0N+3Pxc3/2FkP1G40LsP3FGS2I3e+Z/4+yv9OzkF6DMJXcFBAAA</data>
+        <length>668</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="43ae298a536310100f29ddeeff7b12f5">43ae298a536310100f29ddeeff7b12f5</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-30 20:00:46</sys_created_on>
+        <sys_id>07ae298a536310100f29ddeeff7b12f5</sys_id>
+    </sys_attachment_doc>
+</record_update>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/applications/{application_sys_id}/{application_version}/status</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Application Status</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var appStatusKey = '';
+	var applicationSysId = request.pathParams.application_sys_id;
+	var applicationVersion = request.pathParams.application_version;
+	var applicationStatusHelper = new ApplicationStatusHelper();
+
+	var setResponse = function(appStatusKey, lastSubmitDate) {
+		response.setBody({
+			status: applicationStatusHelper.appStatusMapping[appStatusKey],
+			last_published_date: lastSubmitDate
+		});
+		response.setStatus(200);
+	};
+	
+	var getDeploymentRequestState = function(appSysId, appVersion) {
+		var appParams = {
+			application_sys_id: appSysId,
+			application_version: appVersion,
+		};
+		var deploymentHelpers = new DeploymentHelpers;
+		var getDeploymentRequestResponse = deploymentHelpers.getDeploymentRequestResponse('sn_app_eng_studio.get_deployment_request_subflow', appParams);
+		var result = [];
+
+		if (getDeploymentRequestResponse.has_error) {
+			gs.info("Error occurred in sys_ws_operation: Get Deployment Request\n" + getDeploymentRequestResponse.error_message + "\n" + "Deployment Request Record with app_sys_id " + appSysId + " and app version " + appVersion + " not found.");
+			throw new sn_ws_err.ServiceError()
+				.setStatus(getDeploymentRequestResponse.status_code)
+				.setMessage(gs.getMessageLang("Failed to retrieve Deployment Request Record with app_sys_id {0} and app version {1}.", "en", [appSysId, appVersion]))
+				.setDetail(gs.getMessage("Failed to retrieve Deployment Request Record with app_sys_id {0} and app version {1}.", [appSysId, appVersion]));
+		}
+		
+		try {
+			result = JSON.parse(getDeploymentRequestResponse.body).result || [];
+		} catch (parsingError) {
+			throw new sn_ws_err.ServiceError()
+				.setStatus(500)
+				.setMessage(gs.getMessageLang("Error parsing deployment request response", "en"))
+				.setDetail(gs.getMessage("Error parsing deployment request response"));
+		}
+
+		if (!result.length) {
+			throw new sn_ws_err.ServiceError()
+				.setStatus(404)
+				.setMessage(gs.getMessageLang("Deployment Request Record with app_sys_id {0} and app version {1} not found", "en", [applicationSysId, applicationVersion]))
+				.setDetail(gs.getMessage("Deployment Request Record with app_sys_id {0} and app version {1} not found", [applicationSysId, applicationVersion]));
+		}
+
+		return result[0].state;
+	};
+
+	// Checks for updates made to the application. Example: adding or updating tables
+	var lastSubmitDate = '';
+
+	var appDetailsRecord = new GlideRecord(CreatorStudioConstants.appDetailsTable.NAME);
+	if (!appDetailsRecord.get("application", applicationSysId)) {
+		// `0` is the in_development status for consistency
+		setResponse(0, lastSubmitDate);
+		return;
+	}
+
+	// Using the displayValue to take the user's current timezone into account
+	lastSubmitDate = appDetailsRecord.getDisplayValue("submitted_on");
+
+	// If the app has never been published we know it is still in development
+	if (!lastSubmitDate) {
+		// `0` is the in_development status for consistency
+		setResponse(0, lastSubmitDate);
+		return;
+	}
+
+	// Checks for updates made to application properties. Example: updating short description
+	var sysAppChanged = new GlideRecord('sys_app');
+	sysAppChanged.addEncodedQuery("sys_updated_on>javascript:gs.dateGenerate('"+ lastSubmitDate +"')");
+	sysAppChanged.addQuery('sys_id', applicationSysId);
+	// we have to filter out admin updates because our flows updates sys_app after publishing.
+	sysAppChanged.addQuery('sys_updated_by', '!=', 'admin');
+	sysAppChanged.setLimit(1);
+	sysAppChanged.query();
+
+	if(sysAppChanged.next()){
+		// `0` is the in_development status for consistency
+		setResponse(0, lastSubmitDate);
+		return;
+	}
+	
+	var sysMetaDataEntries = new GlideRecord('sys_metadata');
+	sysMetaDataEntries.setLimit(1);
+	sysMetaDataEntries.addEncodedQuery("sys_created_on>javascript:gs.dateGenerate('"+ lastSubmitDate +"')");
+	sysMetaDataEntries.addQuery('sys_scope', applicationSysId);
+	sysMetaDataEntries.query();
+	
+	// If there has been changes in sys_metadata, check the sys_update_xml table to make sure
+	// the app has actually changed. This is necessary because the sys_metadata table may contain
+	// changes that are not published with the app. Querying sys_update_xml is expensive so sys_metadata
+	// is queried first.
+	if(sysMetaDataEntries.next()) {
+		var sysUpdateXml = new GlideRecord('sys_update_xml');
+		sysUpdateXml.setLimit(1);
+		sysUpdateXml.addEncodedQuery("sys_created_on>javascript:gs.dateGenerate('"+ lastSubmitDate +"')");
+		sysUpdateXml.addQuery('application', applicationSysId);
+		sysUpdateXml.query();
+		
+		if (sysUpdateXml.next()) {
+			// This is the in_development status for consistency
+			appStatusKey = 0;
+		} else {
+			// There are no changes in the app that are going to be actually shipped with the app, so we get the status from deployment request
+			appStatusKey = getDeploymentRequestState(applicationSysId, applicationVersion);
+		}
+		
+	} else {
+		// There has been no changes to the app since the deployment request was submitted, so get deployment request record status			
+		appStatusKey = getDeploymentRequestState(applicationSysId, applicationVersion);
+	}
+	
+	setResponse(appStatusKey, lastSubmitDate);
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/applications/{application_sys_id}/{application_version}/status</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/{application_sys_id}/{application_version}/status</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description>Deployment status of the application. This is not 1:1 of the deployment record</short_description>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-23 16:15:48</sys_created_on>
+        <sys_id>cbff7642c7211010d447c17cf4c26043</sys_id>
+        <sys_mod_count>61</sys_mod_count>
+        <sys_name>Get Application Status</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_cbff7642c7211010d447c17cf4c26043</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-30 20:32:53</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Applications API">4c41d3287700001001fb4311a81061ae</web_service_definition>
+        <web_service_version display_value="v1">eff91f2c7700001001fb4311a8106131</web_service_version>
+    </sys_ws_operation>
+</record_update>

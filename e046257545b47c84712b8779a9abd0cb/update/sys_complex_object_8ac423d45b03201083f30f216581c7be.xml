@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDc6c423d4ad032010deddd9d7537892be</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>e046257545b47c84712b8779a9abd0cb</scope_name>
+        <serialized_content>{"FlowDesigner:FDc6c423d4ad032010deddd9d7537892be":{},"FlowDesigner:FDc6c423d4ad032010deddd9d7537892be.$type_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDc6c423d4ad032010deddd9d7537892be\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"default_value\":\"\",\"label\":\"Mobile Applet Data\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"65000\",\"uiUniqueId\":\"efbbc9b7-8181-453f-b20b-a3b1445d2dc3\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:47:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8ac423d45b03201083f30f216581c7be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FDc6c423d4ad032010deddd9d7537892be</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_complex_object_8ac423d45b03201083f30f216581c7be</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 17:47:10</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+</record_update>

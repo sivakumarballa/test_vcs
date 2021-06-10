@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/generic/configuration/prod</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get AES Prod Configuration</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var deploymentHelpers = new DeploymentHelpers();
+    var aesUtils = new AesUtils();
+    var prodCredentials = deploymentHelpers.getProdCredentials();
+    var prodBaseInstanceUrl = prodCredentials.prodBaseInstanceUrl;
+    var credentialID = deploymentHelpers.getCredentialID(); // discovery_credential.sys_id
+
+    if (credentialID) {
+        var path = '/api/sn_app_eng_studio/generic/configuration';
+        var remoteInstanceResponse = aesUtils.getResponseFromRemoteInstanceFlow(prodBaseInstanceUrl, path, credentialID);
+
+        if (remoteInstanceResponse && remoteInstanceResponse.has_error) {
+            gs.info("Error occurred in sys_ws_operation: Get AES Prod Configuration\n" + remoteInstanceResponse.error_message);
+
+            response.setStatus(remoteInstanceResponse.status_code);
+            response.setBody({
+                message: remoteInstanceResponse.error_message
+            });
+        } else if (remoteInstanceResponse && remoteInstanceResponse.body) {
+            var configuration = JSON.parse(remoteInstanceResponse.body).result;
+
+            response.setBody(configuration);
+            response.setStatus(remoteInstanceResponse.status_code);
+        } else {
+            response.setStatus(404);
+            response.setBody({
+                message: gs.getMessage("Prod Credentials not found")
+            });
+        }
+    } else {
+        response.setStatus(404);
+        response.setBody({
+            message: gs.getMessage("Prod Credentials not found")
+        });
+    }
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/generic/configuration/prod</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/configuration/prod</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-18 21:49:13</sys_created_on>
+        <sys_id>de3dd279c3202010a9f5e548fa40ddc8</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Get AES Prod Configuration</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_de3dd279c3202010a9f5e548fa40ddc8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-09 16:44:38</sys_updated_on>
+        <web_service_definition display_value="Generic API">37cc9e39c3202010a9f5e548fa40ddef</web_service_definition>
+        <web_service_version display_value="v1">f7ec1279c3202010a9f5e548fa40dd4d</web_service_version>
+    </sys_ws_operation>
+</record_update>

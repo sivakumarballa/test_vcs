@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ProjectApplicationRefQual</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Returns a list of sysIDs of applications that a user can add to a App Engine Studio project</description>
+        <name>ProjectApplicationRefQual</name>
+        <script><![CDATA[var ProjectApplicationRefQual = (function() {
+	return {
+		getSuitableApplicationSysIds: function() {
+			var appData = new AccessibleApplicationDataBuilder().filterOut([CreatorStudioConstants.GLOBAL_APPLICATION_SYS_ID]).getAccessibleApps();
+			
+			return appData;
+		}
+	};
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-25 21:19:45</sys_created_on>
+        <sys_id>4f4993ee7700001001fb4311a8106170</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>ProjectApplicationRefQual</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_4f4993ee7700001001fb4311a8106170</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-12 14:19:01</sys_updated_on>
+    </sys_script_include>
+</record_update>

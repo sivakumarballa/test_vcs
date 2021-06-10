@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_template_input_var">
+    <sys_app_template_input_var action="INSERT_OR_UPDATE">
+        <default/>
+        <description>The array of acl objects</description>
+        <flow_input_variable display_value="acls">ff9722485b31101083f30f216581c70c</flow_input_variable>
+        <label/>
+        <mandatory>false</mandatory>
+        <name>acls</name>
+        <sys_class_name>sys_app_template_input_var</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-06-29 19:18:43</sys_created_on>
+        <sys_id>ea2966885b31101083f30f216581c7d7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>acls</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_app_template_input_var_ea2966885b31101083f30f216581c7d7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-18 05:36:18</sys_updated_on>
+        <template display_value="Security">db0896405b31101083f30f216581c714</template>
+        <type>string</type>
+    </sys_app_template_input_var>
+</record_update>

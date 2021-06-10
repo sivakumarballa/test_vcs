@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>501aad370fa02010310be3d1df767e56</image>
+        <name>aes_environments.svg</name>
+        <size_bytes>2536</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-24 23:12:18</sys_created_on>
+        <sys_id>0689ad370fa02010310be3d1df767e50</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>aes_environments.svg</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>db_image_0689ad370fa02010310be3d1df767e50</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-24 23:12:47</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <hash>eddbd45955acef5f16e636256fdb237a3791444cd2e85e46bb5fafb163246a11</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2536</size_bytes>
+        <size_compressed>826</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-24 23:12:47</sys_created_on>
+        <sys_id>501aad370fa02010310be3d1df767e56</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-24 23:12:47</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>0689ad370fa02010310be3d1df767e50</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="501aad370fa02010310be3d1df767e56">501aad370fa02010310be3d1df767e56</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-24 23:12:47</sys_created_on>
+        <sys_id>901aad370fa02010310be3d1df767e56</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>vVZLb9s4EL73VxDcyxawx3w/CtsFtq9Le9ltL70E3li1hTqSISt2+u87pCyLdKwCPeyGQTzzceb7pMkM6fnrp4cdORbNoayrBeXAKCmq+3pdVpsF/fL5/dTR18sX88NxQ07lut0uqNT7J0q2RbnZtr13LIvTX/XTgjLCiNT4S1NSTgnKVIcF3bbt/tVsdjqd4CShbjYzwRibIf055NXTrqy+3wrk3vtZ3KXLFwR/5m3Z7orlu+pYNnX1UFTtYT7rsG5/Q8r1gqb7lBzapv5eLGhVV0XvTc9vho/5rdzt+s1gT5vHHUYXx6Kq1+uzcCTfr9otQfpPUk0k+Yh/hQGmtNIaPQFcyzMyuAqM89E1woZ1hpzKQA/WOmaHxAhcPAdKyCwhIo5rwzNYgdSIIY8Gbm+DE4sp4PqP7k0k+Uo+CQZdipxosJwHzQ4LwRY8dxcjLHEdlqUGQpT2DBdPIgMWaIQE1hF2VlhXYXlqILTApQkriYxY5EHMyMHCpa7jstzA6ME9e5mIRR4HmvnBCus6Lsv9SmMHvqkf/i2rYj39Z7vaF32T/SGse/f+DV3OZ6GXktbq+vZDUz/uKWmbVXX4VjcPCxrN3aot/uQQxoaxCfEQDfbyGe2F76pdGTAhpJZ6wvCfPXhYdxwxLDE2I7vy8kgWS+XAaGsZ5xMDTkhhBMfKcMAyGy2UHIMFByeVkmESEpIROCHJRQfGjH0E1qC091bJnH0ETki6QVDGW2ewRmCFl0w5G5u8hxUwL722QdMDZ5pLxUfQEYoEDpKX6ufxA5yQD5UbQUcoriQ1eOGkNyKPH+CUXIE2EuvmRtARilySG5BWO+FzyQROyC/mbXCEIBW8OYzPp2+2SZymuG9j2t9orKrNrhiukH7SCN57+OaU/MArxAWjv09kck8GpcD2u+TnqX7rwsq0hBrR4v+BlvkftcZqeEvrcq7hga4nofzxbMeB6kyWm0lANM9N8YsHHTueq/3d/WNzqJs7Kz3n7K47h0cObJxGjncNNirBceBaOyZfkqZuw+ZUs/4UJ0PKNMmZJknJLWDB9KSs3w8PfO7gaMzDl6vlT2bItyroCQAA</data>
+        <length>1088</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="501aad370fa02010310be3d1df767e56">501aad370fa02010310be3d1df767e56</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-24 23:12:47</sys_created_on>
+        <sys_id>141aad370fa02010310be3d1df767e56</sys_id>
+    </sys_attachment_doc>
+</record_update>

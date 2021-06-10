@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.FileDataBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Object that's responsible for constructing the list of File data objects. This object will fetch all project objects and iterate through them all decorating them with the appropriate taxonomy defintion data.</description>
+        <name>FileDataBuilder</name>
+        <script><![CDATA[var FileDataBuilder = (function() {
+
+    return {
+        build: function(applicationIds) {
+            return buildProjectObjectFiles(applicationIds);
+        },
+		
+		buildProvidedFiles: function(applicationSysId, fileIds, tableName) {			
+			return decorateProvidedFiles(applicationSysId, fileIds, tableName);
+		}
+    };
+	
+	function buildProjectObjectFiles(applicationIds) {
+		var projectObjectFiles = [];
+		
+		var taxDefinitionRecord = new GlideRecord("sn_app_eng_studio_taxonomy");
+
+		taxDefinitionRecord.query();
+
+		while (taxDefinitionRecord.next()) {
+			var projectObjects = getProjectFilesForTaxonomy(applicationIds, taxDefinitionRecord);
+			var referencedProjectObjects = getReferencedProjectFilesForTaxonomy(applicationIds, taxDefinitionRecord);
+			projectObjectFiles = projectObjectFiles.concat(projectObjects);
+			projectObjectFiles = projectObjectFiles.concat(referencedProjectObjects);
+		}
+		return projectObjectFiles;
+	}
+	
+	function decorateProvidedFiles(applicationSysId, fileIds, tableName) {
+		var decoratedFiles = [];
+		var	appObjects;
+		var referencedObjects;
+		var unfoundFileSysIds = fileIds;
+		
+		var taxDefinitionRecord = new GlideRecord("sn_app_eng_studio_taxonomy");
+		var hasTaxDefRecord = taxDefinitionRecord.get('table', tableName);
+
+		if(!hasTaxDefRecord) {
+			throw CreatorStudioConstants.errors.TAXONOMY_DOES_NOT_EXIST;			
+		}
+				
+		// TODO: This can be improved. As we should only really query for only files we need
+		//       taking a shortcut for now.
+		appObjects = getProjectFilesForTaxonomy([applicationSysId], taxDefinitionRecord);
+		referencedObjects = getReferencedProjectFilesForTaxonomy([applicationSysId], taxDefinitionRecord);
+		
+		decoratedFiles = decoratedFiles.concat(appObjects);
+		decoratedFiles = decoratedFiles.concat(referencedObjects);
+
+		// Since all the files are returned for a given table_name, filter out only the ones requested
+		decoratedFiles = decoratedFiles.filter(function (file) {
+			var found = fileIds.indexOf(file.sys_id) > -1;
+			
+			if(found) {
+				// Keeping track of the files that were found so that we can look for roles outside the app scope
+				unfoundFileSysIds = unfoundFileSysIds.filter(function(sysId) {
+					return sysId !== file.sys_id;
+				});
+			}
+			return found;
+		});
+		
+		
+		// Special case for referenced role. Sometimes we need to return a decorated referenced role but
+		// no references exist yet. In this case, we are just grabbing the record outside the app scope and decorating it.
+		if (tableName === 'sys_user_role' && unfoundFileSysIds.length > 0) {
+			
+			var sysUserRoleRecords = new GlideRecord("sys_user_role");
+			sysUserRoleRecords.addQuery('sys_id', 'IN', unfoundFileSysIds );
+			
+			sysUserRoleRecords.query();
+			
+			if (sysUserRoleRecords) {
+				var referencedRole = validateAndDecorateFiles(sysUserRoleRecords, taxDefinitionRecord, { isReference: true }); 
+				decoratedFiles = decoratedFiles.concat(referencedRole);
+			} 
+		}
+	
+		// Tack on the taxonomy definition to all the files
+		decoratedFiles = addTaxonomyDefToFiles(decoratedFiles, taxDefinitionRecord);
+		
+        return decoratedFiles;
+	}
+	
+	function addTaxonomyDefToFiles(files, taxDefinitionRecord) {
+		var taxonomyDef = new TaxonomyDefinitionsDataModel().generateSingleTaxonomy(taxDefinitionRecord.getValue('sys_id'));
+		
+		if(!taxonomyDef) {
+			return files;
+		}
+		
+		return (
+			files.map(function(file) {
+				file.taxonomy_definition = taxonomyDef;
+				return file;
+			})
+		);
+	}
+
+    function getProjectFilesForTaxonomy(applicationIds, taxDefinitionRecord) {
+
+        var tableName = taxDefinitionRecord.getValue("table");
+        var records = getTableRecords(applicationIds, tableName);
+
+        return validateAndDecorateFiles(records, taxDefinitionRecord, {});
+    }
+
+    function getReferencedProjectFilesForTaxonomy(applicationIds, taxDefinitionRecord) {
+
+        var fileObjects = [];
+
+        var dataRetrieverField = 'references_script';
+
+        var dataRetrieverRecord = new GlideRecord("sn_app_eng_studio_taxonomy_details");
+
+        dataRetrieverRecord.get('taxonomy_id', taxDefinitionRecord.getValue('sys_id'));
+
+        var evaluator = new GlideScopedEvaluator();
+
+        if (dataRetrieverRecord[dataRetrieverField]) {
+            var records = evaluator.evaluateScript(dataRetrieverRecord, dataRetrieverField, {
+                sysIds: applicationIds.join()
+            });
+			
+			var referencedData = {
+				'isReference': true
+			};
+
+			if(dataRetrieverRecord.name_override_enabled && dataRetrieverRecord.name_override){
+				referencedData.taxonomyDetailRecord = dataRetrieverRecord;
+			}
+			
+
+            fileObjects = validateAndDecorateFiles(records, taxDefinitionRecord, referencedData);
+        }
+
+        return fileObjects;
+    }
+
+    function validateAndDecorateFiles(records, taxDefinitionRecord, referencedData) {
+        var fileObjects = [];
+
+        while (records.next()) {
+            if (AccessValidator.canReadRecord(records)) {
+                var fileObject = FileDataDecorator.decorate(records, taxDefinitionRecord, referencedData);
+
+                fileObjects.push(fileObject);
+            }
+        }
+
+        return fileObjects;
+    }
+
+    function getTableRecords(applicationIds, tableName) {
+
+        /*
+        NOTE: Long term goal is to refactor the data model for the taxonomy definition to handle these 
+        types of exceptions rather than hard-coding them. Consult with team prior to adding additional 
+        conditions.
+        */
+
+        if (tableName === 'sys_dictionary')
+            return getSysDictionaryTableRecords(applicationIds);
+
+        if (tableName === 'sys_sg_applet_launcher')
+            return getMobileExperienceRecords(applicationIds);
+
+        var records = new GlideRecord(tableName);
+
+        records.addQuery('sys_scope', 'IN', applicationIds);
+        records.query();
+
+        return records;
+    }
+
+    function getSysDictionaryTableRecords(applicationIds) {
+
+        var records = new GlideRecord('sys_dictionary');
+
+        records.addQuery('sys_scope', 'IN', applicationIds);
+        records.addQuery('internal_type', '!=', 'collection');
+        records.addQuery('sys_class_name', 'NOT IN', getExcludedTables());
+        records.addQuery('name', 'NOT IN', getScopedTables(applicationIds));
+        records.orderBy('sys_name');
+        records.query();
+
+        return records;
+    }
+
+    function getMobileExperienceRecords(applicationIds) {
+        var records = new GlideRecord('sys_metadata');
+
+        records.addQuery('sys_scope', 'IN', applicationIds);
+        records.addQuery('sys_class_name', 'STARTSWITH', 'sys_sg_');
+        records.orderByDesc('sys_updated_on');
+        records.setLimit(1);
+
+        records.query();
+
+        return records;
+    }
+
+    function getScopedTables(appIds) {
+
+        var tables = [];
+
+        var gr = new GlideRecord('sys_dictionary');
+
+        gr.addQuery('sys_scope', 'IN', appIds);
+        gr.addQuery('internal_type', 'collection');
+        gr.query();
+
+        while (gr.next()) {
+            tables.push(gr.getValue('name'));
+        }
+
+        return tables.join(',');
+    }
+
+    function getExcludedTables() {
+        return [
+            'sys_hub_action_input',
+            'sys_hub_action_output',
+            'sys_hub_step_ext_input',
+            'sys_hub_step_ext_output',
+            'sys_hub_flow_input',
+            'sys_hub_flow_output'
+        ];
+    }
+
+
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-08-31 00:18:35</sys_created_on>
+        <sys_id>9c2a0a9a0f2333004c885019c4767e54</sys_id>
+        <sys_mod_count>75</sys_mod_count>
+        <sys_name>FileDataBuilder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_9c2a0a9a0f2333004c885019c4767e54</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-23 18:58:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD3a0527d434032010d02c2973ffdc0bd1</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>e046257545b47c84712b8779a9abd0cb</scope_name>
+        <serialized_content>{"FlowDesigner:FD3a0527d434032010d02c2973ffdc0bd1":{"app_name":"String","app_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"app_name\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\"}"},"short_description":"String","short_description.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"short_description\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\"}"},"tables":"String","tables.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"tables\",\"mandatory\":\"false\",\"order\":\"9\",\"max_length\":\"0\"}"},"icon_color":"String","icon_color.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"icon_color\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"name":"String","name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"name\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"available_offline":"String","available_offline.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"available_offline\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\"}"},"user_roles":"String","user_roles.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"user_roles\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"app_id":"String","app_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"app_id\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\"}"},"icon_name":"String","icon_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"icon_name\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"}},"FlowDesigner:FD3a0527d434032010d02c2973ffdc0bd1.$type_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3a0527d434032010d02c2973ffdc0bd1\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"default_value\":\"\",\"label\":\"mobile_app_data\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"65000\",\"uiUniqueId\":\"b12e0c7e-1e5a-4afd-84ce-ddc4d0acdc19\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-18 17:48:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fa0527d45b03201083f30f216581c7d1</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>FD3a0527d434032010d02c2973ffdc0bd1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_complex_object_fa0527d45b03201083f30f216581c7d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-18 18:26:15</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+</record_update>

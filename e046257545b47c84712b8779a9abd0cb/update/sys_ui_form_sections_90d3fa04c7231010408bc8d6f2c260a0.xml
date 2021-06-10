@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="90d3fa04c7231010408bc8d6f2c260a0" sys_domain="global" table="sn_app_eng_studio_resources_content" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-09-24 19:55:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dcd3fa04c7231010408bc8d6f2c260a2</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="sn_app_eng_studio_resources_content" name="sn_app_eng_studio_resources_content" sys_domain="global" view="Default view">90d3fa04c7231010408bc8d6f2c260a0</sys_ui_form>
+            <sys_ui_section display_value="">c111b2c0c7231010408bc8d6f2c260a2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-26 19:55:02</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>sn_app_eng_studio_resources_content</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-09-24 19:55:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>90d3fa04c7231010408bc8d6f2c260a0</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>sn_app_eng_studio_resources_content</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+            <sys_policy>read</sys_policy>
+            <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+            <sys_update_name>sys_ui_form_sections_90d3fa04c7231010408bc8d6f2c260a0</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-10-26 19:55:01</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

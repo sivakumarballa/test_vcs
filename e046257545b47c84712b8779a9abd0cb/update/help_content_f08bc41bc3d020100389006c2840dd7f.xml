@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="help_content">
+    <help_content action="INSERT_OR_UPDATE">
+        <configuration_types/>
+        <custom_html><![CDATA[<p>App Engine Studio empowers you to quickly build apps for your organization. Start with a template to get some ideas for your next app. You can also start from scratch.</p>
+<p style="text-align: center;"><img src="aes_getting_started_image.svg" width="710" height="265" /></p>]]></custom_html>
+        <default_content>true</default_content>
+        <field_name/>
+        <filter/>
+        <footer/>
+        <guidance_step display_value="Learn how App Engine Studio Works">f25b441bc3d020100389006c2840ddcf</guidance_step>
+        <has_custom_html>true</has_custom_html>
+        <has_image_link>false</has_image_link>
+        <image/>
+        <image_alt/>
+        <image_link/>
+        <open_in/>
+        <options/>
+        <records/>
+        <related_content/>
+        <resource_id/>
+        <subtitle>Welcome to App Engine Studio</subtitle>
+        <sys_class_name>help_content</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-10 16:47:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f08bc41bc3d020100389006c2840dd7f</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>GETTING STARTED</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>help_content_f08bc41bc3d020100389006c2840dd7f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-05 16:02:44</sys_updated_on>
+        <table_name/>
+        <text><![CDATA[<p>Learn how App Engine Studio works</p>]]></text>
+        <title>GETTING STARTED</title>
+        <type>text</type>
+        <url/>
+        <version>all</version>
+        <video_alt/>
+        <video_link/>
+    </help_content>
+    <sys_translated_text action="delete_multiple" query="documentkey=f08bc41bc3d020100389006c2840dd7f"/>
+</record_update>

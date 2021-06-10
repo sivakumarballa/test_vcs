@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="App Details" max_length="40" name="sn_app_eng_studio_app_details" type="collection">
+        <element attributes="encode_utf8=false" label="Application" mandatory="true" max_length="32" name="application" reference="sys_scope" reference_cascade_rule="delete" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" hint="Operations used during app creation" label="Operations" max_length="4000" name="operations" type="string"/>
+        <element attributes="edge_encryption_enabled=true" hint="The date in which the application's deployment request was submitted" label="Submitted" max_length="40" name="submitted_on" type="glide_date_time"/>
+        <index name="index" unique="true">
+            <element name="application"/>
+        </index>
+    </element>
+</database>

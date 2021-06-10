@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="clone_data_preserver">
+    <clone_data_preserver action="INSERT_OR_UPDATE">
+        <condition table="sys_alias">sys_scope=e046257545b47c84712b8779a9abd0cb^EQ<item display_table="sys_scope" display_value="App Engine Studio" endquery="false" field="sys_scope" goto="false" newquery="false" operator="=" or="false" value="e046257545b47c84712b8779a9abd0cb"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <default>true</default>
+        <include_in_system_clone>true</include_in_system_clone>
+        <name>AES Connection and Credentials Aliases</name>
+        <sys_class_name>clone_data_preserver</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-22 22:28:04</sys_created_on>
+        <sys_id>484ca1f875112010fa9b9dd22030460e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AES Connection and Credentials Aliases</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>clone_data_preserver_484ca1f875112010fa9b9dd22030460e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-22 22:28:04</sys_updated_on>
+        <table>sys_alias</table>
+        <theme>false</theme>
+    </clone_data_preserver>
+</record_update>

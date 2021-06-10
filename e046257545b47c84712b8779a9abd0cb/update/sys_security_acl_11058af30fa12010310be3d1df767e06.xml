@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Allow delete for records in sn_app_eng_studio_pipeline, for users with role admin, and if the ACL script returns true.</description>
+        <name>sn_app_eng_studio_pipeline</name>
+        <operation display_value="delete">delete</operation>
+        <script><![CDATA[answer = gs.hasRole('admin');]]></script>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-13 18:13:39</sys_created_on>
+        <sys_id>11058af30fa12010310be3d1df767e06</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sn_app_eng_studio_pipeline</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_security_acl_11058af30fa12010310be3d1df767e06</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 18:42:21</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/generic/license_validation_status</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get AES License Status</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	// if the associated app passed into the `hasLicenseForApp` check does not exist, an error/
+	// exception is thrown (false is not returned, womp) - so we must keep track of license check for
+	// both ways that the AES app can be install (side-loaded & installed through store/plugin list)
+	
+	// if `com.snc.app-engine-studio` is the scoped app id, then app is installed through 
+	// store / plugin
+	
+	// if `sn_app_eng_studio` is the scoped app id, then app has been side-loaded into the system (
+	// via the Install Application platform feature)
+	
+	var hasLicenseForApp = false;
+	
+	try {
+		// checks if the user has a license for AES - installed via the app store / plugins list
+		hasLicenseForApp = sn_lef.GlideEntitlement.hasLicenseForApp('com.snc.app-engine-studio');
+	} catch (e) {
+		hasLicenseForApp = false;
+	}
+	
+	if (!hasLicenseForApp) {
+		try {
+			// checks if the user has a license for AES - installed via side-loading
+			hasLicenseForApp = sn_lef.GlideEntitlement.hasLicenseForApp('sn_app_eng_studio');
+		} catch (e) {
+			hasLicenseForApp = false;
+		}
+	}
+	
+	response.setBody({
+		hasLicenseForApp: hasLicenseForApp,
+	});
+	
+	response.setStatus(200);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/generic/license_validation_status</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/license_validation_status</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-18 21:50:13</sys_created_on>
+        <sys_id>0f7dd679c3202010a9f5e548fa40dd7d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Get AES License Status</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_0f7dd679c3202010a9f5e548fa40dd7d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-09 16:44:12</sys_updated_on>
+        <web_service_definition display_value="Generic API">37cc9e39c3202010a9f5e548fa40ddef</web_service_definition>
+        <web_service_version display_value="v1">f7ec1279c3202010a9f5e548fa40dd4d</web_service_version>
+    </sys_ws_operation>
+</record_update>

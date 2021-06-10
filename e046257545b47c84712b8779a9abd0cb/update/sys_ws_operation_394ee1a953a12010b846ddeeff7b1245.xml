@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/generic/new_aes_users</default_operation_uri>
+        <enforce_acl>f9f0f168c7522010408bc8d6f2c2602f</enforce_acl>
+        <http_method>POST</http_method>
+        <name>POST New AES Users</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	// Setting the HTTP method to POST so that we can utilize setting requestBody when calling the API.
+	// We need to send over the lastProcessedDictionary as part of the request, and this could exceed
+	// queryParams' character limit.
+
+	try {
+		if (!request.body && !request.body.data.lastProcessedDictionary) {
+			throw new sn_ws_err.ServiceError()
+				.setStatus(422)
+				.setMessage(gs.getMessageLang('Unable to query last processed table.', "en"))
+				.setDetail(gs.getMessage('Unable to query last processed table.'));
+		}
+
+		var aesUtils = new AesUtils();
+
+		var sysUserHasRoleGR = new GlideRecord('sys_user_has_role');
+		sysUserHasRoleGR.addQuery('role', SyncConstants.AES_USER_ROLE_ID);
+		sysUserHasRoleGR.query();
+
+		var lastProcessedDictionary = request.body.data.lastProcessedDictionary;
+		var usersWithAESRole = [];
+
+		while (sysUserHasRoleGR.next()) {
+			var sysUserHasRole = aesUtils.getObjectFromGlideRecord(sysUserHasRoleGR, ['sys_updated_on', 'user']);
+			var sysUserHasRoleUpdatedOn = new GlideDateTime(sysUserHasRole.sys_updated_on);
+			var lastProcessedForUser = new GlideDateTime(lastProcessedDictionary[sysUserHasRole.user]);
+			var newlyAddedAESUser = lastProcessedDictionary[sysUserHasRole.user] === undefined;
+			var dateEligible = sysUserHasRoleUpdatedOn.onOrAfter(lastProcessedForUser);
+			var userWithAESRole = aesUtils.getObjectFromGlideRecord(sysUserHasRoleGR.user.getRefRecord(), ['sys_id', 'first_name', 'password_needs_reset', 'email', 'active']);
+
+			if (userWithAESRole.active === '1' && (dateEligible || newlyAddedAESUser)) {
+				usersWithAESRole.push(userWithAESRole);
+			}
+		}
+
+		response.setBody({
+			sysUsers: usersWithAESRole,
+		});
+
+		response.setStatus(200);
+	} catch(e) {
+		throw new sn_ws_err.ServiceError()
+			.setStatus(500)
+			.setMessage(gs.getMessageLang('Unable to find sys_user with AES roles.', "en"))
+			.setDetail(gs.getMessage('Unable to find sys_user with AES roles.'));
+	}
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/generic/new_aes_users</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/new_aes_users</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-06 16:48:29</sys_created_on>
+        <sys_id>394ee1a953a12010b846ddeeff7b1245</sys_id>
+        <sys_mod_count>86</sys_mod_count>
+        <sys_name>POST New AES Users</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_394ee1a953a12010b846ddeeff7b1245</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 22:14:53</sys_updated_on>
+        <web_service_definition display_value="Generic API">37cc9e39c3202010a9f5e548fa40ddef</web_service_definition>
+        <web_service_version display_value="v1">f7ec1279c3202010a9f5e548fa40dd4d</web_service_version>
+    </sys_ws_operation>
+</record_update>

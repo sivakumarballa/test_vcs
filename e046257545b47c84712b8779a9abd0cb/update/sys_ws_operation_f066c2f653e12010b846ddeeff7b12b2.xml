@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/generic/update_user_password</default_operation_uri>
+        <enforce_acl>f9f0f168c7522010408bc8d6f2c2602f</enforce_acl>
+        <http_method>PATCH</http_method>
+        <name>PATCH Update User Password</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    if (
+        !request.body ||
+        !request.body.data ||
+        !request.body.data.sysId ||
+        !request.body.data.tempPass ||
+        !request.headers['x-access-token']
+    ) {
+        throw new sn_ws_err.ServiceError()
+            .setStatus(400)
+            .setMessage(gs.getMessageLang('Missing parameter ', 'en'))
+            .setDetail(gs.getMessage('Missing parameter '));
+    }
+    try {
+
+        var requestAuthService = new RequestAuthService();
+        var isAuthorized = requestAuthService.isAuthorized(PipelineConstants.PROD_ENV_COLUMN, request.headers['x-access-token']);
+
+        if (isAuthorized) {
+            var userSyncService = new UserSyncService();
+
+            var sysId = request.body.data.sysId;
+            var tempPass = request.body.data.tempPass;
+
+            var grSysUser = userSyncService.getUser('sys_id', sysId);
+
+            if (grSysUser) {
+                grSysUser.user_password.setDisplayValue(tempPass);
+                grSysUser.update();
+            }
+
+            response.setStatus(200);
+        } else {
+            response.setStatus(401);
+        }
+
+    } catch (e) {
+        throw new sn_ws_err.ServiceError()
+            .setStatus(500)
+            .setMessage(gs.getMessageLang('Unable to update password for user.', 'en'))
+            .setDetail(gs.getMessage('Unable to update password for user.'));
+    }
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/generic/update_user_password</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/update_user_password</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-10 15:46:52</sys_created_on>
+        <sys_id>f066c2f653e12010b846ddeeff7b12b2</sys_id>
+        <sys_mod_count>41</sys_mod_count>
+        <sys_name>PATCH Update User Password</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>protected</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_f066c2f653e12010b846ddeeff7b12b2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-29 23:44:26</sys_updated_on>
+        <web_service_definition display_value="Generic API">37cc9e39c3202010a9f5e548fa40ddef</web_service_definition>
+        <web_service_version display_value="v1">f7ec1279c3202010a9f5e548fa40dd4d</web_service_version>
+    </sys_ws_operation>
+</record_update>

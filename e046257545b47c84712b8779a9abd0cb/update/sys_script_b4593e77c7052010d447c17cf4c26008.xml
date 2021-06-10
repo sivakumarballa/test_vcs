@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sys_user_grmember</collection>
+        <condition>(gs.getProperty('sn_app_eng_studio.user_sync_queue_enabled') === 'true') &amp;&amp; current.group == SyncConstants.AES_USER_GROUP_ID</condition>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>AES Queue User Group Changes</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var nowTimeStamp = new GlideDateTime();
+	var payload;
+	var queueItem;
+	var userSyncService = new UserSyncService();
+	var userQueueService = new UserQueueService();
+	
+	var pipelineService;
+	try {
+		pipelineService = new PipelineService();
+	}
+	catch(ex) {
+		gs.warn(ex.toString() + "\n\n" + gs.getProperty("glide.servlet.uri") + current.getLink());
+	}
+	
+	// If there isn't an active pipeline at the time it is assumed
+	// this is production and the item is added to the queue. This is to avoid losing changes before
+	// the pipeline is setup.
+	if (pipelineService && !pipelineService.isProd()) { 
+		gs.info('Skipping AES queue sys_user_grmember Business Rule. Not production environment. ');
+		return; 
+	}
+
+	if (current.operation() == 'insert') {
+		
+		// An insert for sys_user always added to the queue is to ensure 
+		// the user always exists when adding to a group. If the user already 
+		// exists then the insertion isn't executed. There isn't an business rule on sys_user 
+		// for insert because it isn't known if the user will be in AES group or not at that point in time.
+		var user = userSyncService.getUser('sys_id', current.user);
+		
+		// Creating a new instance here to modify the seconds. References are bad in this case.
+		// this ensures the user is always inserted before the group.
+		var userInsertTimeStamp = new GlideDateTime(current.sys_updated_on.toString());
+		userInsertTimeStamp.addSeconds(-1);
+		
+		var userQueueItem =  new SyncQueueItem({
+			operation: 'insert',
+			table: 'sys_user',
+			payload: userSyncService.buildUserPayload(user),
+			sequence: userInsertTimeStamp,
+		});
+		
+		queueItem = new SyncQueueItem({
+			operation: 'insert',
+			table: current.getTableName(),
+			payload: userSyncService.buildUserGroupPayload(current),
+			sequence: current.sys_updated_on,
+		});
+		
+
+		userQueueService.insertQueue(userQueueItem);
+		userQueueService.insertQueue(queueItem);
+
+	}
+	else if (current.operation() == 'delete') {
+		payload = userSyncService.buildUserGroupPayload(current);
+		
+		queueItem = new SyncQueueItem({
+			operation: 'delete',
+			table: current.getTableName(),
+			payload: payload,
+			sequence: nowTimeStamp,
+		});
+
+		userQueueService.insertQueue(queueItem);
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-20 01:32:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b4593e77c7052010d447c17cf4c26008</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>AES Queue User Group Changes</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_b4593e77c7052010d447c17cf4c26008</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-15 17:08:42</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b4593e77c7052010d447c17cf4c26008"/>
+</record_update>

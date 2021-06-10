@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>When false, turns off the job that processes changes in the Sync Queue</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>true</is_private>
+        <name>sn_app_eng_studio.user_sync_enabled</name>
+        <read_roles>admin</read_roles>
+        <suffix>user_sync_enabled</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-20 02:45:07</sys_created_on>
+        <sys_id>393a4fb3c7452010d447c17cf4c260ea</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sn_app_eng_studio.user_sync_enabled</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_properties_393a4fb3c7452010d447c17cf4c260ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-11 16:58:58</sys_updated_on>
+        <type>boolean</type>
+        <value>true</value>
+        <write_roles>admin</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=393a4fb3c7452010d447c17cf4c260ea"/>
+</record_update>

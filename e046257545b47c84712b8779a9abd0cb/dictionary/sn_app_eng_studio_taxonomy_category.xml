@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="synch_attachments=true,update_synch=true" extends="sys_metadata" label="Taxonomy Category" max_length="40" name="sn_app_eng_studio_taxonomy_category" type="collection">
+        <element display="true" label="Category" mandatory="true" max_length="100" name="category" type="translated_text"/>
+        <element label="Description" mandatory="true" max_length="100" name="description" type="translated_text"/>
+        <element label="Help text" max_length="100" name="help_text" type="translated_text"/>
+        <element attributes="pdf_cell_type=image" hint="If no icon (.svg format) is provided, a default icon will be used for this Taxonomy Category" label="Icon" max_length="40" name="icon" type="user_image"/>
+        <element hint="A configurable sort order for Taxonomy Categories" label="Order" max_length="40" name="order" type="integer"/>
+    </element>
+</database>

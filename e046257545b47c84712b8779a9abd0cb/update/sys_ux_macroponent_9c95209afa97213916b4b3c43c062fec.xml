@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
+    <sys_ux_macroponent action="INSERT_OR_UPDATE">
+        <associated_types/>
+        <category>component</category>
+        <component_dependencies/>
+        <composition>[]</composition>
+        <da_relay_models/>
+        <data/>
+        <dispatched_events/>
+        <extends/>
+        <handled_events/>
+        <interactions/>
+        <interfaces/>
+        <internal_event_mappings/>
+        <layout>{}</layout>
+        <macroponent_dependencies/>
+        <name>sn-app-engine-studio</name>
+        <props>[]</props>
+        <required_translations/>
+        <root_component display_value="sn-app-engine-studio">39b11dcf1ef8c4b844ba25b5cbd374e5</root_component>
+        <root_component_config>{}</root_component_config>
+        <root_component_definition>{"availableSlots":[]}</root_component_definition>
+        <schema_version>1.0.0</schema_version>
+        <state_properties/>
+        <sys_class_name>sys_ux_macroponent</sys_class_name>
+        <sys_created_by>tectonic</sys_created_by>
+        <sys_created_on>2021-06-09 13:26:24</sys_created_on>
+        <sys_id>9c95209afa97213916b4b3c43c062fec</sys_id>
+        <sys_mod_count>450895</sys_mod_count>
+        <sys_name>sn-app-engine-studio</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ux_macroponent_9c95209afa97213916b4b3c43c062fec</sys_update_name>
+        <sys_updated_by>tectonic</sys_updated_by>
+        <sys_updated_on>2021-06-09 13:26:24</sys_updated_on>
+    </sys_ux_macroponent>
+</record_update>

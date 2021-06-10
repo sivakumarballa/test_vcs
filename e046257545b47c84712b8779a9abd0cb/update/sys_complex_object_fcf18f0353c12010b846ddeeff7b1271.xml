@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FD74f18f03ebc12010e7cb19e7055c8365</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>e046257545b47c84712b8779a9abd0cb</scope_name>
+        <serialized_content>{"FlowDesigner:FD74f18f03ebc12010e7cb19e7055c8365":{"$COCollectionField":[{"user":{"sys_id":"String","sys_id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"sys_id\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"601bdb6a-3a2f-4e00-9df0-225792674065\"}"},"first_name":"String","first_name.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"first_name\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"e78eebc1-9430-4b08-ae91-8b02a6f88da1\"}"},"email":"String","email.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"email\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"17731d02-2ef6-408e-80c8-5bf44e0d3557\"}"},"password_needs_reset":"String","password_needs_reset.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"password_needs_reset\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"cdc62763-0ef1-428c-8f45-b91dc74d29a2\"}"}}}],"$COCollectionField.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"e64e8dc4-4fcd-4a80-a219-01c2b90332b9\",\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"new_aes_users\",\"mandatory\":\"true\",\"child_name\":\"user\",\"uiUniqueId\":\"6a502972-e687-4f0e-b275-a3f3559f5799\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD74f18f03ebc12010e7cb19e7055c8365\",\"child_label\":\"user\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"d6d972ff-021a-44ac-84ad-bc806f2c2ef8\",\"hint\":null,\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6\"}"},"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD74f18f03ebc12010e7cb19e7055c8365.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"e64e8dc4-4fcd-4a80-a219-01c2b90332b9\",\"pwd2droppable\":\"true\",\"default_value\":\"\",\"label\":\"new_aes_users\",\"mandatory\":\"true\",\"child_name\":\"user\",\"uiUniqueId\":\"6a502972-e687-4f0e-b275-a3f3559f5799\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD74f18f03ebc12010e7cb19e7055c8365\",\"child_label\":\"user\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"d6d972ff-021a-44ac-84ad-bc806f2c2ef8\",\"hint\":null,\"uiType\":\"array.object\",\"child_type\":\"object\",\"order\":\"1\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"f5bf06f9-49d9-49ab-a7dc-7fc5edf707d6\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-17 18:12:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fcf18f0353c12010b846ddeeff7b1271</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>FD74f18f03ebc12010e7cb19e7055c8365</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_complex_object_fcf18f0353c12010b846ddeeff7b1271</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-18 03:14:28</sys_updated_on>
+        <type>complex_object_collection</type>
+    </sys_complex_object>
+</record_update>

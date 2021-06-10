@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-Wed_Jun_09_16_13_29_IST_2021.zip</compiler_build>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Calls script include to delete processed records in sn_app_eng_studio_sync_queue after a specified number of days.</description>
+        <ih_action>false</ih_action>
+        <internal_name>sync_queue_cleaner</internal_name>
+        <label_cache>[]</label_cache>
+        <master_snapshot>55067dcd53952010b846ddeeff7b12fb</master_snapshot>
+        <name>Sync Queue Cleaner</name>
+        <natlang/>
+        <outputs/>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:46:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4e6575cd53952010b846ddeeff7b1254</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Sync Queue Cleaner</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_4e6575cd53952010b846ddeeff7b1254</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=4e6575cd53952010b846ddeeff7b1254"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4e6575cd53952010b846ddeeff7b1254"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=4e6575cd53952010b846ddeeff7b1254^sys_idNOT INf4067dcd53952010b846ddeeff7b12b3"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Sync Queue Cleaner">4e6575cd53952010b846ddeeff7b1254</action>
+        <cid>0016126f-8d80-4aab-9426-8c5d52569bc1</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:46</sys_created_on>
+        <sys_id>f4067dcd53952010b846ddeeff7b12b3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:48</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=f4067dcd53952010b846ddeeff7b12b3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>f4067dcd53952010b846ddeeff7b12b3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:48</sys_created_on>
+        <sys_id>15067dcd53952010b846ddeeff7b12e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:48</sys_updated_on>
+        <value/>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>f4067dcd53952010b846ddeeff7b12b3</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:48</sys_created_on>
+        <sys_id>51067dcd53952010b846ddeeff7b12e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:48</sys_updated_on>
+        <value/>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>f4067dcd53952010b846ddeeff7b12b3</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:47</sys_created_on>
+        <sys_id>70067dcd53952010b846ddeeff7b12be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:47</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+	var userQueueService = new UserQueueService();
+  
+  	userQueueService.deleteMultipleQueue();
+})(inputs, outputs);
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>f4067dcd53952010b846ddeeff7b12b3</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:48</sys_created_on>
+        <sys_id>9d067dcd53952010b846ddeeff7b12e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:48</sys_updated_on>
+        <value/>
+        <variable display_value="MID Selection">cbd1070373531010791f94596bf6a776</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>f4067dcd53952010b846ddeeff7b12b3</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:48</sys_created_on>
+        <sys_id>d5067dcd53952010b846ddeeff7b12e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:48</sys_updated_on>
+        <value/>
+        <variable display_value="Select MID Server">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=f4067dcd53952010b846ddeeff7b12b3"/>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Calls script include to delete processed records in sn_app_eng_studio_sync_queue after a specified number of days.</description>
+        <internal_name>sync_queue_cleaner</internal_name>
+        <label_cache>[]</label_cache>
+        <master>true</master>
+        <name>Sync Queue Cleaner</name>
+        <natlang/>
+        <outputs/>
+        <parent_action display_value="Sync Queue Cleaner">4e6575cd53952010b846ddeeff7b1254</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55067dcd53952010b846ddeeff7b12fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=55067dcd53952010b846ddeeff7b12fb"/>
+    <sys_variable_value action="delete_multiple" query="document_key=55067dcd53952010b846ddeeff7b12fb"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=55067dcd53952010b846ddeeff7b12fb^sys_idNOT IN51067dcd53952010b846ddeeff7b12ff"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Sync Queue Cleaner">55067dcd53952010b846ddeeff7b12fb</action>
+        <cid>0016126f-8d80-4aab-9426-8c5d52569bc1</cid>
+        <error_handling_type/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>51067dcd53952010b846ddeeff7b12ff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=51067dcd53952010b846ddeeff7b12ff"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>51067dcd53952010b846ddeeff7b12ff</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>1506bdcd53952010b846ddeeff7b1206</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <value/>
+        <variable display_value="Required Runtime">74315b04b3201300176b051a16a8dc2b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>51067dcd53952010b846ddeeff7b12ff</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>5106bdcd53952010b846ddeeff7b1206</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <value/>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>51067dcd53952010b846ddeeff7b12ff</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>9906bdcd53952010b846ddeeff7b1206</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <value>(function execute(inputs, outputs) {
+	var userQueueService = new UserQueueService();
+  
+  	userQueueService.deleteMultipleQueue();
+})(inputs, outputs);
+</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>51067dcd53952010b846ddeeff7b12ff</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>9d06bdcd53952010b846ddeeff7b1205</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <value/>
+        <variable display_value="MID Selection">cbd1070373531010791f94596bf6a776</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>51067dcd53952010b846ddeeff7b12ff</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-23 17:48:49</sys_created_on>
+        <sys_id>d506bdcd53952010b846ddeeff7b1206</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-12-23 17:48:49</sys_updated_on>
+        <value/>
+        <variable display_value="Select MID Server">2c226939b3101300176b051a16a8dc83</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=51067dcd53952010b846ddeeff7b12ff"/>
+    <sys_hub_action_type_definition action="update">
+        <sys_id>4e6575cd53952010b846ddeeff7b1254</sys_id>
+        <latest_snapshot>55067dcd53952010b846ddeeff7b12fb</latest_snapshot>
+    </sys_hub_action_type_definition>
+</record_update>

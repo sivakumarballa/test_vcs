@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>sn_app_eng_studio_aes_configure_environments.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<style>
+		td,
+		th {
+			border: 1px solid #9AA4A5;
+			padding: 12px;
+			font-size: 16px;
+			color: #161B1C;
+		}
+
+		.link {
+			color: #1f8476;
+		}
+
+		.table__head {
+			border-top: 1px solid #9AA4A5;
+			border-bottom: 2px solid #D1D6D6;
+		}
+		
+		.table .table__th {
+			color: #637274;
+		}
+
+		.hd1 {
+			padding-bottom: 15px;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	</style>
+
+	<g2:evaluate jelly="true">
+		var gr = new GlideRecord("sn_app_eng_studio_pipeline");
+		gr.addQuery('active', true);
+		gr.query();
+
+		var environments = {};
+
+		while (gr.next()) {
+		  environments = {
+				development: {
+					name: gr.dev_environment.getRefRecord().getValue('name'),
+					url: gr.dev_environment.getRefRecord().getValue('instance_url'),
+				},
+				test: {
+					name: gr.test_environment.getRefRecord().getValue('name'),
+					url: gr.test_environment.getRefRecord().getValue('instance_url'),
+				}
+			}
+		}
+
+		var devEnvName = environments.development.name;
+		var testEnvName = environments.test.name;
+	</g2:evaluate>
+
+	<div style="padding:8px">
+		<h1 class="hd1">${gs.getMessage('App Engine Studio must be installed on each instance before you start configuring these environments. Once installed, come back to finish setting up your credentials and pipelines. Go to Store to install App Engine Studio.')}</h1>
+		
+		<table>
+			<thead class="table__head">
+				<tr>
+					<th class="table__th">${gs.getMessage('Environment')}</th>
+					<th class="table__th">${gs.getMessage('Status')}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<g2:set_if var="jvar_dev_env_name" test="$[environments.development.name.length > 0]" true="$[devEnvName]" false="${gs.getMessage('Development Environment')}"/>
+						$[jvar_dev_env_name]
+					</td>
+					<td>
+						<j2:choose>
+							<j2:when test="$[environments.development.url.length > 0]">
+								<a href="$[environments.development.url]" target="_blank" class="link">${gs.getMessage('Access your development environment')}</a>
+							</j2:when>
+							<j2:otherwise>${gs.getMessage('Please configure your development environment before continuing')}</j2:otherwise>
+						</j2:choose>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<g2:set_if var="jvar_test_env_name" test="$[environments.test.name.length > 0]" true="$[testEnvName]" false="${gs.getMessage('Test Environment')}"/>
+						$[jvar_test_env_name]
+					</td>
+					<td>
+						<j2:choose>
+							<j2:when test="$[environments.test.url.length > 0]">
+								<a href="$[environments.test.url]" target="_blank" class="link">${gs.getMessage('Access your test environment')}</a>
+							</j2:when>
+							<j2:otherwise>${gs.getMessage('Please configure your test environment before continuing')}</j2:otherwise>
+						</j2:choose>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</j:jelly>]]></html>
+        <name>aes_configure_environments</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-12-01 21:10:53</sys_created_on>
+        <sys_id>022195c2a7302010b84676a9ce7901a3</sys_id>
+        <sys_mod_count>169</sys_mod_count>
+        <sys_name>aes_configure_environments</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ui_page_022195c2a7302010b84676a9ce7901a3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-19 22:11:14</sys_updated_on>
+    </sys_ui_page>
+</record_update>

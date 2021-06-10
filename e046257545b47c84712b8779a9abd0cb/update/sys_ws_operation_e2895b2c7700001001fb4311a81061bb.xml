@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/sn_app_eng_studio/applications</default_operation_uri>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GET Applications List</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    try {
+        var sort_field = request.queryParams.sort_field ? request.queryParams.sort_field[0].toLowerCase() : '';
+        var sort_order = request.queryParams.sort_order ? request.queryParams.sort_order[0].toLowerCase() : '';
+
+        // array of sys_ids
+        var userAppSysIds = new ApplicationsListBuilder()
+			// FIXME: check if filterOut actually does something
+            .filterOut([CreatorStudioConstants.GLOBAL_APPLICATION_SYS_ID])
+            .sortBy(sort_field, sort_order)
+            .getUserApps();
+
+        var decoratedApplicationList = [];
+
+        userAppSysIds.forEach(function(userAppSysId) {            
+			/**
+			 * Checks that the application is not in the global scope
+			 * before sending to the FE; as requested in STRY52334107
+			 */			
+            if (!AccessValidator.isApplicationInGlobalScope(userAppSysId)) {
+                decoratedApplicationList.push(ApplicationsDataModel.generate(userAppSysId));
+            }
+        });
+
+        response.setBody(decoratedApplicationList);
+        response.setStatus(200);
+    } catch (exception) {
+        throw new sn_ws_err.ServiceError()
+            .setStatus(500)
+            .setMessage(gs.getMessageLang("Unhandled exception {0}", "en", [exception]))
+            .setDetail(gs.getMessage("Unhandled exception {0}", [exception]));
+    }
+})(request, response);]]></operation_script>
+        <operation_uri>/api/sn_app_eng_studio/v1/applications</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description>Retrieves a list of applications the user can modify (or has created)</short_description>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-19 16:07:04</sys_created_on>
+        <sys_id>e2895b2c7700001001fb4311a81061bb</sys_id>
+        <sys_mod_count>44</sys_mod_count>
+        <sys_name>GET Applications List</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_ws_operation_e2895b2c7700001001fb4311a81061bb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-06-02 14:31:09</sys_updated_on>
+        <web_service_definition display_value="App Engine Studio Applications API">4c41d3287700001001fb4311a81061ae</web_service_definition>
+        <web_service_version display_value="v1">eff91f2c7700001001fb4311a8106131</web_service_version>
+    </sys_ws_operation>
+</record_update>

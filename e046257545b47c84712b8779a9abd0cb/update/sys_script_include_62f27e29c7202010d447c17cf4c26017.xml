@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>sn_app_eng_studio.ApplicationFileBuilder</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Builder object decorates provided application files </description>
+        <name>ApplicationFileBuilder</name>
+        <script><![CDATA[var ApplicationFileBuilder = (function() {
+	return {
+		build: function(applicationSysId, fileIds, tableName) {
+			AccessValidator.verifyApplicationAccess(applicationSysId);
+
+			return FileDataBuilder.buildProvidedFiles(applicationSysId, fileIds, tableName);
+		}
+	};
+	
+})();]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-18 04:57:43</sys_created_on>
+        <sys_id>62f27e29c7202010d447c17cf4c26017</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>ApplicationFileBuilder</sys_name>
+        <sys_package display_value="App Engine Studio" source="sn_app_eng_studio">e046257545b47c84712b8779a9abd0cb</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="App Engine Studio">e046257545b47c84712b8779a9abd0cb</sys_scope>
+        <sys_update_name>sys_script_include_62f27e29c7202010d447c17cf4c26017</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-19 02:17:56</sys_updated_on>
+    </sys_script_include>
+</record_update>
